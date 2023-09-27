@@ -5,9 +5,13 @@ if (!process.env.WORDPRESS_API_URL) {
   `);
 }
 
+const domains = ["0.gravatar.com", "1.gravatar.com"];
+
+if (process.env.WORDPRESS_DOMAIN) domains.push(WORDPRESS_DOMAIN);
+
 /** @type {import('next').NextConfig} */
 module.exports = {
   images: {
-    domains: ["localhost", "0.gravatar.com", "1.gravatar.com"],
+    domains,
   },
 };
