@@ -12,6 +12,13 @@ if (!process.env.WORDPRESS_DOMAIN) {
   `);
 }
 
+if (!process.env.NEXT_PUBLIC_HOME_CANONICAL) {
+  throw new Error(`
+    Please provide a valid canonical home url.
+    Add to your environment variables NEXT_PUBLIC_HOME_CANONICAL.
+  `);
+}
+
 domains = ["0.gravatar.com", "1.gravatar.com", process.env.WORDPRESS_DOMAIN];
 
 /** @type {import('next').NextConfig} */

@@ -10,8 +10,12 @@ export default function Index({ allPosts: { edges }, preview }) {
 
   return (
     <Layout preview={preview}>
-      <Meta titleFollowUp={"Centrum Sportów Rakietowych"} />
-      <main className="home">Main</main>
+      <Meta
+        titleFollowUp={"Centrum Sportów Rakietowych"}
+        canonical={process.env.NEXT_PUBLIC_HOME_CANONICAL}
+        twitterCard="summary"
+      />
+      <main className="index">Main</main>
     </Layout>
   );
 }
