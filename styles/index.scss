@@ -1,0 +1,40 @@
+@import "./vendor/bootstrap.scss";
+
+/*
+// For convenience: scss function size($rem) returns 1/16 of $rem argument (and scales with user browser font size setting).
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $ff-main;
+  font-size: $fs-p;
+  line-height: 1;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: $wrapper-mw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $wrapper-p;
+  padding-right: $wrapper-p;
+
+  @media screen and (min-width: $bp-768) {
+    padding-left: $wrapper-p-768;
+    padding-right: $wrapper-p-768;
+  }
+
+  @media screen and (min-width: $bp-1024) {
+    padding-left: $wrapper-p-1024;
+    padding-right: $wrapper-p-1024;
+  }
+
+  @media screen and (min-width: $bp-1280) {
+    padding-left: $wrapper-p-1280;
+    padding-right: $wrapper-p-1280;
+  }
+}
