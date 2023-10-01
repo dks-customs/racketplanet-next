@@ -1,4 +1,6 @@
-<svg
+export default function SygnetSVG() {
+  return (
+    <svg
       xmlns="http://www.w3.org/2000/svg"
       width="326"
       height="178.015"
@@ -12,8 +14,8 @@
           transform="translate(-199.54 -37.716)"
           fill="none"
           stroke="#fff"
-          stroke-miterlimit="10"
-          stroke-width="2"
+          strokeMiterlimit="10"
+          strokeWidth="2"
         />
         <path
           id="Path_2"
@@ -22,8 +24,8 @@
           transform="translate(-60.924 0)"
           fill="none"
           stroke="#000"
-          stroke-miterlimit="10"
-          stroke-width="2"
+          strokeMiterlimit="10"
+          strokeWidth="2"
         />
         <path
           id="Path_3"
@@ -38,8 +40,8 @@
           transform="translate(-181.917 -9.263)"
           fill="none"
           stroke="#000"
-          stroke-miterlimit="10"
-          stroke-width="2"
+          strokeMiterlimit="10"
+          strokeWidth="2"
         />
         <path
           id="Path_5"
@@ -48,8 +50,8 @@
           transform="translate(-182.326 -13.399)"
           fill="none"
           stroke="#000"
-          stroke-miterlimit="10"
-          stroke-width="2"
+          strokeMiterlimit="10"
+          strokeWidth="2"
         />
         <line
           id="Line_1"
@@ -59,8 +61,8 @@
           transform="translate(325.963 401.701)"
           fill="none"
           stroke="#000"
-          stroke-miterlimit="10"
-          stroke-width="2"
+          strokeMiterlimit="10"
+          strokeWidth="2"
         />
         <line
           id="Line_2"
@@ -70,8 +72,8 @@
           transform="translate(329.122 421.198)"
           fill="none"
           stroke="#000"
-          stroke-miterlimit="10"
-          stroke-width="2"
+          strokeMiterlimit="10"
+          strokeWidth="2"
         />
         <line
           id="Line_3"
@@ -81,8 +83,8 @@
           transform="translate(326.945 412.158)"
           fill="none"
           stroke="#000"
-          stroke-miterlimit="10"
-          stroke-width="2"
+          strokeMiterlimit="10"
+          strokeWidth="2"
         />
         <path
           id="Path_6"
@@ -91,8 +93,8 @@
           transform="translate(-206.461 -9.347)"
           fill="none"
           stroke="#000"
-          stroke-miterlimit="10"
-          stroke-width="1"
+          strokeMiterlimit="10"
+          strokeWidth="1"
         />
         <path
           id="Path_7"
@@ -101,8 +103,8 @@
           transform="translate(-182.281 -29.247)"
           fill="none"
           stroke="#fff"
-          stroke-miterlimit="10"
-          stroke-width="1"
+          strokeMiterlimit="10"
+          strokeWidth="1"
         />
         <g
           id="Group_4"
@@ -132,8 +134,8 @@
                 transform="translate(-394.946 -449.829)"
                 fill="none"
                 stroke="#000"
-                stroke-miterlimit="10"
-                stroke-width="2"
+                strokeMiterlimit="10"
+                strokeWidth="2"
               />
               <path
                 id="Path_23"
@@ -142,8 +144,8 @@
                 transform="translate(-297.771 -388.9)"
                 fill="none"
                 stroke="#000"
-                stroke-miterlimit="10"
-                stroke-width="2"
+                strokeMiterlimit="10"
+                strokeWidth="2"
               />
               <path
                 id="Path_24"
@@ -152,8 +154,8 @@
                 transform="translate(-292.396 -391.04)"
                 fill="none"
                 stroke="#000"
-                stroke-miterlimit="10"
-                stroke-width="2"
+                strokeMiterlimit="10"
+                strokeWidth="2"
               />
               <path
                 id="Path_25"
@@ -162,8 +164,8 @@
                 transform="translate(-254.781 -479.067)"
                 fill="none"
                 stroke="#000"
-                stroke-miterlimit="10"
-                stroke-width="2"
+                strokeMiterlimit="10"
+                strokeWidth="2"
               />
               <path
                 id="Path_26"
@@ -172,8 +174,8 @@
                 transform="translate(-252.598 -473.384)"
                 fill="none"
                 stroke="#000"
-                stroke-miterlimit="10"
-                stroke-width="2"
+                strokeMiterlimit="10"
+                strokeWidth="2"
               />
               <path
                 id="Path_27"
@@ -182,8 +184,8 @@
                 transform="translate(-292.351 -388.9)"
                 fill="none"
                 stroke="#000"
-                stroke-miterlimit="10"
-                stroke-width="2"
+                strokeMiterlimit="10"
+                strokeWidth="2"
               />
               <path
                 id="Path_28"
@@ -192,8 +194,8 @@
                 transform="translate(-394.946 -449.829)"
                 fill="none"
                 stroke="#000"
-                stroke-miterlimit="10"
-                stroke-width="2"
+                strokeMiterlimit="10"
+                strokeWidth="2"
               />
               <line
                 id="Line_4"
@@ -203,8 +205,8 @@
                 transform="translate(0.004 115.406)"
                 fill="none"
                 stroke="#000"
-                stroke-miterlimit="10"
-                stroke-width="2"
+                strokeMiterlimit="10"
+                strokeWidth="2"
               />
               <path
                 id="Path_29"
@@ -213,8 +215,8 @@
                 transform="translate(-368.534 -509.893)"
                 fill="none"
                 stroke="#000"
-                stroke-miterlimit="10"
-                stroke-width="2"
+                strokeMiterlimit="10"
+                strokeWidth="2"
               />
             </g>
           </g>
@@ -238,8 +240,8 @@
           transform="translate(-176.133 -38.173)"
           fill="none"
           stroke="#fff"
-          stroke-miterlimit="10"
-          stroke-width="1"
+          strokeMiterlimit="10"
+          strokeWidth="1"
         />
         <g
           id="Group_6"
@@ -255,3 +257,5 @@
         </g>
       </g>
     </svg>
+  );
+}

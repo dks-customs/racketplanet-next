@@ -17,12 +17,10 @@ export default async function RootLayout({
   const sports = await getSports();
   const widgetEvents = await getWidgetEvents();
 
-  console.log(widgetEvents);
-
   return (
     <html lang="pl" className={nunito.className}>
       <body>
-        <Header />
+        <Header categories={categories} sports={sports} events={widgetEvents} />
         {children}
         <Footer />
       </body>

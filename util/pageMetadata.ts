@@ -15,7 +15,7 @@ type MetadataInfo = {
   showOgDescription?: boolean;
 };
 
-export default function getMetadata({
+export default function pageMetadata({
   url,
   titleFollowUp,
   description,

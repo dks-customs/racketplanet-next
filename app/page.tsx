@@ -1,5 +1,5 @@
 import getHomePosts from "../api/getHomePosts";
-import getMetadata from "../util/getMetadata";
+import pageMetadata from "../util/pageMetadata";
 
 export default async function Page() {
   const res = await getHomePosts();
@@ -13,7 +13,7 @@ export default async function Page() {
   );
 }
 
-export const metadata = getMetadata({
+export const metadata = pageMetadata({
   url: "/",
   titleFollowUp: "Centrum Sportów Rakietowych",
   description:
