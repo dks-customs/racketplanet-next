@@ -59,7 +59,11 @@ export default function SideMenu({
           <ul>
             {categories.map((category) => {
               if (category.children?.nodes?.length > 0) {
-                return <CategoryCollapse category={category} />;
+                return (
+                  <li key={`header-bottom-${category.id}`}>
+                    <CategoryCollapse category={category} />
+                  </li>
+                );
               } else {
                 return (
                   <li key={`header-bottom-${category.id}`}>

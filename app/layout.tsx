@@ -1,12 +1,13 @@
 import { Metadata } from "next";
 import { nunito } from "./fonts";
 import { CANONICAL_BASE } from "../constants/constants";
-import "../styles/index.scss";
 import Header from "../components/header/header";
 import getCategories from "../api/getCategories";
 import getSports from "../api/getSports";
 import getWidgetEvents from "../api/getWidgetEvents";
 import Footer from "../components/footer/footer";
+
+import "../styles/global.scss";
 
 export default async function RootLayout({
   children,

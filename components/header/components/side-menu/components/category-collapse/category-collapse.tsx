@@ -24,7 +24,7 @@ export default function CategoryCollapse({ category }: CategoryCollapseProps) {
         <div id={`category-${category.id}-collapse`}>
           {category.children.nodes.map((child) => {
             return (
-              <Link href={`/${child.slug}`} id={`collapse-item-${child.id}`}>
+              <Link href={`/${child.slug}`} key={`collapse-item-${child.id}`}>
                 {child.name}
               </Link>
             );
