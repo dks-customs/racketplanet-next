@@ -1,4 +1,4 @@
-export type Events = {
+export type APIEvents = {
   id: string;
   slug: string;
   eventAcf: {

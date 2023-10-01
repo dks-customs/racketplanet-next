@@ -1,6 +1,4 @@
 import { Dispatch, SetStateAction } from "react";
-import { Categories } from "../../../../api/types/categories";
-import { Sports } from "../../../../api/types/sports";
 import {
   FACEBOOK_URL,
   INSTAGRAM_URL,
@@ -9,33 +7,32 @@ import {
 import Link from "next/link";
 import InstagramSVG from "../../../svg/instagram";
 import FacebookSVG from "../../../svg/facebook";
-import CloseSVG from "../../../svg/close";
-import { Offcanvas } from "react-bootstrap";
+import { Offcanvas, OffcanvasHeader } from "react-bootstrap";
 import CategoryCollapse from "./components/category-collapse/category-collapse";
 
 import "./side-menu.scss";
+import { APICategories } from "../../../../api/types/categories";
+import { APISports } from "../../../../api/types/sports";
 
 type SideMenuProps = {
   show: boolean;
-  setShowMenu: Dispatch<SetStateAction<boolean>>;
-  categories: Categories;
-  sports: Sports;
+  setShow: Dispatch<SetStateAction<boolean>>;
+  categories: APICategories;
+  sports: APISports;
 };
 
 export default function SideMenu({
   show,
-  setShowMenu,
+  setShow,
   categories,
   sports,
 }: SideMenuProps) {
-  const handleClose = () => setShowMenu(false);
+  const handleClose = () => setShow(false);
 
   return (
     <Offcanvas show={show} onHide={handleClose} backdrop={true} scroll={true}>
+      <OffcanvasHeader closeButton />
       <Offcanvas.Body>
-        <button className="side-menu-close-btn" onClick={handleClose}>
-          <CloseSVG />
-        </button>
         <nav className="side-menu">
           <ul>
             <li onClick={handleClose}>

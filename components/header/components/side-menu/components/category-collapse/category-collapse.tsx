@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Button, Collapse } from "react-bootstrap";
-import { Categories } from "../../../../../../api/types/categories";
 import Link from "next/link";
 
 import "./category-collapse.scss";
+import { APICategories } from "../../../../../../api/types/categories";
 
 type CategoryCollapseProps = {
-  category: Categories[0];
+  category: APICategories[0];
 };
 
 export default function CategoryCollapse({ category }: CategoryCollapseProps) {

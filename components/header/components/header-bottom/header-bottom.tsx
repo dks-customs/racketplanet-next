@@ -1,5 +1,4 @@
 import { usePathname } from "next/navigation";
-import { Categories } from "../../../../api/types/categories";
 import "./header-bottom.scss";
 import {
   FACEBOOK_URL,
@@ -10,9 +9,10 @@ import Link from "next/link";
 import FacebookSVG from "../../../svg/facebook";
 import InstagramSVG from "../../../svg/instagram";
 import { Dropdown } from "react-bootstrap";
+import { APICategories } from "../../../../api/types/categories";
 
 type HeaderBottomProps = {
-  categories: Categories;
+  categories: APICategories;
 };
 
 export default function HeaderBottom({ categories }: HeaderBottomProps) {
@@ -21,7 +21,7 @@ export default function HeaderBottom({ categories }: HeaderBottomProps) {
     pathname === routes.RACKET_MAPA ? "header-bottom--hidden" : "header-bottom";
 
   return (
-    <nav className={`${className} container`}>
+    <nav className={`${className} layout-container`}>
       <ul className="header-bottom__categories">
         {categories.map((category) => {
           if (category.children?.nodes?.length > 0) {

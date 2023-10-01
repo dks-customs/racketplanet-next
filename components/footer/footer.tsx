@@ -8,5 +8,5 @@ type FooterProps = {
 };
 
 export default function Footer({ categories, sports }: FooterProps) {
-  return <footer className="footer container">Footer</footer>;
+  return <footer className="footer layout-container">Footer</footer>;
 }

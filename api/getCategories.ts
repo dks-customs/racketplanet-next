@@ -1,13 +1,13 @@
 import fetchApi from "../util/fetchApi";
-import { Categories } from "./types/categories";
+import { APICategories } from "./types/categories";
 
 type CategoriesApiData = {
   categories: {
-    nodes: Categories;
+    nodes: APICategories;
   };
 };
 
-export default async function getCategories(): Promise<Categories> {
+export default async function getCategories(): Promise<APICategories> {
   const data = await fetchApi<CategoriesApiData>(
     `
       query Categories {
@@ -37,7 +37,7 @@ export default async function getCategories(): Promise<Categories> {
   );
 
   if (data?.categories?.nodes) {
-    let other: Categories[0] | undefined;
+    let other: APICategories[0] | undefined;
 
     const categories = data.categories.nodes.filter((c) => {
       if (c.slug === "inne") other = c;

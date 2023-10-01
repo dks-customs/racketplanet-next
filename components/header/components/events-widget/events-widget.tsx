@@ -1,8 +1,8 @@
-import { Events } from "../../../../api/types/events";
+import { APIEvents } from "../../../../api/types/events";
 import "./events-widget.scss";
 
 type EventsWidgetProps = {
-  events: Events;
+  events: APIEvents;
 };
 
 export default function EventsWidget({ events }: EventsWidgetProps) {

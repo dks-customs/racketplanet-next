@@ -1,4 +1,4 @@
-export type Sports = {
+export type APISports = {
   id: string;
   name: string;
   slug: string;

@@ -1,13 +1,13 @@
 import fetchApi from "../util/fetchApi";
-import { Sports } from "./types/sports";
+import { APISports } from "./types/sports";
 
 type SportsApiData = {
   sports: {
-    nodes: Sports;
+    nodes: APISports;
   };
 };
 
-export default async function getSports(): Promise<Sports> {
+export default async function getSports(): Promise<APISports> {
   const data = await fetchApi<SportsApiData>(
     `
       query Sports {

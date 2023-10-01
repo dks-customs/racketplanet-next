@@ -1,4 +1,4 @@
-export type Categories = {
+export type APICategories = {
   id: string;
   name: string;
   slug: string;

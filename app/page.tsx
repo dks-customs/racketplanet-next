@@ -6,7 +6,7 @@ export default async function Page() {
   const heroPost = res.edges[0]?.node;
   const morePosts = res.edges.slice(1);
 
-  return <main className="index container">Main</main>;
+  return <main className="index layout-container">Home</main>;
 }
 
 export const metadata = pageMetadata({

@@ -1,20 +1,20 @@
 "use client";
-
-import { Categories } from "../../api/types/categories";
-import { Events } from "../../api/types/events";
-import { Sports } from "../../api/types/sports";
+import { APICategories } from "../../api/types/categories";
+import { APIEvents } from "../../api/types/events";
+import { APISports } from "../../api/types/sports";
+import SideMenu from "./components/side-menu/side-menu";
+import SearchModal from "./components/search-modal/search-modal";
 import EventsWidget from "./components/events-widget/events-widget";
 import HeaderBottom from "./components/header-bottom/header-bottom";
 import HeaderTop from "./components/header-top/header-top";
 import { useState } from "react";
 
 import "./header.scss";
-import SideMenu from "./components/side-menu/side-menu";
 
 type HeaderProps = {
-  categories: Categories;
-  sports: Sports;
-  events: Events;
+  categories: APICategories;
+  sports: APISports;
+  events: APIEvents;
 };
 
 export default function Header({ categories, sports, events }: HeaderProps) {
@@ -32,8 +32,9 @@ export default function Header({ categories, sports, events }: HeaderProps) {
         sports={sports}
         categories={categories}
         show={showMenu}
-        setShowMenu={setShowMenu}
+        setShow={setShowMenu}
       />
+      <SearchModal show={showSearch} setShow={setShowSearch} />
     </>
   );
 }

@@ -15,7 +15,7 @@ export default function HeaderTop({
   setShowSearch,
 }: HeaderTopProps) {
   return (
-    <div className="header-top container">
+    <div className="header-top layout-container">
       <button
         className="header-top__menu-btn hoverable"
         onClick={() => setShowMenu(true)}
