@@ -13,17 +13,21 @@ export default async function getCategories(): Promise<Categories> {
       query Categories {
         categories {
           nodes {
-            slug
             id
+            name
+            slug
             parent {
               node {
+                id
+                name
                 slug
               }
             }
             children {
               nodes {
-                slug
                 id
+                name
+                slug
               }
             }
           }

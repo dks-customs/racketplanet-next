@@ -3,10 +3,10 @@ import { nunito } from "./fonts";
 import { CANONICAL_BASE } from "../constants/constants";
 import "../styles/index.scss";
 import Header from "../components/header/header";
-import Footer from "../components/footer";
 import getCategories from "../api/getCategories";
 import getSports from "../api/getSports";
 import getWidgetEvents from "../api/getWidgetEvents";
+import Footer from "../components/footer/footer";
 
 export default async function RootLayout({
   children,
@@ -22,7 +22,7 @@ export default async function RootLayout({
       <body>
         <Header categories={categories} sports={sports} events={widgetEvents} />
         {children}
-        <Footer />
+        <Footer categories={categories} sports={sports} />
       </body>
     </html>
   );

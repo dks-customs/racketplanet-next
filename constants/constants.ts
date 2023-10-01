@@ -1,5 +1,7 @@
 export const WEBSITE_TITLE = "Racket Planet";
 export const WEBSITE_DESCRIPTION = "Centrum Sportów Rakietowych";
+export const FACEBOOK_URL = "https://www.facebook.com/racketplanetpl";
+export const INSTAGRAM_URL = "https://www.instagram.com/racketplanetpl";
 
 export const routes = {
   HOME: "/",

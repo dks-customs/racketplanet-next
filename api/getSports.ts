@@ -15,9 +15,11 @@ export default async function getSports(): Promise<Sports> {
           nodes {
             id
             slug
+            name
             pages {
               nodes {
                 id
+                slug
                 ustawieniaStrony {
                   typStrony
                 }

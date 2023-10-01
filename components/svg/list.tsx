@@ -4,7 +4,7 @@ export default function ListSVG() {
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
-      fill="black"
+      fill="currentColor"
       viewBox="2 2.5 11 11"
     >
       <path

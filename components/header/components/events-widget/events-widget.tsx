@@ -1,4 +1,4 @@
-import { Events } from "../../api/types/events";
+import { Events } from "../../../../api/types/events";
 import "./events-widget.scss";
 
 type EventsWidgetProps = {
