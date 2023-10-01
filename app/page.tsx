@@ -1,0 +1,24 @@
+import getHomePosts from "../api/getHomePosts";
+import getMetadata from "../util/getMetadata";
+
+export default async function Page() {
+  const res = await getHomePosts();
+  const heroPost = res.edges[0]?.node;
+  const morePosts = res.edges.slice(1);
+
+  return (
+    <div>
+      <main className="index container">Main</main>
+    </div>
+  );
+}
+
+export const metadata = getMetadata({
+  url: "/",
+  titleFollowUp: "Centrum Sportów Rakietowych",
+  description:
+    "Najnowsze informacje, wydarzenia, relacje, wywiady, poradniki i wiele innych ze sportów rakietowych z kraju i ze świata.",
+  twitterCard: "summary",
+  imageUrl: `/images/logo-sygnet.jpg`,
+  imageAlt: "Racket Planet Logo",
+});

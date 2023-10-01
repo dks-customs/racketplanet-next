@@ -12,7 +12,7 @@ if (!process.env.WORDPRESS_DOMAIN) {
   `);
 }
 
-if (!process.env.NEXT_PUBLIC_HOME_CANONICAL) {
+if (!process.env.NEXT_PUBLIC_CANONICAL_BASE) {
   throw new Error(`
     Please provide a valid canonical home url.
     Add to your environment variables NEXT_PUBLIC_HOME_CANONICAL.
