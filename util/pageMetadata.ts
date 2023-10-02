@@ -8,8 +8,8 @@ type MetadataInfo = {
   author?: string;
   publishedTime?: string;
   modifiedTime?: string;
-  imageUrl: string;
-  imageAlt: string;
+  imageUrl?: string;
+  imageAlt?: string;
   twitterCard: "summary" | "summary_large_image";
   ogType?: "article" | "website";
   showOgDescription?: boolean;
