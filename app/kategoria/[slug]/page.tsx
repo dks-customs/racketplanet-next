@@ -5,17 +5,31 @@ import "./category.scss";
 import getCategory from "../../../api/getCategory";
 import LoadMore from "../../../components/load-more/load-more";
 
-type PageProps = {
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  const categories = await getCategories();
+
+  return categories
+    .filter((category) => category.children.nodes.length === 0)
+    .map((category) => ({
+      slug: category.slug,
+      id: category.id,
+    }));
+}
+
+type CategoryProps = {
   params: {
     slug: string;
   };
 };
 
-export default async function Page({ params }: PageProps) {
+export default async function Category({ params }: CategoryProps) {
   const category = await getCategory(params.slug);
 
   return (
     <main className="category layout-container">
+      <p>{new Date().toLocaleTimeString()}</p>
       <h1>{category.name}</h1>
       <ul className="posts">
         {category.posts.map((post) => (
@@ -36,18 +50,4 @@ export default async function Page({ params }: PageProps) {
       )}
     </main>
   );
-}
-
-export const dynamicParams = false;
-export const dynamic = "force-static";
-
-export async function generateStaticParams() {
-  const categories = await getCategories();
-
-  return categories
-    .filter((category) => category.children.nodes.length === 0)
-    .map((category) => ({
-      slug: category.slug,
-      id: category.id,
-    }));
 }
