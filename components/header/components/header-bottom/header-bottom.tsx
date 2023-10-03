@@ -10,18 +10,30 @@ import FacebookSVG from "../../../svg/facebook";
 import InstagramSVG from "../../../svg/instagram";
 import { Dropdown } from "react-bootstrap";
 import { APICategories } from "../../../../api/types/categories";
+import { APISports } from "../../../../api/types/sports";
 
 type HeaderBottomProps = {
+  sports: APISports;
   categories: APICategories;
 };
 
-export default function HeaderBottom({ categories }: HeaderBottomProps) {
+export default function HeaderBottom({
+  categories,
+  sports,
+}: HeaderBottomProps) {
   const pathname = usePathname();
   const className =
     pathname === routes.RACKET_MAPA ? "header-bottom--hidden" : "header-bottom";
 
   return (
     <nav className={`${className} layout-container`}>
+      <ul className="header-bottom__sports">
+        {sports.map((sport) => (
+          <li key={`header-bottom-${sport.id}`}>
+            <Link href={`${routes.SPORT}/${sport.slug}`}>{sport.name}</Link>
+          </li>
+        ))}
+      </ul>
       <ul className="header-bottom__categories">
         {categories.map((category) => {
           if (category.children?.nodes?.length > 0) {
@@ -35,7 +47,9 @@ export default function HeaderBottom({ categories }: HeaderBottomProps) {
                   <Dropdown.Menu>
                     {category.children.nodes.map((child) => (
                       <Dropdown.Item key={`header-bottom-child-${child.id}`}>
-                        <Link href={`/${child.slug}`}>{child.name}</Link>
+                        <Link href={`${routes.CATEGORY}/${child.slug}`}>
+                          {child.name}
+                        </Link>
                       </Dropdown.Item>
                     ))}
                   </Dropdown.Menu>
@@ -45,7 +59,9 @@ export default function HeaderBottom({ categories }: HeaderBottomProps) {
           } else {
             return (
               <li key={`header-bottom-${category.id}`}>
-                <Link href={`/${category.slug}`}>{category.name}</Link>
+                <Link href={`${routes.CATEGORY}/${category.slug}`}>
+                  {category.name}
+                </Link>
               </li>
             );
           }

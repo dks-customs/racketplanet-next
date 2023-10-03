@@ -1,8 +1,8 @@
-if (!process.env.WORDPRESS_API_URL) {
+if (!process.env.NEXT_PUBLIC_WORDPRESS_API_URL) {
   throw new Error(`
-    Please provide a valid WordPress instance URL.
-    Add to your environment variables WORDPRESS_API_URL.
-  `);
+  Please provide a valid wordpress API url.
+  Add to your environment variables NEXT_PUBLIC_WORDPRESS_API_URL.
+`);
 }
 
 if (!process.env.WORDPRESS_DOMAIN) {

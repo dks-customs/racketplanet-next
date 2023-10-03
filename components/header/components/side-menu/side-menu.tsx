@@ -47,7 +47,7 @@ export default function SideMenu({
               .filter((sport) => sport.slug !== "bez-sportu")
               .map((sport) => (
                 <li key={`side-menu-${sport.id}`} onClick={handleClose}>
-                  <Link href={`${routes.SPORTS}/${sport.slug}`}>
+                  <Link href={`${routes.SPORT}/${sport.slug}`}>
                     {sport.name}
                   </Link>
                 </li>
@@ -64,7 +64,9 @@ export default function SideMenu({
               } else {
                 return (
                   <li key={`header-bottom-${category.id}`}>
-                    <Link href={`/${category.slug}`}>{category.name}</Link>
+                    <Link href={`${routes.CATEGORY}/${category.slug}`}>
+                      {category.name}
+                    </Link>
                   </li>
                 );
               }

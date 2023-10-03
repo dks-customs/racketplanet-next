@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import "./category-collapse.scss";
 import { APICategories } from "../../../../../../api/types/categories";
+import { routes } from "../../../../../../constants/constants";
 
 type CategoryCollapseProps = {
   category: APICategories[0];
@@ -24,7 +25,10 @@ export default function CategoryCollapse({ category }: CategoryCollapseProps) {
         <div id={`category-${category.id}-collapse`}>
           {category.children.nodes.map((child) => {
             return (
-              <Link href={`/${child.slug}`} key={`collapse-item-${child.id}`}>
+              <Link
+                href={`${routes.CATEGORY}/${child.slug}`}
+                key={`collapse-item-${child.id}`}
+              >
                 {child.name}
               </Link>
             );

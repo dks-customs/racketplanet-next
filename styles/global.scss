@@ -4,18 +4,30 @@
 // For convenience: scss function size($rem) returns 1/16 of $rem argument (and scales with user browser font size setting).
 */
 
-* {
+body {
+  font-family: $ff-main;
+  font-size: $fs-p;
+  line-height: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+ol,
+li,
+button,
+span {
   margin: 0;
   padding: 0;
   background: none;
   border: 0;
   outline: none;
-}
-
-body {
-  font-family: $ff-main;
-  font-size: $fs-p;
-  line-height: 1;
 }
 
 .hoverable {

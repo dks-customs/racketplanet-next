@@ -1,17 +1,17 @@
 import fetchApi from "../util/fetchApi";
 import { APICategories } from "./types/categories";
 
-type CategoriesApiData = {
+type CategoriesAPIData = {
   categories: {
     nodes: APICategories;
   };
 };
 
 export default async function getCategories(): Promise<APICategories> {
-  const data = await fetchApi<CategoriesApiData>(
+  const data = await fetchApi<CategoriesAPIData>(
     `
       query Categories {
-        categories {
+        categories(first: 100) {
           nodes {
             id
             name

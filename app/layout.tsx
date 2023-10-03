@@ -6,8 +6,10 @@ import getCategories from "../api/getCategories";
 import getSports from "../api/getSports";
 import getWidgetEvents from "../api/getWidgetEvents";
 import Footer from "../components/footer/footer";
+import { ToastContainer } from "react-toastify";
 
 import "../styles/global.scss";
+import "react-toastify/dist/ReactToastify.css";
 
 export default async function RootLayout({
   children,
@@ -24,6 +26,7 @@ export default async function RootLayout({
         <Header categories={categories} sports={sports} events={widgetEvents} />
         {children}
         <Footer categories={categories} sports={sports} />
+        <ToastContainer theme="colored" position="bottom-center" />
       </body>
     </html>
   );

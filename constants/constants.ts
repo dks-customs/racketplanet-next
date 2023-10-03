@@ -8,7 +8,8 @@ export const routes = {
   HOME: "/",
   RACKET_MAPA: "/racket-mapa",
   EVENTS: "/wydarzenia",
-  SPORTS: "/dyscypliny",
+  SPORT: "/sport",
+  CATEGORY: "/kategoria",
   TAG: "/tag",
   PRIVACY_POLICY: "/polityka-prywatnosci",
   TERMS: "/regulamin",
@@ -32,7 +33,6 @@ export const NEXT_PUBLIC_ALGOLIA_APP_ID = (() => {
   if (!process.env.NEXT_PUBLIC_ALGOLIA_APP_ID) {
     throw new Error(`
       Please provide a valid Algolia App Id.
-      Add to your environment variables NEXT_PUBLIC_ALGOLIA_APP_ID.
     `);
   }
 
@@ -43,7 +43,6 @@ export const NEXT_PUBLIC_ALGOLIA_SEARCH_KEY = (() => {
   if (!process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_KEY) {
     throw new Error(`
     Please provide a valid Algolia Search Key.
-    Add to your environment variables NEXT_PUBLIC_ALGOLIA_SEARCH_KEY.
   `);
   }
 
@@ -51,18 +50,13 @@ export const NEXT_PUBLIC_ALGOLIA_SEARCH_KEY = (() => {
 })();
 
 export const API_URL = (() => {
-  if (typeof window === "undefined") {
-    if (!process.env.WORDPRESS_API_URL) {
-      throw new Error(`
-        Please provide a valid WordPress instance URL.
-        Add to your environment variables WORDPRESS_API_URL.
-      `);
-    }
-
-    return process.env.WORDPRESS_API_URL;
-  } else {
-    return "";
+  if (!process.env.NEXT_PUBLIC_WORDPRESS_API_URL) {
+    throw new Error(`
+    Please provide a valid wordpress API url.
+  `);
   }
+
+  return process.env.NEXT_PUBLIC_WORDPRESS_API_URL;
 })();
 
 export const ALGOLIA_ADMIN_KEY = (() => {
@@ -70,7 +64,6 @@ export const ALGOLIA_ADMIN_KEY = (() => {
     if (!process.env.ALGOLIA_ADMIN_KEY) {
       throw new Error(`
         Please provide a valid Algolia admin key.
-        Add to your environment variables ALGOLIA_ADMIN_KEY.
       `);
     }
 

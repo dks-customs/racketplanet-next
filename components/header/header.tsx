@@ -26,7 +26,7 @@ export default function Header({ categories, sports, events }: HeaderProps) {
       <header className="header">
         <EventsWidget events={events} />
         <HeaderTop setShowSearch={setShowSearch} setShowMenu={setShowMenu} />
-        <HeaderBottom categories={categories} />
+        <HeaderBottom sports={sports} categories={categories} />
       </header>
       <SideMenu
         sports={sports}

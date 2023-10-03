@@ -2,17 +2,17 @@ import events from "../util/events";
 import fetchApi from "../util/fetchApi";
 import { APIEvents } from "./types/events";
 
-type EventsApiData = {
+type EventsAPIData = {
   events: {
     nodes: APIEvents;
   };
 };
 
 export default async function getEvents(): Promise<APIEvents> {
-  const data = await fetchApi<EventsApiData>(
+  const data = await fetchApi<EventsAPIData>(
     `
       query Events {
-        events {
+        events(first: 100) {
           nodes {
             id
 						slug
