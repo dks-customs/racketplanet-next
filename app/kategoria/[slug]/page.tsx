@@ -39,6 +39,7 @@ export default async function Page({ params }: PageProps) {
 }
 
 export const dynamicParams = false;
+export const dynamic = "force-static";
 
 export async function generateStaticParams() {
   const categories = await getCategories();
