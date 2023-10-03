@@ -33,10 +33,12 @@ export default function LoadMore({
         if (categorySlug) {
           const category = await getCategory(categorySlug, after);
 
-          newPosts = category.posts.map((post) => post.node);
+          if (category) {
+            newPosts = category.posts.map((post) => post.node);
 
-          if (category.haveNextPage) {
-            newAfter = category.posts[POSTS_PER_PAGE - 1].cursor;
+            if (category.haveNextPage) {
+              newAfter = category.posts[POSTS_PER_PAGE - 1].cursor;
+            }
           }
         } else {
           const posts = await getPosts(after);
