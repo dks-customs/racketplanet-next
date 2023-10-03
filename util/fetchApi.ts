@@ -10,6 +10,9 @@ export default async function fetchApi<T>(
   };
 
   const res = await fetch(API_URL, {
+    headers: {
+      "Content-Type": "application/json",
+    },
     cache: "force-cache",
     method: "POST",
     body: JSON.stringify({
