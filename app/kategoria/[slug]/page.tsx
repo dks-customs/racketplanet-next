@@ -2,8 +2,8 @@ import Link from "next/link";
 import getCategories from "../../../api/getCategories";
 import { POSTS_PER_PAGE } from "../../../constants/constants";
 import "./category.scss";
-import MorePosts from "../../../components/more-posts/more-posts";
 import getCategory from "../../../api/getCategory";
+import LoadMore from "../../../components/load-more/load-more";
 
 type PageProps = {
   params: {
@@ -29,7 +29,7 @@ export default async function Page({ params }: PageProps) {
         ))}
       </ul>
       {category.haveNextPage && (
-        <MorePosts
+        <LoadMore
           afterPostCursor={category.posts[POSTS_PER_PAGE - 1].cursor}
           categorySlug={params.slug}
         />

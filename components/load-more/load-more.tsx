@@ -14,7 +14,7 @@ type MorePostsButtonProps = {
   categorySlug?: string;
 };
 
-export default function MorePosts({
+export default function LoadMore({
   afterPostCursor,
   categorySlug,
 }: MorePostsButtonProps) {
@@ -22,7 +22,7 @@ export default function MorePosts({
   const [posts, setPosts] = useState<APIPostPreview[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const loadPosts = async () => {
+  const loadMore = async () => {
     try {
       if (after) {
         setLoading(true);
@@ -76,11 +76,7 @@ export default function MorePosts({
         </ul>
       )}
       {after && (
-        <Button
-          className="more-posts-btn"
-          variant="primary"
-          onClick={loadPosts}
-        >
+        <Button className="more-posts-btn" variant="primary" onClick={loadMore}>
           {loading ? <Spinner /> : "Załaduj więcej"}
         </Button>
       )}

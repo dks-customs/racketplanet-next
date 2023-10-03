@@ -2,7 +2,7 @@ import Link from "next/link";
 import pageMetadata from "../util/pageMetadata";
 import { POSTS_PER_PAGE } from "../constants/constants";
 import getPosts from "../api/getPosts";
-import MorePosts from "../components/more-posts/more-posts";
+import LoadMore from "../components/load-more/load-more";
 
 export default async function Page() {
   const posts = await getPosts();
@@ -22,7 +22,7 @@ export default async function Page() {
         ))}
       </ul>
       {posts.haveNextPage && (
-        <MorePosts afterPostCursor={posts.items[POSTS_PER_PAGE - 1].cursor} />
+        <LoadMore afterPostCursor={posts.items[POSTS_PER_PAGE - 1].cursor} />
       )}
     </main>
   );
