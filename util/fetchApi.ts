@@ -5,10 +5,12 @@ export default async function fetchApi<T>(
   variables: object = {},
   cache: "force-cache" | "no-store" = "force-cache"
 ): Promise<T> {
-  const headers = { "Content-Type": "application/json" };
+  const headers = {
+    "Content-Type": "application/json",
+  };
 
   const res = await fetch(API_URL, {
-    headers,
+    cache: "force-cache",
     method: "POST",
     body: JSON.stringify({
       query,
