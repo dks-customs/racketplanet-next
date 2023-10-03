@@ -2,7 +2,7 @@ import { routes } from "../../constants/constants";
 import pageMetadata from "../../util/pageMetadata";
 import "./events.scss";
 
-export default async function Page() {
+export default async function Events() {
   return <main className="events layout-container">Wydarzenia</main>;
 }
 

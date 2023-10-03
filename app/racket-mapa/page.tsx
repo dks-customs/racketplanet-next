@@ -2,7 +2,7 @@ import { routes } from "../../constants/constants";
 import pageMetadata from "../../util/pageMetadata";
 import "./map.scss";
 
-export default async function Page() {
+export default async function RacketMapa() {
   return <main className="map layout-container">Racket Mapa</main>;
 }
 

@@ -2,7 +2,7 @@ import { routes } from "../../constants/constants";
 import pageMetadata from "../../util/pageMetadata";
 import "./about.scss";
 
-export default async function Page() {
+export default async function About() {
   return <main className="about layout-container">O nas</main>;
 }
 

@@ -4,7 +4,7 @@ import { POSTS_PER_PAGE } from "../constants/constants";
 import getPosts from "../api/getPosts";
 import LoadMore from "../components/load-more/load-more";
 
-export default async function Page() {
+export default async function Home() {
   const posts = await getPosts();
 
   return (

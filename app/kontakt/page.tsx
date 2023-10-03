@@ -2,7 +2,7 @@ import { routes } from "../../constants/constants";
 import pageMetadata from "../../util/pageMetadata";
 import "./contact.scss";
 
-export default async function Page() {
+export default async function Contact() {
   return <main className="contact layout-container">Kontakt</main>;
 }
 

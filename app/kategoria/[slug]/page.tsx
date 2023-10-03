@@ -6,17 +6,6 @@ import getCategory from "../../../api/getCategory";
 import LoadMore from "../../../components/load-more/load-more";
 import NotFound from "../../not-found";
 
-export async function generateStaticParams() {
-  const categories = await getCategories();
-
-  return categories
-    .filter((category) => category.children.nodes.length === 0)
-    .map((category) => ({
-      slug: category.slug,
-      id: category.id,
-    }));
-}
-
 type CategoryProps = {
   params: {
     slug: string;
@@ -53,4 +42,15 @@ export default async function Category({ params }: CategoryProps) {
   } else {
     return <NotFound />;
   }
+}
+
+export async function generateStaticParams() {
+  const categories = await getCategories();
+
+  return categories
+    .filter((category) => category.children.nodes.length === 0)
+    .map((category) => ({
+      slug: category.slug,
+      id: category.id,
+    }));
 }
