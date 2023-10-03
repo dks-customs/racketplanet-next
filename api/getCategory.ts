@@ -35,9 +35,13 @@ export default async function getCategory(slug: string, after: string = "") {
 
   const category = data.categories.nodes[0];
 
-  return {
-    name: category.name,
-    haveNextPage: category.posts.edges.length > POSTS_PER_PAGE,
-    posts: category.posts.edges.slice(0, POSTS_PER_PAGE),
-  };
+  if (category) {
+    return {
+      name: category.name,
+      haveNextPage: category.posts.edges.length > POSTS_PER_PAGE,
+      posts: category.posts.edges.slice(0, POSTS_PER_PAGE),
+    };
+  } else {
+    return undefined;
+  }
 }
