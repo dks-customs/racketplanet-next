@@ -1,7 +1,7 @@
-import { Events } from "../api/types/events";
+import { APIEvents } from "../api/types/events";
 import specDateString from "./specDateString";
 
-const isFutureEvent = (event: Events[0]) => {
+const isFutureEvent = (event: APIEvents[0]) => {
   const now = new Date();
   const nowUTC = Date.UTC(
     now.getUTCFullYear(),
@@ -26,14 +26,14 @@ const isFutureEvent = (event: Events[0]) => {
   }
 };
 
-const sortByDate = (a: Events[0], b: Events[0]) => {
+const sortByDate = (a: APIEvents[0], b: APIEvents[0]) => {
   const aBeginTime = new Date(specDateString(a.eventAcf.dateBegin)).getTime();
   const bBeginTime = new Date(specDateString(b.eventAcf.dateBegin)).getTime();
 
   return aBeginTime - bBeginTime;
 };
 
-function getCalendarEvents(events: Events) {
+function getCalendarEvents(events: APIEvents) {
   return events.filter(isFutureEvent).map((event) => event.id);
 }
 

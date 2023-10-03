@@ -1,10 +1,10 @@
-import { Categories } from "../../api/types/categories";
-import { Sports } from "../../api/types/sports";
+import { APICategories } from "../../api/types/categories";
+import { APISports } from "../../api/types/sports";
 import "./footer.scss";
 
 type FooterProps = {
-  categories: Categories;
-  sports: Sports;
+  categories: APICategories;
+  sports: APISports;
 };
 
 export default function Footer({ categories, sports }: FooterProps) {
