@@ -2,7 +2,6 @@ import { API_URL } from "../constants/constants";
 
 export default async function fetchApi<T>(
   query: string,
-  variables: object = {},
   cache: "force-cache" | "no-store" = "force-cache"
 ): Promise<T> {
   const res = await fetch(API_URL, {
@@ -12,11 +11,8 @@ export default async function fetchApi<T>(
     method: "POST",
     body: JSON.stringify({
       query,
-      variables: {
-        variables,
-      },
-      cache,
     }),
+    cache,
   });
 
   const json = await res.json();

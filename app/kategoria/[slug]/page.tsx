@@ -38,7 +38,6 @@ export default async function Page({ params }: PageProps) {
   );
 }
 
-export const dynamic = "force-static";
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
