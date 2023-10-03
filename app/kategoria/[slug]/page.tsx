@@ -40,7 +40,6 @@ export default async function Page({ params }: PageProps) {
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
-export const revalidate = "force-cache";
 
 export async function generateStaticParams() {
   const categories = await getCategories();
