@@ -1,10 +1,10 @@
 import Link from "next/link";
 import pageMetadata from "../util/pageMetadata";
-import getPosts from "../graphql/getPosts";
 import LoadMore from "../components/load-more/load-more";
+import getPostsPreviews from "../graphql/getPostsPreviews";
 
 export default async function Home() {
-  const posts = await getPosts();
+  const posts = await getPostsPreviews();
 
   return (
     <main className="index layout-container">

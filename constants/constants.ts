@@ -19,6 +19,16 @@ export const routes = {
   SEARCH: "/szukaj",
 };
 
+export const DISQUS_SHORTNAME = (() => {
+  if (!process.env.NEXT_PUBLIC_DISQUS_SHORTNAME) {
+    throw new Error(`
+        Please provide a valid disqus shortname.
+      `);
+  }
+
+  return process.env.NEXT_PUBLIC_DISQUS_SHORTNAME;
+})();
+
 export const CANONICAL_BASE = (() => {
   if (!process.env.NEXT_PUBLIC_CANONICAL_BASE) {
     throw new Error(`

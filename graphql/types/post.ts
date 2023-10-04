@@ -1,6 +1,6 @@
 import { FeaturedImageAPI } from "./featuredImage";
 
-export type APIPostPreview = {
+export type PostAPI = {
   id: string;
   databaseId: number;
   isSticky: boolean;
@@ -8,7 +8,14 @@ export type APIPostPreview = {
   title: string;
   date: string;
   excerpt?: string;
+  content: string;
   featuredImage?: FeaturedImageAPI;
+  author: {
+    node: {
+      name: string;
+      slug: string;
+    };
+  };
   categories: {
     nodes: {
       name: string;
@@ -22,6 +29,12 @@ export type APIPostPreview = {
     }[];
   };
   sports: {
+    nodes: {
+      slug: string;
+      name: string;
+    }[];
+  };
+  tags: {
     nodes: {
       slug: string;
       name: string;

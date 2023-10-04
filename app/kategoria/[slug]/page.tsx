@@ -1,6 +1,6 @@
 import Link from "next/link";
 import getCategories from "../../../graphql/getCategories";
-import { POSTS_PER_PAGE, routes } from "../../../constants/constants";
+import { routes } from "../../../constants/constants";
 import "./category.scss";
 import getCategory from "../../../graphql/getCategory";
 import LoadMore from "../../../components/load-more/load-more";
@@ -32,9 +32,9 @@ export default async function Category({ params }: CategoryProps) {
             </li>
           ))}
         </ul>
-        {category.haveNextPage && (
+        {category.hasNextPage && (
           <LoadMore
-            afterPostCursor={category.posts[POSTS_PER_PAGE - 1].cursor}
+            afterCursor={category.endCursor}
             categorySlug={params.slug}
           />
         )}

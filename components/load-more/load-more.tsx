@@ -5,9 +5,9 @@ import { APIPostPreview } from "../../graphql/types/post-preview";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import Link from "next/link";
-import getPosts from "../../graphql/getPosts";
 import getCategory from "../../graphql/getCategory";
 import getSport from "../../graphql/getSport";
+import getPostsPreviews from "../../graphql/getPostsPreviews";
 
 type MorePostsButtonProps = {
   afterCursor: string;
@@ -47,7 +47,7 @@ export default function LoadMore({
             if (sport.hasNextPage) newAfter = sport.endCursor;
           }
         } else {
-          const posts = await getPosts(after);
+          const posts = await getPostsPreviews(after);
           newPosts = posts.items.map((post) => post.node);
           if (posts.hasNextPage) newAfter = posts.endCursor;
         }

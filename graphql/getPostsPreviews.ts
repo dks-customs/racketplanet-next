@@ -3,7 +3,7 @@ import { postPreviewFragment } from "./fragments/post-preview";
 import fetchApi from "../util/fetchApi";
 import { APIPostPreview } from "./types/post-preview";
 
-type PostsAPIData = {
+type PostsPreviewsAPIData = {
   posts: {
     pageInfo: {
       endCursor: string;
@@ -15,11 +15,15 @@ type PostsAPIData = {
   };
 };
 
-export default async function getPosts(afterCursor: string = "") {
-  const data = await fetchApi<PostsAPIData>(
+export default async function getPostsPreviews(afterCursor: string = "") {
+  const data = await fetchApi<PostsPreviewsAPIData>(
     `
-      query Posts {
+      query PostPreviews {
         posts(first: ${POSTS_PER_PAGE}, where: { orderby: { field: DATE, order: DESC } }, after: "${afterCursor}") {
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
           edges {
             cursor
             node {

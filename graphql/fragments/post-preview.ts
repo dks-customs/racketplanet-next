@@ -13,8 +13,8 @@ export const postPreviewFragment = `
 		nodes {
 			name
 			slug
-			parent {
-				node {
+			children {
+				nodes {
 					slug
 					name
 				}

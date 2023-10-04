@@ -19,22 +19,26 @@ export default async function SportSubpage({ params }: SportSubpageProps) {
   if (subpage) {
     return (
       <main className="sport-subpage layout-container">
-        <h1>{subpage.title}</h1>
-        {subpage.ustawieniaStrony && (
-          <div>
-            <p>{subpage.ustawieniaStrony.nazwaFederacji}</p>
-            <p>{subpage.ustawieniaStrony.prezesFederacji}</p>
-            <p>
-              <a
-                href={subpage.ustawieniaStrony.stronaFederacji}
-                target="_blank"
-              >
-                Strona internetowa&nbsp;&rarr;
-              </a>
-            </p>
-          </div>
-        )}
-        <div dangerouslySetInnerHTML={{ __html: subpage.content }}></div>
+        <div className="sport-subpage-content">
+          {/* FEATURED IMAGE */}
+          <h1>{subpage.title}</h1>
+          {subpage.ustawieniaStrony && (
+            <div>
+              <p>{subpage.ustawieniaStrony.nazwaFederacji}</p>
+              <p>{subpage.ustawieniaStrony.prezesFederacji}</p>
+              <p>
+                <a
+                  href={subpage.ustawieniaStrony.stronaFederacji}
+                  target="_blank"
+                >
+                  Strona internetowa&nbsp;&rarr;
+                </a>
+              </p>
+            </div>
+          )}
+          <div dangerouslySetInnerHTML={{ __html: subpage.content }}></div>
+        </div>
+        {/* SEE MORE */}
       </main>
     );
   } else {
