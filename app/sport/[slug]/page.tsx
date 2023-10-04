@@ -8,6 +8,7 @@ import "./sport.scss";
 import { Metadata } from "next";
 import pageMetadata from "../../../util/pageMetadata";
 import subpageSlug from "../../../util/subpageSlug";
+import notFoundMetadata from "../../../util/notFoundMetadata";
 
 type SportProps = {
   params: {
@@ -72,10 +73,15 @@ export async function generateMetadata({
   params,
 }: SportProps): Promise<Metadata> {
   const sport = await getSport(params.slug);
+  const url = `${routes.SPORT}/${params.slug}`;
 
-  return pageMetadata({
-    url: `${routes.SPORT}/${params.slug}`,
-    titleFollowUp: sport ? sport.name : "Nie znaleziono strony",
-    twitterCard: "summary",
-  });
+  if (sport) {
+    return pageMetadata({
+      url,
+      titleFollowUp: sport.name,
+      twitterCard: "summary",
+    });
+  } else {
+    return notFoundMetadata(url);
+  }
 }

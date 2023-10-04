@@ -15,7 +15,7 @@ export default function PostTags({ tags }: PostTagsProps) {
       <ul className="post-tags">
         {tags.map((tag) => (
           <li key={`post-tags-${tag.slug}`}>
-            <Link href={`${routes.TAG}/${tag.slug}`}>{tag.name}</Link>
+            <Link href={`${routes.TAG}/${tag.slug}`}>#{tag.name}</Link>
           </li>
         ))}
       </ul>

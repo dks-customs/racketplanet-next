@@ -8,17 +8,20 @@ import Link from "next/link";
 import getCategory from "../../graphql/getCategory";
 import getSport from "../../graphql/getSport";
 import getPostsPreviews from "../../graphql/getPostsPreviews";
+import getTag from "../../graphql/getTag";
 
 type MorePostsButtonProps = {
   afterCursor: string;
   categorySlug?: string;
   sportSlug?: string;
+  tagSlug?: string;
 };
 
 export default function LoadMore({
   afterCursor,
   categorySlug,
   sportSlug,
+  tagSlug,
 }: MorePostsButtonProps) {
   const [after, setAfter] = useState<string | undefined>(afterCursor);
   const [posts, setPosts] = useState<APIPostPreview[]>([]);
@@ -45,6 +48,13 @@ export default function LoadMore({
           if (sport) {
             newPosts = sport.posts.map((post) => post.node);
             if (sport.hasNextPage) newAfter = sport.endCursor;
+          }
+        } else if (tagSlug) {
+          const tag = await getTag(tagSlug, after);
+
+          if (tag) {
+            newPosts = tag.posts.map((post) => post.node);
+            if (tag.hasNextPage) newAfter = tag.endCursor;
           }
         } else {
           const posts = await getPostsPreviews(after);

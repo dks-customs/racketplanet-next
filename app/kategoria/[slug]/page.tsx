@@ -7,6 +7,7 @@ import LoadMore from "../../../components/load-more/load-more";
 import NotFound from "../../not-found";
 import { Metadata } from "next";
 import pageMetadata from "../../../util/pageMetadata";
+import notFoundMetadata from "../../../util/notFoundMetadata";
 
 type CategoryProps = {
   params: {
@@ -59,10 +60,15 @@ export async function generateMetadata({
   params,
 }: CategoryProps): Promise<Metadata> {
   const category = await getCategory(params.slug);
+  const url = `${routes.CATEGORY}/${params.slug}`;
 
-  return pageMetadata({
-    url: `${routes.CATEGORY}/${params.slug}`,
-    titleFollowUp: category ? category.name : "Nie znaleziono strony",
-    twitterCard: "summary",
-  });
+  if (category) {
+    return pageMetadata({
+      url,
+      titleFollowUp: category.name,
+      twitterCard: "summary",
+    });
+  } else {
+    return notFoundMetadata(url);
+  }
 }

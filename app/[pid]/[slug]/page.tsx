@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import PostAuthor from "../../../components/post-author/post-author";
 import PostCategories from "../../../components/post-categories/post-categories";
 import PostComments from "../../../components/post-comments/post-comments";
@@ -9,6 +10,9 @@ import getAllPostsMeta from "../../../graphql/getAllPostsMeta";
 import getPost from "../../../graphql/getPost";
 import NotFound from "../../not-found";
 import "./post.scss";
+import pageMetadata from "../../../util/pageMetadata";
+import { notFound } from "next/navigation";
+import notFoundMetadata from "../../../util/notFoundMetadata";
 
 type PostProps = {
   params: {
@@ -56,4 +60,23 @@ export async function generateStaticParams() {
     pid: postMeta.postId.toString(),
     slug: postMeta.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: PostProps): Promise<Metadata> {
+  const post = await getPost(params.slug);
+  const url = `${params.pid}/${params.slug}`;
+
+  if (post) {
+    return pageMetadata({
+      url,
+      titleFollowUp: post.title,
+      twitterCard: "summary_large_image",
+      description: post.excerpt,
+      ogType: "article",
+    });
+  } else {
+    return notFoundMetadata(url);
+  }
 }
