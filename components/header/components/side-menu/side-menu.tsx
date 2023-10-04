@@ -11,8 +11,8 @@ import { Offcanvas, OffcanvasHeader } from "react-bootstrap";
 import CategoryCollapse from "./components/category-collapse/category-collapse";
 
 import "./side-menu.scss";
-import { APICategories } from "../../../../api/types/categories";
-import { APISports } from "../../../../api/types/sports";
+import { APICategories } from "../../../../graphql/types/categories";
+import { APISports } from "../../../../graphql/types/sports";
 
 type SideMenuProps = {
   show: boolean;

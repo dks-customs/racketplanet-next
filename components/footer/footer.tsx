@@ -1,5 +1,5 @@
-import { APICategories } from "../../api/types/categories";
-import { APISports } from "../../api/types/sports";
+import { APICategories } from "../../graphql/types/categories";
+import { APISports } from "../../graphql/types/sports";
 import "./footer.scss";
 
 type FooterProps = {

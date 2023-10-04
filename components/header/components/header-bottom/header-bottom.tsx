@@ -9,8 +9,8 @@ import Link from "next/link";
 import FacebookSVG from "../../../svg/facebook";
 import InstagramSVG from "../../../svg/instagram";
 import { Dropdown } from "react-bootstrap";
-import { APICategories } from "../../../../api/types/categories";
-import { APISports } from "../../../../api/types/sports";
+import { APICategories } from "../../../../graphql/types/categories";
+import { APISports } from "../../../../graphql/types/sports";
 
 type HeaderBottomProps = {
   sports: APISports;

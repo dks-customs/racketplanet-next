@@ -3,7 +3,7 @@ import { Button, Collapse } from "react-bootstrap";
 import Link from "next/link";
 
 import "./category-collapse.scss";
-import { APICategories } from "../../../../../../api/types/categories";
+import { APICategories } from "../../../../../../graphql/types/categories";
 import { routes } from "../../../../../../constants/constants";
 
 type CategoryCollapseProps = {

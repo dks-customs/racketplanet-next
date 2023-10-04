@@ -1,7 +1,7 @@
 "use client";
-import { APICategories } from "../../api/types/categories";
-import { APIEvents } from "../../api/types/events";
-import { APISports } from "../../api/types/sports";
+import { APICategories } from "../../graphql/types/categories";
+import { APIEvents } from "../../graphql/types/events";
+import { APISports } from "../../graphql/types/sports";
 import SideMenu from "./components/side-menu/side-menu";
 import SearchModal from "./components/search-modal/search-modal";
 import EventsWidget from "./components/events-widget/events-widget";

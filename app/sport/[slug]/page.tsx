@@ -1,9 +1,9 @@
 import Link from "next/link";
-import getSport from "../../../api/getSport";
-import getSports from "../../../api/getSports";
+import getSport from "../../../graphql/getSport";
+import getSports from "../../../graphql/getSports";
 import NotFound from "../../not-found";
 import LoadMore from "../../../components/load-more/load-more";
-import { POSTS_PER_PAGE, routes } from "../../../constants/constants";
+import { routes } from "../../../constants/constants";
 import "./sport.scss";
 import { Metadata } from "next";
 import pageMetadata from "../../../util/pageMetadata";
@@ -50,11 +50,8 @@ export default async function Sport({ params }: SportProps) {
             </li>
           ))}
         </ul>
-        {sport.haveNextPage && (
-          <LoadMore
-            afterPostCursor={sport.posts[POSTS_PER_PAGE - 1].cursor}
-            sportSlug={params.slug}
-          />
+        {sport.hasNextPage && (
+          <LoadMore afterCursor={sport.endCursor} sportSlug={params.slug} />
         )}
       </main>
     );

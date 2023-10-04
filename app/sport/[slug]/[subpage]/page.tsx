@@ -1,7 +1,7 @@
 import { Metadata } from "next";
-import getSports from "../../../../api/getSports";
+import getSports from "../../../../graphql/getSports";
 import subpageSlug from "../../../../util/subpageSlug";
-import getSportSubpage from "../../../../api/getSportSubpage";
+import getSportSubpage from "../../../../graphql/getSportSubpage";
 import NotFound from "../../../not-found";
 import { routes } from "../../../../constants/constants";
 import pageMetadata from "../../../../util/pageMetadata";

@@ -1,3 +1,5 @@
+import { featuredImageFragment } from "./featured-image";
+
 export const postPreviewFragment = `
 	id
 	databaseId
@@ -6,20 +8,7 @@ export const postPreviewFragment = `
 	title
 	date
 	excerpt
-	featuredImage {
-		node {
-			altText
-			sourceUrl
-			mediaDetails {
-				sizes {
-					name
-					sourceUrl
-					height
-					width
-				}
-			}
-		}
-	}
+	${featuredImageFragment}
 	categories {
 		nodes {
 			name

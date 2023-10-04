@@ -1,4 +1,4 @@
-import { APIEvents } from "../../../../api/types/events";
+import { APIEvents } from "../../../../graphql/types/events";
 import "./events-widget.scss";
 
 type EventsWidgetProps = {

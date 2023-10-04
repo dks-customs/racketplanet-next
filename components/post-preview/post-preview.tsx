@@ -1,4 +1,4 @@
-import { APIPostPreview } from "../../api/types/post-preview";
+import { APIPostPreview } from "../../graphql/types/post-preview";
 import Hero from "./components/hero/hero";
 import PostPreviewHorizontal from "./components/horizontal/horizontal";
 import PostPreviewMini from "./components/mini/mini";

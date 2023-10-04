@@ -1,5 +1,12 @@
 import "./post.scss";
 
-export default async function Post() {
+type PostProps = {
+  params: {
+    wpId: number;
+    slug: string;
+  };
+};
+
+export default async function Post({ params }: PostProps) {
   return <main className="single layout-container">Post</main>;
 }

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import pageMetadata from "../util/pageMetadata";
-import { POSTS_PER_PAGE } from "../constants/constants";
-import getPosts from "../api/getPosts";
+import getPosts from "../graphql/getPosts";
 import LoadMore from "../components/load-more/load-more";
 
 export default async function Home() {
@@ -21,9 +20,7 @@ export default async function Home() {
           </li>
         ))}
       </ul>
-      {posts.haveNextPage && (
-        <LoadMore afterPostCursor={posts.items[POSTS_PER_PAGE - 1].cursor} />
-      )}
+      {posts.hasNextPage && <LoadMore afterCursor={posts.endCursor} />}
     </main>
   );
 }

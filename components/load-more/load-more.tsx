@@ -1,27 +1,26 @@
 "use client";
 
 import { Button, Fade, Spinner } from "react-bootstrap";
-import { APIPostPreview } from "../../api/types/post-preview";
+import { APIPostPreview } from "../../graphql/types/post-preview";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import Link from "next/link";
-import { POSTS_PER_PAGE } from "../../constants/constants";
-import getPosts from "../../api/getPosts";
-import getCategory from "../../api/getCategory";
-import getSport from "../../api/getSport";
+import getPosts from "../../graphql/getPosts";
+import getCategory from "../../graphql/getCategory";
+import getSport from "../../graphql/getSport";
 
 type MorePostsButtonProps = {
-  afterPostCursor: string;
+  afterCursor: string;
   categorySlug?: string;
   sportSlug?: string;
 };
 
 export default function LoadMore({
-  afterPostCursor,
+  afterCursor,
   categorySlug,
   sportSlug,
 }: MorePostsButtonProps) {
-  const [after, setAfter] = useState<string | undefined>(afterPostCursor);
+  const [after, setAfter] = useState<string | undefined>(afterCursor);
   const [posts, setPosts] = useState<APIPostPreview[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -38,29 +37,19 @@ export default function LoadMore({
 
           if (category) {
             newPosts = category.posts.map((post) => post.node);
-
-            if (category.haveNextPage) {
-              newAfter = category.posts[POSTS_PER_PAGE - 1].cursor;
-            }
+            if (category.hasNextPage) newAfter = category.endCursor;
           }
         } else if (sportSlug) {
           const sport = await getSport(sportSlug, after);
 
           if (sport) {
             newPosts = sport.posts.map((post) => post.node);
-
-            if (sport.haveNextPage) {
-              newAfter = sport.posts[POSTS_PER_PAGE - 1].cursor;
-            }
+            if (sport.hasNextPage) newAfter = sport.endCursor;
           }
         } else {
           const posts = await getPosts(after);
-
           newPosts = posts.items.map((post) => post.node);
-
-          if (posts.haveNextPage) {
-            newAfter = posts.items[POSTS_PER_PAGE - 1].cursor;
-          }
+          if (posts.hasNextPage) newAfter = posts.endCursor;
         }
 
         setAfter(newAfter);

@@ -1,8 +1,8 @@
 import Link from "next/link";
-import getCategories from "../../../api/getCategories";
+import getCategories from "../../../graphql/getCategories";
 import { POSTS_PER_PAGE, routes } from "../../../constants/constants";
 import "./category.scss";
-import getCategory from "../../../api/getCategory";
+import getCategory from "../../../graphql/getCategory";
 import LoadMore from "../../../components/load-more/load-more";
 import NotFound from "../../not-found";
 import { Metadata } from "next";

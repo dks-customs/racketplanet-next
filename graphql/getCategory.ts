@@ -1,5 +1,5 @@
 import { POSTS_PER_PAGE } from "../constants/constants";
-import { postPreviewFragment } from "../graphql-fragments/post-preview";
+import { postPreviewFragment } from "./fragments/post-preview";
 import fetchApi from "../util/fetchApi";
 import { APICategory } from "./types/category";
 
@@ -17,11 +17,12 @@ export default async function getCategory(slug: string, after: string = "") {
           nodes {
             name
             categoryId
-            posts(first: ${
-              POSTS_PER_PAGE + 1
-            }, where: { orderby: { field: DATE, order: DESC } }, after: "${after}") {
+            posts(first: ${POSTS_PER_PAGE}, where: { orderby: { field: DATE, order: DESC } }, after: "${after}") {
+              pageInfo {
+                endCursor
+                hasNextPage
+              }
               edges {
-                cursor
                 node {
                   ${postPreviewFragment}
                 }
@@ -38,7 +39,8 @@ export default async function getCategory(slug: string, after: string = "") {
   if (category) {
     return {
       name: category.name,
-      haveNextPage: category.posts.edges.length > POSTS_PER_PAGE,
+      hasNextPage: category.posts.pageInfo.hasNextPage,
+      endCursor: category.posts.pageInfo.endCursor,
       posts: category.posts.edges.slice(0, POSTS_PER_PAGE),
     };
   } else {

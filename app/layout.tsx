@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import { nunito } from "./fonts";
 import { CANONICAL_BASE } from "../constants/constants";
 import Header from "../components/header/header";
-import getCategories from "../api/getCategories";
-import getSports from "../api/getSports";
-import getWidgetEvents from "../api/getWidgetEvents";
+import getCategories from "../graphql/getCategories";
+import getSports from "../graphql/getSports";
+import getWidgetEvents from "../graphql/getWidgetEvents";
 import Footer from "../components/footer/footer";
 import { ToastContainer } from "react-toastify";
 

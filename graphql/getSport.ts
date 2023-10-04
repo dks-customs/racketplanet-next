@@ -1,5 +1,5 @@
 import { POSTS_PER_PAGE } from "../constants/constants";
-import { postPreviewFragment } from "../graphql-fragments/post-preview";
+import { postPreviewFragment } from "./fragments/post-preview";
 import fetchApi from "../util/fetchApi";
 import { APISport } from "./types/sport";
 
@@ -17,11 +17,12 @@ export default async function getSport(slug: string, after: string = "") {
           nodes {
             name
             sportId
-            posts(first: ${
-              POSTS_PER_PAGE + 1
-            }, where: { orderby: { field: DATE, order: DESC } }, after: "${after}") {
+            posts(first: ${POSTS_PER_PAGE}, where: { orderby: { field: DATE, order: DESC } }, after: "${after}") {
+              pageInfo {
+                hasNextPage
+                endCursor
+              }
               edges {
-                cursor
                 node {
                   ${postPreviewFragment}
                 }
@@ -45,8 +46,9 @@ export default async function getSport(slug: string, after: string = "") {
   if (sport) {
     return {
       name: sport.name,
-      haveNextPage: sport.posts.edges.length > POSTS_PER_PAGE,
-      posts: sport.posts.edges.slice(0, POSTS_PER_PAGE),
+      hasNextPage: sport.posts.pageInfo.hasNextPage,
+      endCursor: sport.posts.pageInfo.endCursor,
+      posts: sport.posts.edges,
       pages: sport.pages.nodes,
     };
   } else {

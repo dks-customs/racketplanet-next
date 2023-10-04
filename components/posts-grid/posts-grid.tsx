@@ -1,4 +1,4 @@
-import { APIPostPreview } from "../../api/types/post-preview";
+import { APIPostPreview } from "../../graphql/types/post-preview";
 import PostPreview from "../post-preview/post-preview";
 import "./posts-grid.scss";
 
