@@ -8,15 +8,18 @@ import Link from "next/link";
 import { POSTS_PER_PAGE } from "../../constants/constants";
 import getPosts from "../../api/getPosts";
 import getCategory from "../../api/getCategory";
+import getSport from "../../api/getSport";
 
 type MorePostsButtonProps = {
   afterPostCursor: string;
   categorySlug?: string;
+  sportSlug?: string;
 };
 
 export default function LoadMore({
   afterPostCursor,
   categorySlug,
+  sportSlug,
 }: MorePostsButtonProps) {
   const [after, setAfter] = useState<string | undefined>(afterPostCursor);
   const [posts, setPosts] = useState<APIPostPreview[]>([]);
@@ -38,6 +41,16 @@ export default function LoadMore({
 
             if (category.haveNextPage) {
               newAfter = category.posts[POSTS_PER_PAGE - 1].cursor;
+            }
+          }
+        } else if (sportSlug) {
+          const sport = await getSport(sportSlug, after);
+
+          if (sport) {
+            newPosts = sport.posts.map((post) => post.node);
+
+            if (sport.haveNextPage) {
+              newAfter = sport.posts[POSTS_PER_PAGE - 1].cursor;
             }
           }
         } else {

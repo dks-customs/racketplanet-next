@@ -30,6 +30,11 @@ span {
   outline: none;
 }
 
+ul,
+ol {
+  list-style-type: none;
+}
+
 .hoverable {
   transition: color 0.1s linear;
 }

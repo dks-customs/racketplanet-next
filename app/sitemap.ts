@@ -2,7 +2,6 @@ import { MetadataRoute } from "next";
 import { CANONICAL_BASE } from "../constants/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const deployTime = new Date();
   // ---- POJEDYNCZE ----
   // lastModified ustawić w momencie wrzucania strony na nexta
   //RACKET MAPA
