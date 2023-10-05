@@ -1,3 +1,5 @@
+"use client";
+
 import * as maptilersdk from "@maptiler/sdk";
 import { useEffect, useRef } from "react";
 import { MAPTILER_API_KEY } from "../../constants/constants";

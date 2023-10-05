@@ -1,6 +1,4 @@
-"use client";
-
-import { Button, Collapse } from "react-bootstrap";
+import { Collapse } from "react-bootstrap";
 import { APIEvent } from "../../graphql/types/event";
 import { useState } from "react";
 import ListEventHeader from "./components/list-event-header/list-event-header";

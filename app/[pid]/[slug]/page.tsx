@@ -67,7 +67,7 @@ export async function generateMetadata({
   const post = await getPost(params.pid);
   const url = `${params.pid}/${params.slug}`;
 
-  if (post) {
+  if (post && post.slug === params.slug) {
     return pageMetadata({
       url,
       titleFollowUp: post.title,

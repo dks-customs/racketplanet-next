@@ -1,5 +1,6 @@
 import eventsUtils from "../util/eventsUtils";
 import fetchApi from "../util/fetchApi";
+import { eventFragment } from "./fragments/event";
 import { APIEvent } from "./types/event";
 
 type EventsAPIData = {
@@ -26,30 +27,7 @@ export default async function getEvents(): Promise<APIEvent[]> {
         events(first: 100, after: "${endCursor}") {
           edges {
             node {
-              sports {
-                nodes {
-                  name
-                  slug
-                  id
-                }
-              }
-              eventAcfOsm {
-                address
-                lat
-                lng
-              }
-              eventAcf {
-                dateBegin
-                dateEnd
-                eventCity
-                name
-                price
-                webpage
-              }
-              slug
-              title
-              content
-              eventId
+              ${eventFragment}
             }
           }
           pageInfo {

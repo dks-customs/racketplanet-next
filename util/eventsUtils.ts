@@ -30,7 +30,7 @@ const sortByDate = (a: APIEvent, b: APIEvent) => {
   const aBeginTime = new Date(specDateString(a.eventAcf.dateBegin)).getTime();
   const bBeginTime = new Date(specDateString(b.eventAcf.dateBegin)).getTime();
 
-  return aBeginTime - bBeginTime;
+  return bBeginTime - aBeginTime;
 };
 
 const eventsUtils = {
