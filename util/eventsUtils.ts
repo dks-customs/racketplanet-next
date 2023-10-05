@@ -1,7 +1,7 @@
-import { APIEvents } from "../graphql/types/events";
+import { APIEvent } from "../graphql/types/event";
 import specDateString from "./specDateString";
 
-const isFutureEvent = (event: APIEvents[0]) => {
+const isFutureEvent = (event: APIEvent) => {
   const now = new Date();
   const nowUTC = Date.UTC(
     now.getUTCFullYear(),
@@ -26,20 +26,16 @@ const isFutureEvent = (event: APIEvents[0]) => {
   }
 };
 
-const sortByDate = (a: APIEvents[0], b: APIEvents[0]) => {
+const sortByDate = (a: APIEvent, b: APIEvent) => {
   const aBeginTime = new Date(specDateString(a.eventAcf.dateBegin)).getTime();
   const bBeginTime = new Date(specDateString(b.eventAcf.dateBegin)).getTime();
 
   return aBeginTime - bBeginTime;
 };
 
-function getCalendarEvents(events: APIEvents) {
-  return events.filter(isFutureEvent).map((event) => event.id);
-}
-
-const events = {
+const eventsUtils = {
   isFutureEvent,
   sortByDate,
 };
 
-export default events;
+export default eventsUtils;

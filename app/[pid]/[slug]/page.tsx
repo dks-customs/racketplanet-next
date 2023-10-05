@@ -11,7 +11,6 @@ import getPost from "../../../graphql/getPost";
 import NotFound from "../../not-found";
 import "./post.scss";
 import pageMetadata from "../../../util/pageMetadata";
-import { notFound } from "next/navigation";
 import notFoundMetadata from "../../../util/notFoundMetadata";
 
 type PostProps = {
@@ -65,7 +64,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: PostProps): Promise<Metadata> {
-  const post = await getPost(params.slug);
+  const post = await getPost(params.pid);
   const url = `${params.pid}/${params.slug}`;
 
   if (post) {

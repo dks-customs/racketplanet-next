@@ -4,12 +4,13 @@ import { CANONICAL_BASE } from "../constants/constants";
 import Header from "../components/header/header";
 import getCategories from "../graphql/getCategories";
 import getSports from "../graphql/getSports";
-import getWidgetEvents from "../graphql/getWidgetEvents";
 import Footer from "../components/footer/footer";
 import { ToastContainer } from "react-toastify";
 
 import "../styles/global.scss";
 import "react-toastify/dist/ReactToastify.css";
+import getEvents from "../graphql/getEvents";
+import eventsUtils from "../util/eventsUtils";
 
 export default async function RootLayout({
   children,
@@ -18,7 +19,8 @@ export default async function RootLayout({
 }) {
   const categories = await getCategories();
   const sports = await getSports();
-  const widgetEvents = await getWidgetEvents();
+  const events = await getEvents();
+  const widgetEvents = events.filter(eventsUtils.isFutureEvent).slice(0, 3);
 
   return (
     <html lang="pl" className={nunito.className}>
