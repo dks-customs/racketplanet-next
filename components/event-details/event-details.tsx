@@ -1,4 +1,9 @@
 import EventMap from "../event-map/event-map";
+import EventDetailsAddress from "./components/event-details-address/event-details-address";
+import EventDetailsContent from "./components/event-details-content/event-details-content";
+import EventDetailsPrice from "./components/event-details-price/event-details-price";
+import EventDetailsTime from "./components/event-details-time/event-details-time";
+import EventDetailsWebsite from "./components/event-details-website/event-details-website";
 import "./event-details.scss";
 
 type EventDetailsProps = {
@@ -25,26 +30,11 @@ export default function EventDetails({
   return (
     <main className="event-details">
       <div className="event-details__main">
-        {dateBegin && <p className="event-details__main__time"></p>}
-        {address && <p className="event-details__main__address">{address}</p>}
-        {website && (
-          <p className="event-details__main__website">
-            <a href={website} target="_blank">
-              Strona internetowa&nbsp;&rarr;
-            </a>
-          </p>
-        )}
-        {price && price !== "-" && (
-          <p className="event-details__main__price">{price}</p>
-        )}
-        {content && (
-          <div
-            className="event-details__main__content"
-            dangerouslySetInnerHTML={{ __html: "" }}
-          >
-            {content}
-          </div>
-        )}
+        <EventDetailsTime dateBegin={dateBegin} dateEnd={dateEnd} />
+        <EventDetailsAddress address={address} />
+        <EventDetailsWebsite website={website} />
+        <EventDetailsPrice price={price} />
+        <EventDetailsContent content={content} />
       </div>
       <div className="event-details__map">
         <EventMap address={address} lat={lat} lng={lng} />
