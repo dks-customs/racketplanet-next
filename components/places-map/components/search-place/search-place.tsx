@@ -75,40 +75,34 @@ export default function SearchPlace({
   };
 
   return (
-    <div className="places-map-search-input">
-      <div className="racket-mapa__search">
-        <AsyncTypeahead
-          filterBy={filterSuggestionsBySearchText}
-          id="async-example"
-          isLoading={false}
-          labelKey="name"
-          minLength={3}
-          onSearch={initSuggestions}
-          options={suggestions}
-          placeholder="Wyszukaj po mieście, sporcie lub nazwie"
-          renderMenuItemChildren={(option: Suggestion, props) => (
-            <div
-              className="rm-search-option"
-              onClick={() => setSearchedPlaceId(option.placeId)}
-              key={`search-suggestion-${option.placeId}`}
-            >
-              <div className="rm-search-option__sports">
-                {option.sports.map((sport: string) => (
-                  <span
-                    className="rm-search-option__sports__sport"
-                    key={`search-suggestion-${option.placeId}-${sport}`}
-                  >
-                    {sport}
-                  </span>
-                ))}
-              </div>
-              <div className="rm-search-option__name">{option.name}</div>
-              <div className="rm-search-option__address">{option.address}</div>
+    <div>
+      <AsyncTypeahead
+        filterBy={filterSuggestionsBySearchText}
+        id="async-example"
+        isLoading={false}
+        labelKey="name"
+        minLength={3}
+        onSearch={initSuggestions}
+        options={suggestions}
+        placeholder="Wyszukaj po mieście, sporcie lub nazwie"
+        renderMenuItemChildren={(option: Suggestion, props) => (
+          <div
+            onClick={() => setSearchedPlaceId(option.placeId)}
+            key={`search-suggestion-${option.placeId}`}
+          >
+            <div>
+              {option.sports.map((sport: string) => (
+                <span key={`search-suggestion-${option.placeId}-${sport}`}>
+                  {sport}
+                </span>
+              ))}
             </div>
-          )}
-        />
-        <SearchSVG />
-      </div>
+            <div>{option.name}</div>
+            <div>{option.address}</div>
+          </div>
+        )}
+      />
+      <SearchSVG />
     </div>
   );
 }

@@ -1,15 +1,17 @@
 import PlacesMap from "../../components/places-map/places-map";
 import { routes } from "../../constants/constants";
 import getPlaces from "../../graphql/getPlaces";
+import getSports from "../../graphql/getSports";
 import pageMetadata from "../../util/pageMetadata";
 import "./map.scss";
 
 export default async function RacketMapa() {
   const places = await getPlaces();
+  const sports = await getSports();
 
   return (
     <main className="racket-mapa layout-container">
-      <PlacesMap places={places} />
+      <PlacesMap places={places} sports={sports} />
     </main>
   );
 }

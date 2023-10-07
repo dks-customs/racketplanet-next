@@ -11,7 +11,7 @@ export default function usePlacesMap(
 ) {
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const map = useRef<null | maptilersdk.Map>(null);
-  const [markers, setMarkers] = useState<maptilersdk.Marker[]>([]);
+  const markers = useRef<maptilersdk.Marker[]>([]);
 
   useEffect(() => {
     if (!map.current) {
@@ -24,7 +24,12 @@ export default function usePlacesMap(
     }
 
     if (map.current) {
-      markers.forEach((marker) => marker.remove());
+      markers.current.forEach((marker) => marker.remove());
+
+      if (!searchedPlaceId) {
+        map.current?.setCenter([19.1451, 51.9194]);
+        map.current?.zoomTo(5.8);
+      }
 
       const newMarkers: maptilersdk.Marker[] = [];
 
@@ -67,19 +72,20 @@ export default function usePlacesMap(
             .setLngLat([lng, lat])
             .setPopup(popup);
 
-          if (map.current) marker.addTo(map.current);
+          if (map.current) {
+            marker.addTo(map.current);
+            newMarkers.push(marker);
+          }
 
           if (searchedPlaceId === place.placeId) {
             map.current?.setCenter([lng, lat]);
             map.current?.zoomTo(12);
             marker.togglePopup();
           }
-
-          newMarkers.push(marker);
         }
       });
 
-      setMarkers(newMarkers);
+      markers.current = newMarkers;
     }
   }, [places, searchedPlaceId]);
 
