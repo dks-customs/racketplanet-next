@@ -4,7 +4,11 @@ import { MAPTILER_API_KEY } from "../../../constants/constants";
 
 maptilersdk.config.apiKey = MAPTILER_API_KEY;
 
-export default function useMap(lat?: number, lng?: number, address?: string) {
+export default function useEventMap(
+  lat?: number,
+  lng?: number,
+  address?: string
+) {
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const map = useRef<null | maptilersdk.Map>(null);
 
@@ -19,7 +23,7 @@ export default function useMap(lat?: number, lng?: number, address?: string) {
         zoom: 12,
       });
 
-      const popup = new maptilersdk.Popup({ offset: 25 }).setHTML(
+      const popup = new maptilersdk.Popup({ offset: 40 }).setHTML(
         `<div><p>${address}</p><a href="http://www.google.com/maps/place/${lat},${lng}" target="_blank">Pokaż w Google&nbsp;&rarr;</a></div>`
       );
 

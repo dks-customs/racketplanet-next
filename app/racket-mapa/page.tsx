@@ -1,9 +1,17 @@
+import PlacesMap from "../../components/places-map/places-map";
 import { routes } from "../../constants/constants";
+import getPlaces from "../../graphql/getPlaces";
 import pageMetadata from "../../util/pageMetadata";
 import "./map.scss";
 
 export default async function RacketMapa() {
-  return <main className="map layout-container">Racket Mapa</main>;
+  const places = await getPlaces();
+
+  return (
+    <main className="racket-mapa layout-container">
+      <PlacesMap places={places} />
+    </main>
+  );
 }
 
 export const metadata = pageMetadata({
