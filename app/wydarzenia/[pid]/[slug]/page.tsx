@@ -7,6 +7,8 @@ import pageMetadata from "../../../../util/pageMetadata";
 import Link from "next/link";
 import { routes } from "../../../../constants/constants";
 import EventDetails from "../../../../components/event-details/event-details";
+import getMoreCategoryPosts from "../../../../graphql/getMoreCategoryPosts";
+import PostsGrid from "../../../../components/posts-grid/posts-grid";
 
 type EventProps = {
   params: {
@@ -17,6 +19,7 @@ type EventProps = {
 
 export default async function Event({ params }: EventProps) {
   const event = await getEvent(params.pid);
+  const relations = await getMoreCategoryPosts("relacje");
 
   if (event && event.slug === params.slug) {
     return (
@@ -35,6 +38,12 @@ export default async function Event({ params }: EventProps) {
             lng={event.eventAcfOsm.lng}
           />
         </div>
+        {relations && relations.length > 0 && (
+          <section>
+            <div>Relacje z wydarzeń</div>
+            <PostsGrid posts={relations} />
+          </section>
+        )}
       </main>
     );
   } else {

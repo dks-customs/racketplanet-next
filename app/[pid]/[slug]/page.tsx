@@ -12,6 +12,7 @@ import NotFound from "../../not-found";
 import "./post.scss";
 import pageMetadata from "../../../util/pageMetadata";
 import notFoundMetadata from "../../../util/notFoundMetadata";
+import PostsGrid from "../../../components/posts-grid/posts-grid";
 
 type PostProps = {
   params: {
@@ -44,7 +45,7 @@ export default async function Post({ params }: PostProps) {
             <PostComments id={post.id} title={post.title} />
           </footer>
         </article>
-        {/* SEE MORE */}
+        {post.morePosts.length > 0 && <PostsGrid posts={post.morePosts} />}
       </main>
     );
   } else {

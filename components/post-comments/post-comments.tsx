@@ -4,6 +4,7 @@ import { DiscussionEmbed } from "disqus-react";
 import "./post-comments.scss";
 import { DISQUS_SHORTNAME } from "../../constants/constants";
 import useGDPRCookies from "../gdpr/hooks/useGDPRCookies";
+import { useEffect, useState } from "react";
 
 type PostCommentsProps = {
   id: string;
@@ -11,11 +12,16 @@ type PostCommentsProps = {
 };
 
 export default function PostComments({ id, title }: PostCommentsProps) {
+  const [DOMLoaded, setDOMLoaded] = useState<boolean>(false);
   const { disqus } = useGDPRCookies();
 
-  if (disqus === true) {
+  useEffect(() => {
+    setDOMLoaded(true);
+  }, []);
+
+  if (DOMLoaded && disqus === true) {
     return (
-      <div className="post-comments">
+      <div>
         <DiscussionEmbed
           shortname={DISQUS_SHORTNAME || ""}
           config={{

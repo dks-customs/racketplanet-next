@@ -1,9 +1,14 @@
 import fetchApi from "../util/fetchApi";
 import { eventFragment } from "./fragments/event";
+import { postPreviewFragment } from "./fragments/post-preview";
 import { APIEvent } from "./types/event";
+import { APIPostPreview } from "./types/post-preview";
 
 type EventsAPIData = {
   event: APIEvent;
+  posts: {
+    nodes: APIPostPreview[];
+  };
 };
 
 export default async function getEvent(

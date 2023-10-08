@@ -57,13 +57,19 @@ export default function SideMenu({
             {categories.map((category) => {
               if (category.children?.nodes?.length > 0) {
                 return (
-                  <li key={`header-bottom-${category.id}`}>
+                  <li
+                    key={`header-bottom-${category.id}`}
+                    onClick={handleClose}
+                  >
                     <CategoryCollapse category={category} />
                   </li>
                 );
               } else {
                 return (
-                  <li key={`header-bottom-${category.id}`}>
+                  <li
+                    key={`header-bottom-${category.id}`}
+                    onClick={handleClose}
+                  >
                     <Link href={`${routes.CATEGORY}/${category.slug}`}>
                       {category.name}
                     </Link>
@@ -86,13 +92,13 @@ export default function SideMenu({
           <div className="side-menu__social">
             <h5>Śledź nas na</h5>
             <ul>
-              <li>
-                <a href={FACEBOOK_URL} target="_blank" onClick={handleClose}>
+              <li onClick={handleClose}>
+                <a href={FACEBOOK_URL} target="_blank">
                   <FacebookSVG />
                 </a>
               </li>
-              <li>
-                <a href={INSTAGRAM_URL} target="_blank" onClick={handleClose}>
+              <li onClick={handleClose}>
+                <a href={INSTAGRAM_URL} target="_blank">
                   <InstagramSVG />
                 </a>
               </li>

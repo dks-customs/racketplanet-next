@@ -1,4 +1,5 @@
 import { FeaturedImageAPI } from "./featuredImage";
+import { APIPostPreview } from "./post-preview";
 
 export type PostAPI = {
   id: string;
@@ -40,4 +41,5 @@ export type PostAPI = {
       name: string;
     }[];
   };
+  morePosts: APIPostPreview[];
 };
