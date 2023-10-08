@@ -19,6 +19,13 @@ if (!process.env.NEXT_PUBLIC_CANONICAL_BASE) {
   `);
 }
 
+if (!process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TRACKING_ID) {
+  throw new Error(`
+    Please provide a valid google analytics tracking id.
+    Add to your environment variables NEXT_PUBLIC_GOOGLE_ANALYTICS_TRACKING_ID.
+  `);
+}
+
 domains = ["0.gravatar.com", "1.gravatar.com", process.env.WORDPRESS_DOMAIN];
 
 /** @type {import('next').NextConfig} */

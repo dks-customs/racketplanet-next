@@ -45,10 +45,14 @@ export default async function Author({ params }: AuthorProps) {
 export async function generateStaticParams() {
   const authors = await getAuthors();
 
-  return authors?.allAuthors.map((author) => ({
-    pid: author.databaseId.toString(),
-    slug: authorSlug(author.name),
-  }));
+  if (authors) {
+    return authors.allAuthors.map((author) => ({
+      pid: author.databaseId.toString(),
+      slug: authorSlug(author.name),
+    }));
+  } else {
+    return [];
+  }
 }
 
 export async function generateMetadata({

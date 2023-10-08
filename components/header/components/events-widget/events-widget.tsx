@@ -1,8 +1,8 @@
-import { APIEvents } from "../../../../graphql/types/events";
+import { APIEvent } from "../../../../graphql/types/event";
 import "./events-widget.scss";
 
 type EventsWidgetProps = {
-  events: APIEvents;
+  events: APIEvent[];
 };
 
 export default function EventsWidget({ events }: EventsWidgetProps) {
