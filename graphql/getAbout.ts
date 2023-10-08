@@ -20,7 +20,7 @@ export default async function getAbout() {
   );
 
   if (data) {
-    return data;
+    return data.pageBy;
   } else {
     return undefined;
   }

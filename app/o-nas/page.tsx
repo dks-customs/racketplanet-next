@@ -14,9 +14,9 @@ export default async function About() {
   if (about && authors) {
     return (
       <main className="about layout-container">
-        <h1>{about.pageBy.title}</h1>
+        <h1>{about.title}</h1>
         <div>
-          <div dangerouslySetInnerHTML={{ __html: about.pageBy.content }}></div>
+          <div dangerouslySetInnerHTML={{ __html: about.content }}></div>
           <div>
             <LogoSVG />
           </div>
@@ -67,7 +67,7 @@ export default async function About() {
       </main>
     );
   } else {
-    return <NotFound />;
+    return null;
   }
 }
 

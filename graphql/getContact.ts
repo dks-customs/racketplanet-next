@@ -20,7 +20,7 @@ export default async function getContact() {
   );
 
   if (data) {
-    return data;
+    return data.pageBy;
   } else {
     return undefined;
   }

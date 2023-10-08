@@ -4,6 +4,7 @@ type PrivacyPolicyAPIData = {
   pageBy: {
     content: string;
     title: string;
+    modified: string;
   };
 };
 
@@ -14,13 +15,14 @@ export default async function getPrivacyPolicy() {
       pageBy(pageId: 3) {
         content
         title
+        modified
       }
     }
   `
   );
 
   if (data) {
-    return data;
+    return data.pageBy;
   } else {
     return undefined;
   }
