@@ -9,8 +9,6 @@ type AuthorsAPIData = {
   users: {
     nodes: {
       name: string;
-      description: string;
-      slug: string;
       databaseId: number;
       avatar: {
         url: string;
@@ -26,8 +24,6 @@ export default async function getAuthors() {
       users {
         nodes {
           name
-          description
-          slug
           databaseId
           avatar {
             url
@@ -55,10 +51,14 @@ export default async function getAuthors() {
       }
     });
 
+    const authors: AuthorsAPIData["users"]["nodes"] = [];
+    if (headAuthor) authors.push(headAuthor);
+
     return {
       headAuthor: headAuthor as AuthorsAPIData["users"]["nodes"][0] | null,
       activeAuthors,
       inactiveAuthors,
+      allAuthors: authors.concat(activeAuthors).concat(inactiveAuthors),
     };
   } else {
     return undefined;

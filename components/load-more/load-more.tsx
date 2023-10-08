@@ -11,12 +11,14 @@ import getPostsPreviews from "../../graphql/getPostsPreviews";
 import getTag from "../../graphql/getTag";
 import PostsGrid from "../posts-grid/posts-grid";
 import PostsList from "../posts-list/posts-list";
+import getAuthor from "../../graphql/getAuthor";
 
 type MorePostsButtonProps = {
   afterCursor: string;
   categorySlug?: string;
   sportSlug?: string;
   tagSlug?: string;
+  authorId?: string;
   variant?: "list" | "grid";
 };
 
@@ -25,6 +27,7 @@ export default function LoadMore({
   categorySlug,
   sportSlug,
   tagSlug,
+  authorId,
   variant = "list",
 }: MorePostsButtonProps) {
   const [after, setAfter] = useState<string | undefined>(afterCursor);
@@ -60,10 +63,20 @@ export default function LoadMore({
             newPosts = tag.posts.map((post) => post.node);
             if (tag.hasNextPage) newAfter = tag.endCursor;
           }
+        } else if (authorId) {
+          const author = await getAuthor(authorId, after);
+
+          if (author) {
+            newPosts = author.posts.map((post) => post.node);
+            if (author.hasNextPage) newAfter = author.endCursor;
+          }
         } else {
           const posts = await getPostsPreviews(after);
-          newPosts = posts.items.map((post) => post.node);
-          if (posts.hasNextPage) newAfter = posts.endCursor;
+
+          if (posts) {
+            newPosts = posts.items.map((post) => post.node);
+            if (posts.hasNextPage) newAfter = posts.endCursor;
+          }
         }
 
         setAfter(newAfter);

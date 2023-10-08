@@ -4,10 +4,10 @@ import { WEBSITE_TITLE } from "../constants/constants";
 type MetadataInfo = {
   url: string;
   titleFollowUp: string;
+  titleFirst?: boolean;
   description?: string;
   author?: string;
   publishedTime?: string;
-  modifiedTime?: string;
   imageUrl?: string;
   imageAlt?: string;
   twitterCard: "summary" | "summary_large_image";
@@ -21,14 +21,16 @@ export default function pageMetadata({
   description,
   author,
   publishedTime,
-  modifiedTime,
   imageUrl,
   imageAlt,
   twitterCard,
   ogType = "website",
   showOgDescription = true,
+  titleFirst = false,
 }: MetadataInfo): Metadata {
-  const title = `${WEBSITE_TITLE} - ${titleFollowUp}`;
+  const title = titleFirst
+    ? `${WEBSITE_TITLE} - ${titleFollowUp}`
+    : `${titleFollowUp} - ${WEBSITE_TITLE}`;
   const images =
     imageUrl && imageAlt
       ? [

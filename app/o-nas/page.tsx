@@ -1,4 +1,3 @@
-import Link from "next/link";
 import LogoSVG from "../../components/svg/logo";
 import { routes } from "../../constants/constants";
 import getAbout from "../../graphql/getAbout";

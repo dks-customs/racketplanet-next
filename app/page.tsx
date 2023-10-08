@@ -10,8 +10,12 @@ export default async function Home() {
   return (
     <main className="index layout-container">
       <h1>Strona główna</h1>
-      <PostsList posts={posts.items.map((item) => item.node)} />
-      {posts.hasNextPage && <LoadMore afterCursor={posts.endCursor} />}
+      {posts && (
+        <>
+          <PostsList posts={posts.items.map((item) => item.node)} />
+          <LoadMore afterCursor={posts.endCursor} />
+        </>
+      )}
     </main>
   );
 }
@@ -19,6 +23,7 @@ export default async function Home() {
 export const metadata = pageMetadata({
   url: "/",
   titleFollowUp: "Centrum Sportów Rakietowych",
+  titleFirst: true,
   description:
     "Najnowsze informacje, wydarzenia, relacje, wywiady, poradniki i wiele innych ze sportów rakietowych z kraju i ze świata.",
   twitterCard: "summary",
