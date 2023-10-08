@@ -12,8 +12,6 @@ export default function SearchForm({ setQuery, loading }: SearchFormProps) {
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
 
-    console.log(e.target[0].value);
-
     setQuery(e.target[0].value);
   };
 
