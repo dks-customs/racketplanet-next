@@ -124,6 +124,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             lastModified: lastMajorSiteUpdate,
           });
         });
+      } else {
+        items.push({
+          url: `${base}${routes.CATEGORY}/${category.slug}`,
+          lastModified: lastMajorSiteUpdate,
+        });
       }
     });
   }
