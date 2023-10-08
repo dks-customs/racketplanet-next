@@ -4,6 +4,7 @@ type ContactAPIData = {
   pageBy: {
     content: string;
     title: string;
+    modified: string;
   };
 };
 
@@ -14,6 +15,7 @@ export default async function getContact() {
       pageBy(pageId: 95) {
         content
         title
+        modified
       }
     }
   `

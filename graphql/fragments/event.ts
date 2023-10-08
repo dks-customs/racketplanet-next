@@ -23,4 +23,5 @@ export const eventFragment = `
   title
   content
   eventId
+  modified
 `;

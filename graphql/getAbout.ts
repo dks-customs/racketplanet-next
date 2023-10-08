@@ -4,6 +4,7 @@ type AboutAPIData = {
   pageBy: {
     content: string;
     title: string;
+    modified: string;
   };
 };
 
@@ -14,6 +15,7 @@ export default async function getAbout() {
       pageBy(pageId: 80) {
         content
         title
+        modified
       }
     }
   `

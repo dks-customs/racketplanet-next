@@ -26,7 +26,6 @@ export const routes = {
   CATEGORY: "/kategoria",
   TAG: "/tag",
   PRIVACY_POLICY: "/polityka-prywatnosci",
-  TERMS: "/regulamin",
   ABOUT: "/o-nas",
   CONTACT: "/kontakt",
   TEAM: "/redakcja",

@@ -3,6 +3,7 @@ export type APIEvent = {
   title: string;
   content: string;
   eventId: number;
+  modified: string;
   sports: {
     nodes: {
       id: string;
