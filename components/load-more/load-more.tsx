@@ -9,12 +9,15 @@ import getCategory from "../../graphql/getCategory";
 import getSport from "../../graphql/getSport";
 import getPostsPreviews from "../../graphql/getPostsPreviews";
 import getTag from "../../graphql/getTag";
+import PostsGrid from "../posts-grid/posts-grid";
+import PostsList from "../posts-list/posts-list";
 
 type MorePostsButtonProps = {
   afterCursor: string;
   categorySlug?: string;
   sportSlug?: string;
   tagSlug?: string;
+  variant?: "list" | "grid";
 };
 
 export default function LoadMore({
@@ -22,6 +25,7 @@ export default function LoadMore({
   categorySlug,
   sportSlug,
   tagSlug,
+  variant = "list",
 }: MorePostsButtonProps) {
   const [after, setAfter] = useState<string | undefined>(afterCursor);
   const [posts, setPosts] = useState<APIPostPreview[]>([]);
@@ -74,21 +78,8 @@ export default function LoadMore({
 
   return (
     <>
-      {posts.length > 0 && (
-        <ul>
-          {posts.map((post) => (
-            <li key={post.id}>
-              <Fade in={true} appear>
-                <article>
-                  <Link href={`/${post.databaseId}/${post.slug}`}>
-                    {post.title}
-                  </Link>
-                </article>
-              </Fade>
-            </li>
-          ))}
-        </ul>
-      )}
+      {variant === "grid" && <PostsGrid posts={posts} />}
+      {variant === "list" && <PostsList posts={posts} />}
       {after && (
         <Button className="more-posts-btn" variant="primary" onClick={loadMore}>
           {loading ? <Spinner /> : "Załaduj więcej"}

@@ -1,6 +1,5 @@
 "use client";
 import { APICategories } from "../../graphql/types/categories";
-import { APIEvents } from "../../graphql/types/events";
 import { APISports } from "../../graphql/types/sports";
 import SideMenu from "./components/side-menu/side-menu";
 import SearchModal from "./components/search-modal/search-modal";
@@ -10,11 +9,12 @@ import HeaderTop from "./components/header-top/header-top";
 import { useState } from "react";
 
 import "./header.scss";
+import { APIEvent } from "../../graphql/types/event";
 
 type HeaderProps = {
   categories: APICategories;
   sports: APISports;
-  events: APIEvents;
+  events: APIEvent[];
 };
 
 export default function Header({ categories, sports, events }: HeaderProps) {

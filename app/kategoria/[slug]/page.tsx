@@ -8,6 +8,7 @@ import NotFound from "../../not-found";
 import { Metadata } from "next";
 import pageMetadata from "../../../util/pageMetadata";
 import notFoundMetadata from "../../../util/notFoundMetadata";
+import PostsList from "../../../components/posts-list/posts-list";
 
 type CategoryProps = {
   params: {
@@ -22,17 +23,7 @@ export default async function Category({ params }: CategoryProps) {
     return (
       <main className="category layout-container">
         <h1>{category.name}</h1>
-        <ul className="posts">
-          {category.posts.map((post) => (
-            <li key={post.node.id}>
-              <article>
-                <Link href={`/${post.node.databaseId}/${post.node.slug}`}>
-                  {post.node.title}
-                </Link>
-              </article>
-            </li>
-          ))}
-        </ul>
+        <PostsList posts={category.posts.map((item) => item.node)} />
         {category.hasNextPage && (
           <LoadMore
             afterCursor={category.endCursor}

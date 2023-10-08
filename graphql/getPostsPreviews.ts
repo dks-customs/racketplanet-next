@@ -15,11 +15,14 @@ type PostsPreviewsAPIData = {
   };
 };
 
-export default async function getPostsPreviews(afterCursor: string = "") {
-  const data = await fetchApi<PostsPreviewsAPIData>(
+export default async function getPostsPreviews(
+  afterCursor: string = "",
+  searchQuery: string = ""
+) {
+  const data = await fetchApi<PostsPreviewsAPIData | undefined>(
     `
       query PostPreviews {
-        posts(first: ${POSTS_PER_PAGE}, where: { orderby: { field: DATE, order: DESC } }, after: "${afterCursor}") {
+        posts(first: ${POSTS_PER_PAGE}, where: { orderby: { field: DATE, order: DESC }, search: "${searchQuery}" }, after: "${afterCursor}") {
           pageInfo {
             hasNextPage
             endCursor
@@ -35,9 +38,13 @@ export default async function getPostsPreviews(afterCursor: string = "") {
     `
   );
 
-  return {
-    hasNextPage: data.posts.pageInfo.hasNextPage,
-    endCursor: data.posts.pageInfo.endCursor,
-    items: data.posts.edges.slice(0, POSTS_PER_PAGE),
-  };
+  if (data?.posts) {
+    return {
+      hasNextPage: data.posts.pageInfo.hasNextPage,
+      endCursor: data.posts.pageInfo.endCursor,
+      items: data.posts.edges.slice(0, POSTS_PER_PAGE),
+    };
+  } else {
+    return undefined;
+  }
 }

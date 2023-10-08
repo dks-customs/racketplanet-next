@@ -2,6 +2,7 @@ import Link from "next/link";
 import pageMetadata from "../util/pageMetadata";
 import LoadMore from "../components/load-more/load-more";
 import getPostsPreviews from "../graphql/getPostsPreviews";
+import PostsList from "../components/posts-list/posts-list";
 
 export default async function Home() {
   const posts = await getPostsPreviews();
@@ -9,17 +10,7 @@ export default async function Home() {
   return (
     <main className="index layout-container">
       <h1>Strona główna</h1>
-      <ul className="posts">
-        {posts.items.map((post) => (
-          <li key={post.node.id}>
-            <article>
-              <Link href={`/${post.node.databaseId}/${post.node.slug}`}>
-                {post.node.title}
-              </Link>
-            </article>
-          </li>
-        ))}
-      </ul>
+      <PostsList posts={posts.items.map((item) => item.node)} />
       {posts.hasNextPage && <LoadMore afterCursor={posts.endCursor} />}
     </main>
   );

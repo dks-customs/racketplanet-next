@@ -9,6 +9,7 @@ import { Metadata } from "next";
 import pageMetadata from "../../../util/pageMetadata";
 import subpageSlug from "../../../util/subpageSlug";
 import notFoundMetadata from "../../../util/notFoundMetadata";
+import PostsList from "../../../components/posts-list/posts-list";
 
 type SportProps = {
   params: {
@@ -40,17 +41,7 @@ export default async function Sport({ params }: SportProps) {
             </li>
           ))}
         </ul>
-        <ul className="posts">
-          {sport.posts.map((post) => (
-            <li key={post.node.id}>
-              <article>
-                <Link href={`/${post.node.databaseId}/${post.node.slug}`}>
-                  {post.node.title}
-                </Link>
-              </article>
-            </li>
-          ))}
-        </ul>
+        <PostsList posts={sport.posts.map((item) => item.node)} />
         {sport.hasNextPage && (
           <LoadMore afterCursor={sport.endCursor} sportSlug={params.slug} />
         )}

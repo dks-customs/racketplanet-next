@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { API_URL } from "../constants/constants";
 
 export default async function fetchApi<T>(
@@ -18,8 +19,9 @@ export default async function fetchApi<T>(
   const json = await res.json();
 
   if (json.errors) {
+    console.error("Failed to fetch");
     console.error(json.errors);
-    throw new Error("Failed to fetch API");
+    if (typeof window !== undefined) toast.error("Failed to fetch");
   }
 
   return json.data as Promise<T>;

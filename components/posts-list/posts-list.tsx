@@ -1,25 +1,25 @@
 import { APIPostPreview } from "../../graphql/types/post-preview";
 import PostPreview from "../post-preview/post-preview";
-import "./posts-grid.scss";
+import "./posts-list.scss";
 
-type PostsGridProps = {
+type PostsListProps = {
   posts: APIPostPreview[];
   showSport?: boolean;
   showCategory?: boolean;
 };
 
-export default function PostsGrid({
+export default function PostsList({
   posts,
   showSport = true,
   showCategory = true,
-}: PostsGridProps) {
+}: PostsListProps) {
   if (posts.length > 0) {
     return (
-      <ul className="posts-grid">
+      <ul className="posts-list">
         {posts.map((post) => (
-          <li key={`posts-grid-${post.id}`}>
+          <li key={`posts-list-${post.id}`}>
             <PostPreview
-              variant="vertical"
+              variant="horizontal"
               post={post}
               showSport={showSport}
               showCategory={showCategory}

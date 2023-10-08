@@ -40,26 +40,6 @@ export const CANONICAL_BASE = (() => {
   return process.env.NEXT_PUBLIC_CANONICAL_BASE;
 })();
 
-export const NEXT_PUBLIC_ALGOLIA_APP_ID = (() => {
-  if (!process.env.NEXT_PUBLIC_ALGOLIA_APP_ID) {
-    throw new Error(`
-      Please provide a valid Algolia App Id.
-    `);
-  }
-
-  return process.env.NEXT_PUBLIC_ALGOLIA_APP_ID;
-})();
-
-export const NEXT_PUBLIC_ALGOLIA_SEARCH_KEY = (() => {
-  if (!process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_KEY) {
-    throw new Error(`
-    Please provide a valid Algolia Search Key.
-  `);
-  }
-
-  return process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_KEY;
-})();
-
 export const API_URL = (() => {
   if (!process.env.NEXT_PUBLIC_WORDPRESS_API_URL) {
     throw new Error(`
@@ -68,18 +48,4 @@ export const API_URL = (() => {
   }
 
   return process.env.NEXT_PUBLIC_WORDPRESS_API_URL;
-})();
-
-export const ALGOLIA_ADMIN_KEY = (() => {
-  if (typeof window === "undefined") {
-    if (!process.env.ALGOLIA_ADMIN_KEY) {
-      throw new Error(`
-        Please provide a valid Algolia admin key.
-      `);
-    }
-
-    return process.env.ALGOLIA_ADMIN_KEY;
-  } else {
-    return "";
-  }
 })();

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { APIPostPreview } from "../../../../graphql/types/post-preview";
 import "./horizontal.scss";
 
@@ -12,5 +13,9 @@ export default function PostPreviewHorizontal({
   showCategory = true,
   showSport = true,
 }: PostPreviewHorizontalProps) {
-  return <article>{post.title}</article>;
+  return (
+    <article>
+      <Link href={`/${post.databaseId}/${post.slug}`}>{post.title}</Link>
+    </article>
+  );
 }

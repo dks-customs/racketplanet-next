@@ -19,27 +19,6 @@ if (!process.env.NEXT_PUBLIC_CANONICAL_BASE) {
   `);
 }
 
-if (!process.env.ALGOLIA_ADMIN_KEY) {
-  throw new Error(`
-    Please provide a valid Algolia admin key.
-    Add to your environment variables ALGOLIA_ADMIN_KEY.
-  `);
-}
-
-if (!process.env.NEXT_PUBLIC_ALGOLIA_APP_ID) {
-  throw new Error(`
-    Please provide a valid Algolia App Id.
-    Add to your environment variables NEXT_PUBLIC_ALGOLIA_APP_ID.
-  `);
-}
-
-if (!process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_KEY) {
-  throw new Error(`
-    Please provide a valid Algolia Search Key.
-    Add to your environment variables NEXT_PUBLIC_ALGOLIA_SEARCH_KEY.
-  `);
-}
-
 if (!process.env.NEXT_PUBLIC_DISQUS_SHORTNAME) {
   throw new Error(`
       Please provide a valid disqus shortname.

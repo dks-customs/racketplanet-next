@@ -8,6 +8,7 @@ import notFoundMetadata from "../../../util/notFoundMetadata";
 import "./tag.scss";
 import getTag from "../../../graphql/getTag";
 import getTags from "../../../graphql/getTags";
+import PostsList from "../../../components/posts-list/posts-list";
 
 type TagProps = {
   params: {
@@ -22,17 +23,7 @@ export default async function Tag({ params }: TagProps) {
     return (
       <main className="tag layout-container">
         <h1>{tag.name}</h1>
-        <ul className="posts">
-          {tag.posts.map((post) => (
-            <li key={post.node.id}>
-              <article>
-                <Link href={`/${post.node.databaseId}/${post.node.slug}`}>
-                  {post.node.title}
-                </Link>
-              </article>
-            </li>
-          ))}
-        </ul>
+        <PostsList posts={tag.posts.map((item) => item.node)} />
         {tag.hasNextPage && (
           <LoadMore afterCursor={tag.endCursor} tagSlug={params.slug} />
         )}

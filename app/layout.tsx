@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { nunito } from "./fonts";
+import { merriweather, nunito } from "./fonts";
 import { CANONICAL_BASE } from "../constants/constants";
 import Header from "../components/header/header";
 import getCategories from "../graphql/getCategories";
@@ -23,7 +23,7 @@ export default async function RootLayout({
   const widgetEvents = events.filter(eventsUtils.isFutureEvent).slice(0, 3);
 
   return (
-    <html lang="pl" className={nunito.className}>
+    <html lang="pl">
       <body>
         <Header categories={categories} sports={sports} events={widgetEvents} />
         {children}
