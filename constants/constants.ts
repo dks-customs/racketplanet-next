@@ -33,6 +33,16 @@ export const routes = {
   SEARCH: "/szukaj",
 };
 
+export const GOOGLE_ANALYTICS_TRACKING_ID = (() => {
+  if (!process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TRACKING_ID) {
+    throw new Error(`
+        Please provide a valid google analytics tracking id.
+      `);
+  }
+
+  return process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TRACKING_ID;
+})();
+
 export const DISQUS_SHORTNAME = (() => {
   if (!process.env.NEXT_PUBLIC_DISQUS_SHORTNAME) {
     throw new Error(`

@@ -11,6 +11,7 @@ import "../styles/global.scss";
 import "react-toastify/dist/ReactToastify.css";
 import getEvents from "../graphql/getEvents";
 import eventsUtils from "../util/eventsUtils";
+import GoogleAnalytics from "../components/google-analytics/google-analytics";
 
 export default async function RootLayout({
   children,
@@ -29,6 +30,7 @@ export default async function RootLayout({
         {children}
         <Footer categories={categories} sports={sports} />
         <ToastContainer theme="colored" position="bottom-center" />
+        <GoogleAnalytics />
       </body>
     </html>
   );
