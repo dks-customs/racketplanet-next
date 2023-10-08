@@ -8,7 +8,7 @@ type TagsAPIData = {
 };
 
 export default async function getCategories(): Promise<APITags> {
-  const data = await fetchApi<TagsAPIData>(
+  const data = await fetchApi<TagsAPIData | undefined>(
     `
       query Categories {
         categories(first: 100) {

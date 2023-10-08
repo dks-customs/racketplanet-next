@@ -10,7 +10,7 @@ type TagAPIData = {
 };
 
 export default async function getTag(slug: string, after: string = "") {
-  const data = await fetchApi<TagAPIData>(
+  const data = await fetchApi<TagAPIData | undefined>(
     `
       query Tag {
         tags(first: 1, where: {slug: "${slug}"}) {
@@ -34,7 +34,7 @@ export default async function getTag(slug: string, after: string = "") {
     `
   );
 
-  const tag = data.tags.nodes[0];
+  const tag = data?.tags.nodes[0];
 
   if (tag) {
     return {

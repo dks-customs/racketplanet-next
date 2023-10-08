@@ -10,7 +10,7 @@ type CategoryAPIData = {
 };
 
 export default async function getCategory(slug: string, after: string = "") {
-  const data = await fetchApi<CategoryAPIData>(
+  const data = await fetchApi<CategoryAPIData | undefined>(
     `
       query Category {
         categories(first: 1, where: {slug: "${slug}"}) {
@@ -34,7 +34,7 @@ export default async function getCategory(slug: string, after: string = "") {
     `
   );
 
-  const category = data.categories.nodes[0];
+  const category = data?.categories.nodes[0];
 
   if (category) {
     return {

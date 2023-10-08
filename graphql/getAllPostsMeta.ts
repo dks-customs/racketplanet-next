@@ -19,7 +19,7 @@ export default async function getAllPostsMeta() {
   let posts: PostMeta[] = [];
 
   do {
-    const data = await fetchApi<PostsMetaAPIData>(
+    const data = await fetchApi<PostsMetaAPIData | undefined>(
       `
       query PostsMeta {
         posts(first: 100, where: { orderby: { field: DATE, order: DESC } }, after: "${endCursor}") {
@@ -40,9 +40,11 @@ export default async function getAllPostsMeta() {
     `
     );
 
-    nextPage = data.posts.pageInfo.hasNextPage;
-    endCursor = data.posts.pageInfo.endCursor;
-    posts = posts.concat(data.posts.edges.map((edge) => edge.node));
+    if (data) {
+      nextPage = data.posts.pageInfo.hasNextPage;
+      endCursor = data.posts.pageInfo.endCursor;
+      posts = posts.concat(data.posts.edges.map((edge) => edge.node));
+    }
   } while (nextPage);
 
   return posts;

@@ -10,7 +10,7 @@ type SportAPIData = {
 };
 
 export default async function getSport(slug: string, after: string = "") {
-  const data = await fetchApi<SportAPIData>(
+  const data = await fetchApi<SportAPIData | undefined>(
     `
       query Sport {
         sports(first: 1, where: {slug: "${slug}"}) {
@@ -41,7 +41,7 @@ export default async function getSport(slug: string, after: string = "") {
     `
   );
 
-  const sport = data.sports.nodes[0];
+  const sport = data?.sports.nodes[0];
 
   if (sport) {
     return {

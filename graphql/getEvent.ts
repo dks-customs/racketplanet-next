@@ -6,8 +6,10 @@ type EventsAPIData = {
   event: APIEvent;
 };
 
-export default async function getEvent(eventId: string): Promise<APIEvent> {
-  const data = await fetchApi<EventsAPIData>(
+export default async function getEvent(
+  eventId: string
+): Promise<APIEvent | undefined> {
+  const data = await fetchApi<EventsAPIData | undefined>(
     `
       query Event {
         event(id: "${eventId}", idType: DATABASE_ID ) {
@@ -17,5 +19,9 @@ export default async function getEvent(eventId: string): Promise<APIEvent> {
     `
   );
 
-  return data.event;
+  if (data) {
+    return data.event;
+  } else {
+    return undefined;
+  }
 }

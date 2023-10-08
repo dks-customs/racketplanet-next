@@ -9,7 +9,7 @@ type SportSubpageAPIData = {
 };
 
 export default async function getSportSubpage(sportSlug: string, slug: string) {
-  const data = await fetchApi<SportSubpageAPIData>(
+  const data = await fetchApi<SportSubpageAPIData | undefined>(
     `
       query Sport {
         sports(first: 1, where: {slug: "${sportSlug}"}) {
@@ -51,7 +51,7 @@ export default async function getSportSubpage(sportSlug: string, slug: string) {
     `
   );
 
-  const sport = data.sports.nodes[0];
+  const sport = data?.sports.nodes[0];
 
   if (sport) {
     const subpages = sport.pages.nodes;

@@ -8,7 +8,7 @@ type SportsAPIData = {
 };
 
 export default async function getSports(): Promise<APISports> {
-  const data = await fetchApi<SportsAPIData>(
+  const data = await fetchApi<SportsAPIData | undefined>(
     `
       query Sports {
         sports(first: 100) {

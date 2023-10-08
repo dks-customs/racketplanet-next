@@ -19,7 +19,7 @@ export default async function getPlaces(): Promise<APIPlace[]> {
   let places: APIPlace[] = [];
 
   do {
-    const data = await fetchApi<PlacesAPIData>(
+    const data = await fetchApi<PlacesAPIData | undefined>(
       `
       query Places {
         places(first: 100, after: "${endCursor}") {
@@ -53,9 +53,11 @@ export default async function getPlaces(): Promise<APIPlace[]> {
     `
     );
 
-    nextPage = data.places.pageInfo.hasNextPage;
-    endCursor = data.places.pageInfo.endCursor;
-    places = places.concat(data.places.edges.map((edge) => edge.node));
+    if (data) {
+      nextPage = data.places.pageInfo.hasNextPage;
+      endCursor = data.places.pageInfo.endCursor;
+      places = places.concat(data.places.edges.map((edge) => edge.node));
+    }
   } while (nextPage);
 
   return places;

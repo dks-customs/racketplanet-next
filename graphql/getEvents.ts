@@ -21,7 +21,7 @@ export default async function getEvents(): Promise<APIEvent[]> {
   let posts: APIEvent[] = [];
 
   do {
-    const data = await fetchApi<EventsAPIData>(
+    const data = await fetchApi<EventsAPIData | undefined>(
       `
       query Events {
         events(first: 100, after: "${endCursor}") {
@@ -39,9 +39,11 @@ export default async function getEvents(): Promise<APIEvent[]> {
     `
     );
 
-    nextPage = data.events.pageInfo.hasNextPage;
-    endCursor = data.events.pageInfo.endCursor;
-    posts = posts.concat(data.events.edges.map((edge) => edge.node));
+    if (data) {
+      nextPage = data.events.pageInfo.hasNextPage;
+      endCursor = data.events.pageInfo.endCursor;
+      posts = posts.concat(data.events.edges.map((edge) => edge.node));
+    }
   } while (nextPage);
 
   return posts.sort(eventsUtils.sortByDate);

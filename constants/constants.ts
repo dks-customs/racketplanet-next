@@ -4,6 +4,14 @@ export const FACEBOOK_URL = "https://www.facebook.com/racketplanetpl";
 export const INSTAGRAM_URL = "https://www.instagram.com/racketplanetpl";
 export const POSTS_PER_PAGE = 14;
 export const MAPTILER_API_KEY = "apksbcaqlt6gXwMNguky";
+export const HEAD_AUTHOR_ID = 2;
+export const ACTIVE_AUTHORS_IDS = [9, 7];
+export const INACTIVE_AUTHORS_IDS = [3, 4, 8];
+export const AUTHORS_IDS = [
+  HEAD_AUTHOR_ID,
+  ...ACTIVE_AUTHORS_IDS,
+  ...INACTIVE_AUTHORS_IDS,
+];
 
 export const routes = {
   HOME: "/",

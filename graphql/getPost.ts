@@ -7,7 +7,7 @@ type PostAPIData = {
 };
 
 export default async function getPost(wpId: string) {
-  const data = await fetchApi<PostAPIData>(
+  const data = await fetchApi<PostAPIData | undefined>(
     `
     query Post {
       post(id: "${wpId}", idType: DATABASE_ID) {
@@ -55,7 +55,7 @@ export default async function getPost(wpId: string) {
   `
   );
 
-  if (data.post) {
+  if (data?.post) {
     return data.post;
   } else {
     return undefined;
