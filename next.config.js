@@ -19,13 +19,6 @@ if (!process.env.NEXT_PUBLIC_CANONICAL_BASE) {
   `);
 }
 
-if (!process.env.NEXT_PUBLIC_DISQUS_SHORTNAME) {
-  throw new Error(`
-      Please provide a valid disqus shortname.
-      Add to your environment variables NEXT_PUBLIC_DISQUS_SHORTNAME.
-    `);
-}
-
 domains = ["0.gravatar.com", "1.gravatar.com", process.env.WORDPRESS_DOMAIN];
 
 /** @type {import('next').NextConfig} */
