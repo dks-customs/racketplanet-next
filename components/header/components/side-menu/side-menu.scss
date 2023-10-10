@@ -1,0 +1,92 @@
+.offcanvas {
+  max-width: size(250rem) !important;
+}
+
+.offcanvas a {
+  color: black;
+}
+
+.offcanvas-body {
+  overflow-y: hidden;
+}
+
+.side-menu__close {
+  position: absolute;
+  top: size(10rem);
+  right: size(20rem);
+}
+
+.side-menu__close svg {
+  width: size(22rem);
+  height: size(22rem);
+}
+
+.offcanvas-body {
+  padding-top: size(20rem) !important;
+}
+
+.side-menu-list {
+  margin-right: size(10rem);
+}
+
+ul.side-menu-list {
+  padding-bottom: size(7rem);
+  margin-bottom: size(7rem);
+  border-bottom: size(1rem) solid $c-break-light;
+}
+
+.side-menu-list > li > a,
+.side-menu-list > li > button {
+  display: block;
+  padding: size(9rem) 0;
+  font-weight: 600;
+  font-size: size(14.5rem);
+}
+
+.side-menu-list > li > button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.side-menu-list > li > button svg {
+  margin-left: auto;
+  width: size(10rem);
+  height: size(10rem);
+}
+
+.side-menu-list > li > ul > li {
+  display: flex;
+  align-items: center;
+}
+
+.side-menu-list > li > ul > li > a {
+  display: block;
+  padding: size(6rem) 0 size(6rem) 0;
+  font-size: size(13rem);
+  font-weight: 400;
+  color: rgb(78, 78, 78);
+  text-align: right;
+  width: 100%;
+}
+
+.side-menu__social > h5 {
+  text-align: right;
+  font-weight: 400;
+  font-size: $fs-small;
+  margin-bottom: size(2rem);
+}
+
+.side-menu__social > ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.side-menu__social ul > li:not(:last-of-type) {
+  margin-right: size(5rem);
+}
+
+.side-menu__social ul > li > a > svg {
+  width: size(15rem);
+  height: size(15rem);
+}

@@ -6,15 +6,16 @@ import {
   INSTAGRAM_URL,
   routes,
 } from "../../../../constants/constants";
-import Link from "next/link";
 import InstagramSVG from "../../../svg/instagram";
 import FacebookSVG from "../../../svg/facebook";
-import { Offcanvas, OffcanvasHeader } from "react-bootstrap";
+import { CloseButton, Offcanvas, OffcanvasHeader } from "react-bootstrap";
 import CategoryCollapse from "./components/category-collapse/category-collapse";
 import { APICategories } from "../../../../graphql/types/categories";
 import { APISports } from "../../../../graphql/types/sports";
 import ListSVG from "../../../svg/list";
+import ActiveLinkClient from "../../../active-link/components/active-link-client";
 import "./side-menu.scss";
+import CloseSVG from "../../../svg/close";
 
 type SideMenuProps = {
   categories: APICategories;
@@ -33,36 +34,44 @@ export default function SideMenu({ categories, sports }: SideMenuProps) {
         <ListSVG />
       </button>
       <Offcanvas show={show} onHide={handleClose} backdrop={true} scroll={true}>
-        <OffcanvasHeader closeButton />
         <Offcanvas.Body>
           <nav className="side-menu">
-            <ul>
+            <button onClick={handleClose} className="side-menu__close">
+              <CloseSVG />
+            </button>
+            <ul className="side-menu__pages side-menu-list">
               <li onClick={handleClose}>
-                <Link href={routes.EVENTS}>Wydarzenia</Link>
+                <ActiveLinkClient href={routes.HOME}>
+                  Strona główna
+                </ActiveLinkClient>
               </li>
               <li onClick={handleClose}>
-                <Link href={routes.RACKET_MAPA}>Racket Mapa</Link>
+                <ActiveLinkClient href={routes.EVENTS}>
+                  Wydarzenia
+                </ActiveLinkClient>
+              </li>
+              <li onClick={handleClose}>
+                <ActiveLinkClient href={routes.RACKET_MAPA}>
+                  Racket Mapa
+                </ActiveLinkClient>
               </li>
             </ul>
-            <ul>
+            <ul className="side-menu__sports side-menu-list">
               {sports
                 .filter((sport) => sport.slug !== "bez-sportu")
                 .map((sport) => (
                   <li key={`side-menu-${sport.id}`} onClick={handleClose}>
-                    <Link href={`${routes.SPORT}/${sport.slug}`}>
+                    <ActiveLinkClient href={`${routes.SPORT}/${sport.slug}`}>
                       {sport.name}
-                    </Link>
+                    </ActiveLinkClient>
                   </li>
                 ))}
             </ul>
-            <ul>
+            <ul className="side-menu__categories side-menu-list">
               {categories.map((category) => {
                 if (category.children?.nodes?.length > 0) {
                   return (
-                    <li
-                      key={`header-bottom-${category.id}`}
-                      onClick={handleClose}
-                    >
+                    <li key={`header-bottom-${category.id}`}>
                       <CategoryCollapse category={category} />
                     </li>
                   );
@@ -72,26 +81,32 @@ export default function SideMenu({ categories, sports }: SideMenuProps) {
                       key={`header-bottom-${category.id}`}
                       onClick={handleClose}
                     >
-                      <Link href={`${routes.CATEGORY}/${category.slug}`}>
+                      <ActiveLinkClient
+                        href={`${routes.CATEGORY}/${category.slug}`}
+                      >
                         {category.name}
-                      </Link>
+                      </ActiveLinkClient>
                     </li>
                   );
                 }
               })}
             </ul>
-            <ul className="side-menu__footer">
+            <ul className="side-menu__about side-menu-list">
               <li onClick={handleClose}>
-                <Link href={routes.ABOUT}>O nas</Link>
+                <ActiveLinkClient href={routes.ABOUT}>O nas</ActiveLinkClient>
               </li>
               <li onClick={handleClose}>
-                <Link href={routes.CONTACT}>Kontakt</Link>
+                <ActiveLinkClient href={routes.CONTACT}>
+                  Kontakt
+                </ActiveLinkClient>
               </li>
               <li onClick={handleClose}>
-                <Link href={routes.PRIVACY_POLICY}>Polityka prywatności</Link>
+                <ActiveLinkClient href={routes.PRIVACY_POLICY}>
+                  Polityka prywatności
+                </ActiveLinkClient>
               </li>
             </ul>
-            <div className="side-menu__social">
+            <div className="side-menu__social side-menu-list">
               <h5>Śledź nas na</h5>
               <ul>
                 <li onClick={handleClose}>

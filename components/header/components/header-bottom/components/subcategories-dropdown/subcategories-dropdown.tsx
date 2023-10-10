@@ -1,7 +1,4 @@
-import Link from "next/link";
 import { Suspense } from "react";
-import { Dropdown } from "react-bootstrap";
-import { routes } from "../../../../../../constants/constants";
 import { APICategories } from "../../../../../../graphql/types/categories";
 import SubcategoriesDropdownClient from "./subcategories-dropdown-client";
 

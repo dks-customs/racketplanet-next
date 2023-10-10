@@ -1,11 +1,11 @@
-"use-client";
+"use client";
 
 import { Dropdown } from "react-bootstrap";
 import { SubcategoriesDropdownProps } from "./subcategories-dropdown";
-import Link from "next/link";
 import { routes } from "../../../../../../constants/constants";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import ActiveLinkClient from "../../../../../active-link/components/active-link-client";
 
 export default function SubcategoriesDropdownClient({
   parentCategory,
@@ -13,7 +13,10 @@ export default function SubcategoriesDropdownClient({
   const [show, setShow] = useState(false);
   const pathname = usePathname();
 
-  const toggleShow = () => setShow(!show);
+  const toggleShow = (bootstrapShow: boolean) => {
+    setShow(bootstrapShow);
+  };
+
   const hide = () => setShow(false);
 
   useEffect(() => {
@@ -21,20 +24,20 @@ export default function SubcategoriesDropdownClient({
   }, [pathname]);
 
   return (
-    <Dropdown show={show}>
-      <Dropdown.Toggle id="dropdown-basic" onClick={toggleShow}>
+    <Dropdown show={show} onToggle={toggleShow}>
+      <Dropdown.Toggle id="dropdown-basic">
         {parentCategory.name}
       </Dropdown.Toggle>
-      <Dropdown.Menu>
+      <Dropdown.Menu rootCloseEvent="click">
         <ul>
           {parentCategory.children.nodes.map((child) => (
             <li key={`header-bottom-child-${child.id}`}>
-              <Link
+              <ActiveLinkClient
                 href={`${routes.CATEGORY}/${child.slug}`}
-                onClick={toggleShow}
+                onClick={() => setShow(false)}
               >
                 {child.name}
-              </Link>
+              </ActiveLinkClient>
             </li>
           ))}
         </ul>

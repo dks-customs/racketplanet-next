@@ -1,11 +1,9 @@
-"use client";
-
 import { routes } from "../../../../constants/constants";
-import Link from "next/link";
 import { APICategories } from "../../../../graphql/types/categories";
 import { APISports } from "../../../../graphql/types/sports";
 import "./header-bottom.scss";
 import SubcategoriesDropdown from "./components/subcategories-dropdown/subcategories-dropdown";
+import ActiveLink from "../../../active-link/active-link";
 
 type HeaderBottomProps = {
   sports: APISports;
@@ -21,12 +19,12 @@ export default function HeaderBottom({
       <ul className="header-bottom__sports">
         {sports.map((sport) => (
           <li key={`header-bottom-${sport.id}`}>
-            <Link
+            <ActiveLink
               className="hoverable-background"
               href={`${routes.SPORT}/${sport.slug}`}
             >
               {sport.name}
-            </Link>
+            </ActiveLink>
           </li>
         ))}
       </ul>
@@ -41,9 +39,9 @@ export default function HeaderBottom({
           } else {
             return (
               <li key={`header-bottom-${category.id}`}>
-                <Link href={`${routes.CATEGORY}/${category.slug}`}>
+                <ActiveLink href={`${routes.CATEGORY}/${category.slug}`}>
                   {category.name}
-                </Link>
+                </ActiveLink>
               </li>
             );
           }

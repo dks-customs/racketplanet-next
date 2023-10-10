@@ -39,12 +39,15 @@ a {
   text-decoration: none;
 }
 
+a.active {
+  color: $c-primary !important;
+}
+
 .hoverable {
   transition: color 0.1s linear;
 }
 
 a:hover,
-a:focus,
 a:active,
 .hoverable:hover,
 .hoverable:focus,
