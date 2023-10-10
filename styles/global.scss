@@ -35,12 +35,21 @@ ol {
   list-style-type: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 .hoverable {
   transition: color 0.1s linear;
 }
 
-.hoverable:hover {
-  color: $primary;
+a:hover,
+a:focus,
+a:active,
+.hoverable:hover,
+.hoverable:focus,
+.hoverable:active {
+  color: $c-primary;
 }
 
 .layout-container {
@@ -51,17 +60,17 @@ ol {
   padding-left: $wrapper-p;
   padding-right: $wrapper-p;
 
-  @media screen and (min-width: $bp-768) {
+  @media screen and (min-width: $br-768) {
     padding-left: $wrapper-p-768;
     padding-right: $wrapper-p-768;
   }
 
-  @media screen and (min-width: $bp-1024) {
+  @media screen and (min-width: $br-1024) {
     padding-left: $wrapper-p-1024;
     padding-right: $wrapper-p-1024;
   }
 
-  @media screen and (min-width: $bp-1280) {
+  @media screen and (min-width: $br-1280) {
     padding-left: $wrapper-p-1280;
     padding-right: $wrapper-p-1280;
   }

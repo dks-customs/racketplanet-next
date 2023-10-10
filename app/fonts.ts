@@ -1,6 +1,6 @@
-import { Nunito, Merriweather } from "next/font/google";
+import { Gothic_A1, Merriweather } from "next/font/google";
 
-export const nunito = Nunito({
+export const gothic_A1 = Gothic_A1({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",

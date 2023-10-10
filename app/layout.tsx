@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { merriweather, nunito } from "./fonts";
 import { CANONICAL_BASE } from "../constants/constants";
 import Header from "../components/header/header";
 import getCategories from "../graphql/getCategories";

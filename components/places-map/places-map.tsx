@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { APIPlace } from "../../graphql/types/place";
-import usePlacesMap from "./hooks/usePlacesMap";
 import "./places-map.scss";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
 import SearchPlace from "./components/search-place/search-place";
 import ChooseSportDropdown from "./components/choose-sport-dropdown/choose-sport-dropdown";
 import { APISports } from "../../graphql/types/sports";
+import useRenderMap from "./hooks/useRenderMap";
 
 type PlacesMapProps = {
   places: APIPlace[];
@@ -20,7 +20,7 @@ export default function PlacesMap({ places, sports }: PlacesMapProps) {
     undefined
   );
 
-  const mapContainer = usePlacesMap(sportPlaces, searchedPlaceId);
+  const mapContainer = useRenderMap(sportPlaces, searchedPlaceId);
 
   useEffect(() => {
     const sportPlacesIds = sportPlaces.map((place) => place.placeId);

@@ -1,0 +1,74 @@
+$li-padding: size(4rem);
+$li-margin: size(8.5rem);
+
+.header-bottom {
+  display: none;
+
+  @media screen and (min-width: $br-1280) {
+    align-items: center;
+    justify-content: center;
+    padding-top: size(8.5rem);
+    padding-bottom: size(8.5rem);
+    border-bottom: size(1rem) solid black;
+    display: flex;
+  }
+}
+
+.header-bottom__sports,
+.header-bottom__categories {
+  display: flex;
+  align-items: center;
+}
+
+.header-bottom__sports,
+.header-bottom__categories {
+  height: size(20rem);
+}
+
+.header-bottom__sports {
+  border-right: size(1rem) solid $c-break-light;
+  margin-right: $li-margin;
+  padding-right: $li-margin;
+}
+
+.header-bottom__categories .dropdown-toggle {
+  background: none !important;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  color: black;
+  position: relative;
+  top: size(1rem);
+}
+
+.header-bottom__categories .dropdown-toggle:hover,
+.header-bottom__categories .dropdown-toggle:active,
+.header-bottom__categories .dropdown-toggle:focus,
+.header-bottom__categories .dropdown-toggle.show {
+  color: $c-primary !important;
+}
+
+.header-bottom__categories .dropdown-menu {
+  padding-top: size(4rem);
+  padding-bottom: size(4rem);
+}
+
+.header-bottom__categories .dropdown-menu li {
+  padding: size(5rem);
+}
+
+.header-bottom li {
+  margin-left: $li-margin;
+  margin-right: $li-margin;
+}
+
+.header-bottom a,
+.header-bottom .dropdown-toggle {
+  padding: size($li-padding);
+  font-size: size(12rem);
+  font-weight: 400;
+  color: black;
+  text-decoration: none;
+  letter-spacing: size(-0.3rem);
+}

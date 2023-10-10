@@ -5,7 +5,7 @@ import { MAPTILER_API_KEY, routes } from "../../../constants/constants";
 
 maptilersdk.config.apiKey = MAPTILER_API_KEY;
 
-export default function usePlacesMap(
+export default function useRenderMap(
   places: APIPlace[],
   searchedPlaceId?: APIPlace["placeId"]
 ) {
@@ -67,7 +67,7 @@ export default function usePlacesMap(
           `);
 
           const marker = new maptilersdk.Marker({
-            color: searchedPlaceId === place.placeId ? "red" : "green",
+            color: searchedPlaceId === place.placeId ? "#007b3e" : "#8B4513",
           })
             .setLngLat([lng, lat])
             .setPopup(popup);

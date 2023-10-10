@@ -1,0 +1,113 @@
+.header-top {
+  position: relative;
+  display: flex;
+  padding-top: size(10rem);
+  padding-bottom: size(10rem);
+  border-bottom: size(1rem) solid black;
+
+  @media screen and (min-width: $br-1280) {
+    padding-bottom: size(7rem);
+    border-bottom: size(1rem) solid $c-break-light;
+    align-items: flex-start;
+  }
+}
+
+.header-top__logo {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-top__logo svg {
+  width: size(90rem);
+  height: auto;
+}
+
+.header-top__menu-btn,
+.header-top__search-btn,
+.header-top__links {
+  position: absolute;
+}
+
+.header-top__menu-btn {
+  left: $wrapper-p;
+  top: size(36rem);
+
+  @media screen and (min-width: $br-768) {
+    left: $wrapper-p-768;
+  }
+
+  @media screen and (min-width: $br-1024) {
+    left: $wrapper-p-1024;
+  }
+
+  @media screen and (min-width: $br-1280) {
+    left: size(5rem);
+    top: size(10rem);
+  }
+}
+
+.header-top__search-btn {
+  top: size(36rem);
+  right: $wrapper-p;
+
+  @media screen and (min-width: $br-768) {
+    right: $wrapper-p-768;
+  }
+
+  @media screen and (min-width: $br-1024) {
+    right: $wrapper-p-1024;
+  }
+
+  @media screen and (min-width: $br-1280) {
+    right: unset;
+    left: size(30rem);
+    top: size(10rem);
+  }
+}
+
+.header-top__menu-btn svg,
+.header-top__search-btn svg {
+  width: size(17rem);
+  height: size(17rem);
+}
+
+.header-top__links {
+  display: none;
+
+  @media screen and (min-width: $br-1280) {
+    top: size(10rem);
+    right: size(5rem);
+    display: flex;
+  }
+}
+
+.header-top__links__pages {
+  margin-right: size(2rem);
+}
+
+.header-top__links__pages,
+.header-top__links__social {
+  display: flex;
+  align-items: center;
+}
+
+.header-top__links__pages a {
+  color: black;
+  font-size: size(12rem);
+  padding-left: size(6rem);
+  padding-right: size(6rem);
+  text-transform: uppercase;
+  letter-spacing: size(0.5rem);
+  font-weight: 300;
+}
+
+.header-top__links__social a {
+  color: black;
+  padding-left: size(3rem);
+  padding-right: size(3rem);
+}
+
+.header-top__links__social a svg {
+  width: size(13rem);
+  height: size(13rem);
+}

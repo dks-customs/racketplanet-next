@@ -1,36 +1,54 @@
 import Link from "next/link";
-import { routes } from "../../../../constants/constants";
-import ListSVG from "../../../svg/list";
+import {
+  FACEBOOK_URL,
+  INSTAGRAM_URL,
+  routes,
+} from "../../../../constants/constants";
 import LogoSVG from "../../../svg/logo";
-import SearchSVG from "../../../svg/search";
-import { Dispatch, SetStateAction } from "react";
+import "./header-top.scss";
+import FacebookSVG from "../../../svg/facebook";
+import InstagramSVG from "../../../svg/instagram";
+import ActiveLink from "../../../active-link/active-link";
+import SideMenu from "../side-menu/side-menu";
+import { APICategories } from "../../../../graphql/types/categories";
+import { APISports } from "../../../../graphql/types/sports";
+import SearchModal from "../search-modal/search-modal";
 
 type HeaderTopProps = {
-  setShowMenu: Dispatch<SetStateAction<boolean>>;
-  setShowSearch: Dispatch<SetStateAction<boolean>>;
+  categories: APICategories;
+  sports: APISports;
 };
 
-export default function HeaderTop({
-  setShowMenu,
-  setShowSearch,
-}: HeaderTopProps) {
+export default function HeaderTop({ categories, sports }: HeaderTopProps) {
   return (
-    <div className="header-top layout-container">
-      <button
-        className="header-top__menu-btn hoverable"
-        onClick={() => setShowMenu(true)}
-      >
-        <ListSVG />
-      </button>
-      <Link href={routes.HOME} className="mh__top__logo">
+    <div className="header-top">
+      <SideMenu categories={categories} sports={sports} />
+      <SearchModal />
+      <Link className="header-top__logo" href={routes.HOME}>
         <LogoSVG />
       </Link>
-      <button
-        className="header-top__search-btn hoverable"
-        onClick={() => setShowSearch(true)}
-      >
-        <SearchSVG />
-      </button>
+      <nav className="header-top__links">
+        <ul className="header-top__links__pages">
+          <li>
+            <ActiveLink href={routes.RACKET_MAPA}>Racket Mapa</ActiveLink>
+          </li>
+          <li>
+            <Link href={routes.EVENTS}>Wydarzenia</Link>
+          </li>
+        </ul>
+        <ul className="header-top__links__social">
+          <li>
+            <a href={FACEBOOK_URL} target="_blank">
+              <FacebookSVG />
+            </a>
+          </li>
+          <li>
+            <a href={INSTAGRAM_URL} target="_blank">
+              <InstagramSVG />
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }
