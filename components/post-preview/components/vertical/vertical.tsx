@@ -14,8 +14,12 @@ export default function PostPreviewVertical({
   showSport = true,
 }: PostPreviewVerticalProps) {
   return (
-    <article>
-      <Link href={`/${post.databaseId}/${post.slug}`}>{post.title}</Link>
+    <article className="post-preview-vertical">
+      <h2>
+        <Link href={`/${post.databaseId}/${post.slug}`} className="hoverable">
+          {post.title}
+        </Link>
+      </h2>
     </article>
   );
 }

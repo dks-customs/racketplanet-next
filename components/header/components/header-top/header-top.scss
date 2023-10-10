@@ -40,11 +40,8 @@
     left: $wrapper-p-1024;
   }
 
-  @media screen and (min-width: $br-1199) {
+  @media screen and (min-width: $wrapper-mw) {
     left: size(5rem);
-  }
-
-  @media screen and (min-width: $br-1280) {
     top: size(10rem);
   }
 }
@@ -61,11 +58,7 @@
     right: $wrapper-p-1024;
   }
 
-  @media screen and (min-width: $br-1199) {
-    right: size(5rem);
-  }
-
-  @media screen and (min-width: $br-1280) {
+  @media screen and (min-width: $wrapper-mw) {
     right: unset;
     left: size(30rem);
     top: size(10rem);
@@ -81,7 +74,7 @@
 .header-top__links {
   display: none;
 
-  @media screen and (min-width: $br-1280) {
+  @media screen and (min-width: $wrapper-mw) {
     top: size(10rem);
     right: size(5rem);
     display: flex;

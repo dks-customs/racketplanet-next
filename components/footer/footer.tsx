@@ -23,7 +23,7 @@ export default function Footer({ categories, sports }: FooterProps) {
             <LogoSVG />
           </ActiveLink>
         </div>
-        <div className="footer-top__sections">
+        <nav className="footer-top__sections">
           <div className="footer-top__sections__sports">
             <h5>Dyscypliny</h5>
             <ul>
@@ -102,7 +102,7 @@ export default function Footer({ categories, sports }: FooterProps) {
               </li>
             </ul>
           </div>
-        </div>
+        </nav>
         <div className="footer-top__social">
           <h5>Śledź nas na:</h5>
           <ul>
