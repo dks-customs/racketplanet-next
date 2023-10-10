@@ -1,0 +1,193 @@
+.footer {
+  margin-top: auto;
+}
+
+.footer.layout-container {
+  @media screen and (max-width: $br-1199) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.footer-top {
+  border-top: size(1rem) solid $c-break-dark;
+  border-bottom: size(1rem) solid $c-break-light;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-top,
+.footer-bottom {
+  padding-left: $wrapper-p;
+  padding-right: $wrapper-p;
+
+  @media screen and (min-width: $br-768) {
+    padding-left: $wrapper-p-768;
+    padding-right: $wrapper-p-768;
+    flex-direction: row;
+  }
+
+  @media screen and (min-width: $br-1024) {
+    padding-left: $wrapper-p-1024;
+    padding-right: $wrapper-p-1024;
+  }
+
+  @media screen and (min-width: $br-1199) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.footer-top__logo {
+  padding-top: size(20rem);
+  padding-bottom: size(20rem);
+  text-align: center;
+
+  @media screen and (min-width: $br-768) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: size(15rem);
+    border-right: size(1rem) solid $c-break-light;
+  }
+}
+
+.footer-top__logo svg {
+  height: size(80rem);
+  width: auto;
+
+  @media screen and (min-width: $br-768) {
+    height: size(60rem);
+  }
+}
+
+.footer-top__sections {
+  @media screen and (min-width: $br-768) {
+    padding-top: size(10rem);
+    border-right: size(1rem) solid $c-break-light;
+    flex-grow: 1;
+  }
+}
+
+.footer-top__sections__sports,
+.footer-top__sections__categories,
+.footer-top__sections__pages {
+  margin-bottom: size(12rem);
+
+  @media screen and (min-width: $br-768) {
+    padding-left: size(10rem);
+    padding-right: size(10rem);
+    margin-bottom: size(6rem);
+    flex-grow: 1;
+  }
+}
+
+.footer-top__sections__sports > h5,
+.footer-top__sections__categories > h5,
+.footer-top__sections__pages > h5,
+.footer-top__social > h5 {
+  font-size: size(14rem);
+  text-transform: uppercase;
+  margin-bottom: size(7rem);
+  font-weight: 700;
+  letter-spacing: size(0.5rem);
+
+  @media screen and (min-width: $br-768) {
+    font-size: size(11rem);
+    margin-bottom: size(5rem);
+  }
+}
+
+.footer-top__sections__sports > ul,
+.footer-top__sections__categories > ul,
+.footer-top__sections__pages > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-top__sections__sports > ul > li,
+.footer-top__sections__categories > ul > li,
+.footer-top__sections__pages > ul > li {
+  margin-bottom: size(5rem);
+  margin-right: size(14rem);
+}
+
+.footer-top__sections__sports > ul > li > a,
+.footer-top__sections__categories > ul > li > a,
+.footer-top__sections__pages > ul > li > a {
+  color: black;
+  font-size: size(14rem);
+  letter-spacing: size(-0.3rem);
+}
+
+.footer-top__sections__pages > ul > li > a.decorate {
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.footer-top__social {
+  display: none;
+
+  @media screen and (min-width: $br-768) {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    padding-left: size(10rem);
+    padding-right: size(20rem);
+    margin-bottom: 0;
+    padding-top: size(10rem);
+    height: 100%;
+  }
+}
+
+.footer-top__social > ul {
+  display: flex;
+}
+
+.footer-top__social > ul > li:not(:last-of-type) {
+  margin-right: size(5rem);
+}
+
+.footer-top__social > ul > li > a {
+  color: black;
+}
+.footer-top__social > ul > li > a > svg {
+  width: size(14rem);
+  height: size(14rem);
+}
+
+.footer-bottom {
+  display: flex;
+}
+
+.footer-bottom__privacy-policy {
+  padding-right: size(10rem);
+  text-align: right;
+  border-right: size(1rem) solid $c-break-light;
+}
+
+.footer-bottom__gdpr {
+  padding-left: size(10rem);
+  text-align: left;
+}
+
+.footer-bottom__privacy-policy,
+.footer-bottom__gdpr {
+  padding-top: size(3rem);
+  padding-bottom: size(3rem);
+}
+
+.footer-bottom__privacy-policy a,
+.footer-bottom__gdpr button {
+  font-size: $fs-small;
+  color: gray;
+  letter-spacing: size(0.8rem);
+}
+
+.footer-bottom__privacy-policy a:hover,
+.footer-bottom__gdpr button:hover {
+  color: rgb(60, 60, 60);
+}

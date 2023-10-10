@@ -107,7 +107,7 @@ export default function SideMenu({ categories, sports }: SideMenuProps) {
               </li>
             </ul>
             <div className="side-menu__social side-menu-list">
-              <h5>Śledź nas na</h5>
+              <h5>Śledź nas na:</h5>
               <ul>
                 <li onClick={handleClose}>
                   <a href={FACEBOOK_URL} target="_blank">

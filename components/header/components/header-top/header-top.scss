@@ -40,8 +40,11 @@
     left: $wrapper-p-1024;
   }
 
-  @media screen and (min-width: $br-1280) {
+  @media screen and (min-width: $br-1199) {
     left: size(5rem);
+  }
+
+  @media screen and (min-width: $br-1280) {
     top: size(10rem);
   }
 }
@@ -56,6 +59,10 @@
 
   @media screen and (min-width: $br-1024) {
     right: $wrapper-p-1024;
+  }
+
+  @media screen and (min-width: $br-1199) {
+    right: size(5rem);
   }
 
   @media screen and (min-width: $br-1280) {
@@ -97,8 +104,8 @@
   padding-left: size(6rem);
   padding-right: size(6rem);
   text-transform: uppercase;
-  letter-spacing: size(0.5rem);
   font-weight: 400;
+  text-decoration: underline;
 }
 
 .header-top__links__social a {

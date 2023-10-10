@@ -33,15 +33,17 @@ export default function PlacesMap({ places, sports }: PlacesMapProps) {
   return (
     <div className="places-map">
       <h1>Racket Mapa</h1>
-      <SearchPlace
-        setSearchedPlaceId={setSearchedPlaceId}
-        places={sportPlaces}
-      />
-      <ChooseSportDropdown
-        setSportPlaces={setSportPlaces}
-        allPlaces={places}
-        sports={sports}
-      />
+      <div>
+        <SearchPlace
+          setSearchedPlaceId={setSearchedPlaceId}
+          places={sportPlaces}
+        />
+        <ChooseSportDropdown
+          setSportPlaces={setSportPlaces}
+          allPlaces={places}
+          sports={sports}
+        />
+      </div>
       <div className="places-map-root" ref={mapContainer}></div>
     </div>
   );

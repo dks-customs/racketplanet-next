@@ -4,10 +4,18 @@
 // For convenience: scss function size($rem) returns 1/16 of $rem argument (and scales with user browser font size setting).
 */
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: $ff-main;
   font-size: $fs-p;
   line-height: 1;
+  min-width: size(320rem);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 h1,
