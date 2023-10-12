@@ -19,12 +19,8 @@
 .post-preview-vertical__taxonomies a {
   font-family: $ff-body;
   text-transform: uppercase;
-  font-size: size(14rem);
+  font-size: $fs-small;
   font-weight: 600;
-
-  @media screen and (min-width: $br-768) {
-    font-size: $fs-small;
-  }
 }
 
 .post-preview-vertical__title {
