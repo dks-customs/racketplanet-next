@@ -11,6 +11,12 @@ export const featuredImageFragment = `
           width
         }
       }
+      atrybucjaAutora {
+        attachmentAuthor
+        attachmentUrl
+        license
+        licenseUrl
+      }
     }
   }
 `;

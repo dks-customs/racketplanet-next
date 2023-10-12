@@ -10,7 +10,7 @@
 }
 
 .footer-top {
-  border-top: size(1rem) solid $c-break-dark;
+  border-top: size(1rem) solid black;
   border-bottom: size(1rem) solid $c-break-light;
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@
 .footer-top__logo {
   padding-top: size(20rem);
   padding-bottom: size(20rem);
-  text-align: center;
+  text-align: left;
 
   @media screen and (min-width: $br-768) {
     display: flex;

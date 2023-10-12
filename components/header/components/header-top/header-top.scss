@@ -1,9 +1,9 @@
 .header-top {
   position: relative;
   display: flex;
-  padding-top: size(10rem);
-  padding-bottom: size(10rem);
-  border-bottom: size(1rem) solid black;
+  padding-top: size(13rem);
+  padding-bottom: size(13rem);
+  border-bottom: size(1rem) solid $c-break-dark;
 
   @media screen and (min-width: $br-1280) {
     padding-bottom: size(7rem);
@@ -18,8 +18,12 @@
 }
 
 .header-top__logo svg {
-  width: size(90rem);
+  width: size(70rem);
   height: auto;
+
+  @media screen and (min-width: $br-1280) {
+    width: size(90rem);
+  }
 }
 
 .header-top__menu-btn,
@@ -30,7 +34,7 @@
 
 .header-top__menu-btn {
   left: $wrapper-p;
-  top: size(36rem);
+  top: size(33rem);
 
   @media screen and (min-width: $br-768) {
     left: $wrapper-p-768;
@@ -47,7 +51,7 @@
 }
 
 .header-top__search-btn {
-  top: size(36rem);
+  top: size(33rem);
   right: $wrapper-p;
 
   @media screen and (min-width: $br-768) {

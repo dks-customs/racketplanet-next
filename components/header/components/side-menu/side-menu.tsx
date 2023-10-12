@@ -33,7 +33,12 @@ export default function SideMenu({ categories, sports }: SideMenuProps) {
       <button className="header-top__menu-btn hoverable" onClick={handleShow}>
         <ListSVG />
       </button>
-      <Offcanvas show={show} onHide={handleClose} backdrop={true} scroll={true}>
+      <Offcanvas
+        show={show}
+        onHide={handleClose}
+        backdrop={true}
+        scroll={false}
+      >
         <Offcanvas.Body>
           <nav className="side-menu">
             <button onClick={handleClose} className="side-menu__close">

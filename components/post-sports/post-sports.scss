@@ -1,0 +1,26 @@
+.post-sports {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.post-sports li {
+  margin-bottom: sze(5rem);
+  margin-top: size(5rem);
+}
+
+.post-sports li:not(:last-of-type) {
+  margin-right: size(5rem);
+}
+
+.post-sports li:not(:first-of-type) {
+  margin-left: size(5rem);
+}
+
+.post-sports li a {
+  color: $c-primary;
+}
+
+.post-sports ~ .post-categories {
+  margin-left: size(7rem);
+}

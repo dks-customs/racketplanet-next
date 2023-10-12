@@ -1,9 +1,16 @@
 $c-primary: #007b3e;
+$c-secondary: #10628a;
 $c-break-light: rgb(232, 232, 232);
 $c-break-dark: rgb(186, 186, 186);
 
-$ff-main: "Fira Sans", sans-serif;
-$ff-secondary: "Merriweather", serif;
+//Merriweather
+//Playfair Display
+//Righteous
+$ff-display: var(--font-display);
+$ff-ui: var(--font-ui);
+
+//Lora
+$ff-body: var(--font-body);
 
 $fs-h1: size(48.83rem);
 $fs-h2: size(39.06rem);
@@ -16,10 +23,12 @@ $fs-smaller: size(10.24rem);
 $fs-smallest: size(8.19rem);
 
 $wrapper-mw: size(1200rem);
-$wrapper-p: size(15rem);
+$wrapper-p: size(20rem);
 $wrapper-p-768: size(20rem);
 $wrapper-p-1024: size(25rem);
 $wrapper-p-1280: size(30rem);
+
+$post-content-mw: size(650rem);
 
 $br-375: size(375rem);
 $br-376: size(376rem);

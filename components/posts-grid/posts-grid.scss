@@ -1,0 +1,12 @@
+.posts-grid li:not(:last-child) {
+  margin-bottom: size(30rem);
+  padding-bottom: size(25rem);
+  border-bottom: size(1rem) solid $c-break-light;
+
+  @media screen and (min-width: $br-768) {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+    border-right: size(1rem) solid black;
+  }
+}

@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  font-family: $ff-main;
+  font-family: $ff-ui;
   font-size: $fs-p;
   line-height: 1;
   min-width: size(320rem);
@@ -30,12 +30,15 @@ ul,
 ol,
 li,
 button,
-span {
+span,
+time,
+figure {
   margin: 0;
   padding: 0;
   background: none;
   border: 0;
   outline: none;
+  line-height: 1;
 }
 
 ul,
@@ -45,6 +48,7 @@ ol {
 
 a {
   text-decoration: none;
+  transition: color 0.07s linear;
 }
 
 a.active {
@@ -84,5 +88,22 @@ a:active,
   @media screen and (min-width: $br-1280) {
     padding-left: $wrapper-p-1280;
     padding-right: $wrapper-p-1280;
+  }
+}
+
+.see-more {
+  display: flex;
+  flex-direction: column;
+}
+
+.see-more > h5 {
+  font-size: $fs-h3;
+  text-transform: uppercase;
+  padding-bottom: size(20rem);
+  margin-bottom: size(20rem);
+  border-bottom: size(1rem) solid black;
+
+  @media screen and (min-width: $br-768) {
+    margin-bottom: size(35rem);
   }
 }

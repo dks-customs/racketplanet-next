@@ -1,0 +1,30 @@
+.post-comments {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: size(25rem);
+}
+
+#disqus_thread + .post-comments-btn {
+  margin-top: size(35rem);
+}
+
+.post-comments-btn {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: size(10rem) size(17rem);
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-top: size(25rem);
+  margin-bottom: size(20rem);
+  border-radius: size(3rem);
+}
+
+.post-comments-btn__count {
+  margin-left: size(5rem);
+}
+
+.post-comments-btn svg {
+  margin-left: size(10rem);
+}

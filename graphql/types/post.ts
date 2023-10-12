@@ -15,6 +15,7 @@ export type PostAPI = {
     node: {
       name: string;
       slug: string;
+      databaseId: number;
     };
   };
   categories: {

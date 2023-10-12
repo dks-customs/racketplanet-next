@@ -1,0 +1,35 @@
+.featured-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 66%;
+}
+
+.featured-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  background-color: rgb(245, 245, 245);
+  font-size: 0;
+}
+
+.featured-image-caption {
+  margin-top: size(7rem);
+}
+
+.featured-image-caption,
+.featured-image-caption a,
+.featured-image-caption span {
+  color: rgb(152, 152, 152);
+  font-size: size(14rem);
+  font-weight: 300;
+  font-family: $ff-body;
+}
+
+.featured-image-caption a:hover {
+  color: rgb(107, 107, 107);
+}

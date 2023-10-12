@@ -1,0 +1,22 @@
+.post-categories {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.post-categories li {
+  margin-bottom: sze(5rem);
+  margin-top: size(5rem);
+}
+
+.post-categories li:not(:last-of-type) {
+  margin-right: size(5rem);
+}
+
+.post-categories li:not(:first-of-type) {
+  margin-left: size(5rem);
+}
+
+.post-categories li a {
+  color: $c-secondary;
+}

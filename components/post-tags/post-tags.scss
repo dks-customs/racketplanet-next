@@ -1,0 +1,40 @@
+.post-tags {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-tags h5 {
+  font-weight: 400;
+  letter-spacing: size(0.5rem);
+  font-size: $fs-small;
+  border-bottom: size(1rem) solid $c-break-light;
+  padding-bottom: size(5rem);
+  margin-bottom: size(8rem);
+}
+
+.post-tags ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: size(19rem);
+}
+
+.post-tags ul li {
+  margin-bottom: size(4rem);
+  margin-top: size(4rem);
+}
+
+.post-tags ul li:not(:last-of-type) {
+  margin-right: size(5rem);
+}
+
+.post-tags ul li a {
+  font-family: $ff-display;
+  font-size: size(14rem);
+  text-transform: uppercase;
+  font-weight: 700;
+  color: black;
+
+  @media screen and (min-width: $br-768) {
+    font-size: $fs-p;
+  }
+}

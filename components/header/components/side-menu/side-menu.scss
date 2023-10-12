@@ -39,7 +39,7 @@ ul.side-menu-list:not(:last-of-type) {
 }
 
 ul.side-menu-list:last-of-type {
-  padding-bottom: size(3rem);
+  padding-bottom: size(10rem);
 }
 
 .side-menu-list > li > a,
@@ -80,7 +80,11 @@ ul.side-menu-list:last-of-type {
 .side-menu__social {
   border-top: size(1rem) solid $c-break-dark;
   margin-top: auto;
-  margin-bottom: size(3rem);
+  padding-bottom: size(12rem);
+
+  @media screen and (min-width: $br-768) {
+    padding-bottom: size(8rem);
+  }
 }
 
 .side-menu__social > h5 {

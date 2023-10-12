@@ -13,6 +13,9 @@ import "./post.scss";
 import pageMetadata from "../../../util/pageMetadata";
 import notFoundMetadata from "../../../util/notFoundMetadata";
 import PostsGrid from "../../../components/posts-grid/posts-grid";
+import FeaturedImage from "../../../components/featured-image/featured-image";
+import PostExcerpt from "../../../components/post-excerpt/post-excerpt";
+import prepareExcerpt from "../../../util/prepareExcerpt";
 
 type PostProps = {
   params: {
@@ -25,27 +28,54 @@ export default async function Post({ params }: PostProps) {
   const post = await getPost(params.pid);
 
   if (post && post.slug === params.slug) {
+    const featuredImage = post.featuredImage?.node;
+
     return (
       <main className="post layout-container">
         <article>
-          <header>
-            <PostSports sports={post.sports.nodes} />
-            <h1>{post.title}</h1>
-            <PostCategories categories={post.categories.nodes} />
-            {/* FEATURED IMAGE */}
-            <PostAuthor
-              name={post.author.node.name}
-              slug={post.author.node.slug}
-            />
-            <PostDate date={post.date} />
+          <header className="post-header">
+            <div className="post-header__taxonomies">
+              <PostSports sports={post.sports.nodes} />
+              <PostCategories categories={post.categories.nodes} />
+            </div>
+            <h1 className="post-header__title">{post.title}</h1>
+            {prepareExcerpt(post.excerpt) && (
+              <div className="post-header__excerpt">
+                <PostExcerpt excerpt={prepareExcerpt(post.excerpt)} />
+              </div>
+            )}
+            {featuredImage && (
+              <div className="post-header__image">
+                <FeaturedImage
+                  src={featuredImage?.sourceUrl}
+                  loading="eager"
+                  alt={post.title}
+                  caption={featuredImage?.atrybucjaAutora}
+                  availableSizes={featuredImage.mediaDetails.sizes}
+                />
+              </div>
+            )}
+            <div className="post-header__meta">
+              <PostAuthor
+                name={post.author.node.name}
+                id={post.author.node.databaseId}
+              />
+              {","}&nbsp;
+              <PostDate date={post.date} />
+            </div>
           </header>
           <PostContent content={post.content} />
-          <footer>
+          <footer className="post-footer">
             <PostTags tags={post.tags.nodes} />
             <PostComments id={post.id} title={post.title} />
           </footer>
         </article>
-        {post.morePosts.length > 0 && <PostsGrid posts={post.morePosts} />}
+        {post.morePosts.length > 0 && (
+          <div className="post-see-more see-more">
+            <h5>Zobacz też</h5>
+            <PostsGrid posts={post.morePosts} />
+          </div>
+        )}
       </main>
     );
   } else {

@@ -5,5 +5,10 @@ type PostContentProps = {
 };
 
 export default function PostContent({ content }: PostContentProps) {
-  return <main dangerouslySetInnerHTML={{ __html: content }} />;
+  return (
+    <main
+      className="post-content"
+      dangerouslySetInnerHTML={{ __html: content }}
+    />
+  );
 }

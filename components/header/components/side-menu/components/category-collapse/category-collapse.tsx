@@ -29,7 +29,7 @@ export default function CategoryCollapse({ category }: CategoryCollapseProps) {
         <ul id={`category-${category.id}-collapse`}>
           {category.children.nodes.map((child) => {
             return (
-              <li>
+              <li key={`category-child-${child.slug}`}>
                 <ActiveLinkClient
                   href={`${routes.CATEGORY}/${child.slug}`}
                   key={`collapse-item-${child.id}`}

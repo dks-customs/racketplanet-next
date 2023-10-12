@@ -27,6 +27,7 @@ export default async function getPost(wpId: string) {
         ${featuredImageFragment}
         author {
           node {
+            databaseId
             name
             slug
           }

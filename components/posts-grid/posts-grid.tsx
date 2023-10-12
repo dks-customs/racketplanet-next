@@ -15,9 +15,9 @@ export default function PostsGrid({
 }: PostsGridProps) {
   if (posts.length > 0) {
     return (
-      <ul className="posts-grid">
+      <ul className="posts-grid row gx-1 gx-sm-5 gx-lg-5">
         {posts.map((post) => (
-          <li key={`posts-grid-${post.id}`}>
+          <li className="col-12 col-md-4" key={`posts-grid-${post.id}`}>
             <PostPreview
               variant="vertical"
               post={post}

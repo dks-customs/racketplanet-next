@@ -1,13 +1,18 @@
-import { Gothic_A1, Merriweather } from "next/font/google";
+import { Playfair_Display, Fira_Sans, Noto_Serif } from "next/font/google";
 
-export const gothic_A1 = Gothic_A1({
-  weight: ["400", "500", "600", "700"],
+export const displayFont = Playfair_Display({
   subsets: ["latin"],
-  display: "swap",
+  variable: "--font-display",
 });
 
-export const merriweather = Merriweather({
-  weight: ["300", "400", "700"],
+export const uiFont = Fira_Sans({
+  weight: ["300", "400", "500", "600"],
   subsets: ["latin"],
-  display: "swap",
+  variable: "--font-ui",
+});
+
+export const bodyFont = Noto_Serif({
+  weight: ["400", "500", "600"],
+  subsets: ["latin"],
+  variable: "--font-body",
 });
