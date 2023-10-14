@@ -11,9 +11,11 @@
 .post-comments-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  padding: size(10rem) size(17rem);
+  height: size(50rem);
+  width: size(250rem);
   text-transform: uppercase;
   font-weight: 300;
   margin-top: size(25rem);

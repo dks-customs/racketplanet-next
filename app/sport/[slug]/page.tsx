@@ -26,22 +26,33 @@ export default async function Sport({ params }: SportProps) {
 
     return (
       <main className="sport layout-container">
-        <h1>{sport.name}</h1>
-        <ul className="sport-subpages">
-          {sport.pages.map((page) => (
-            <li key={page.id}>
-              <Link
-                href={`${routes.SPORT}/${params.slug}/${subpageSlug(
-                  page.slug,
-                  params.slug
-                )}`}
-              >
-                {subpageTitle(page.title)}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <PostsList posts={sport.posts.map((item) => item.node)} />
+        {sport.pages.length > 0 && (
+          <header className="archive-header">
+            <h1 className="archive-title">{sport.name}</h1>
+            <ul className="sport-subpages">
+              {sport.pages.map((page) => (
+                <li key={page.id}>
+                  <Link
+                    href={`${routes.SPORT}/${params.slug}/${subpageSlug(
+                      page.slug,
+                      params.slug
+                    )}`}
+                    className="hoverable"
+                  >
+                    {subpageTitle(page.title)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </header>
+        )}
+        {sport.pages.length === 0 && (
+          <h1 className="archive-title">{sport.name}</h1>
+        )}
+        <PostsList
+          posts={sport.posts.map((item) => item.node)}
+          showSport={false}
+        />
         {sport.hasNextPage && (
           <LoadMore afterCursor={sport.endCursor} sportSlug={params.slug} />
         )}

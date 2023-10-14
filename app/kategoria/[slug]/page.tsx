@@ -21,9 +21,14 @@ export default async function Category({ params }: CategoryProps) {
 
   if (category) {
     return (
-      <main className="category layout-container">
-        <h1>{category.name}</h1>
-        <PostsList posts={category.posts.map((item) => item.node)} />
+      <main className="category archive layout-container">
+        <header className="archive-header">
+          <h1 className="archive-title">{category.name}</h1>
+        </header>
+        <PostsList
+          posts={category.posts.map((item) => item.node)}
+          showSport={false}
+        />
         {category.hasNextPage && (
           <LoadMore
             afterCursor={category.endCursor}

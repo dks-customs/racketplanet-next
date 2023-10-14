@@ -21,8 +21,10 @@ export default async function Tag({ params }: TagProps) {
 
   if (tag) {
     return (
-      <main className="tag layout-container">
-        <h1>{tag.name}</h1>
+      <main className="tag archive layout-container">
+        <header className="archive-header">
+          <h1 className="archive-title">#{tag.name}</h1>
+        </header>
         <PostsList posts={tag.posts.map((item) => item.node)} />
         {tag.hasNextPage && (
           <LoadMore afterCursor={tag.endCursor} tagSlug={params.slug} />

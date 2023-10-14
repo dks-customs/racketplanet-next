@@ -1,3 +1,10 @@
+.post-preview-vertical {
+  @media screen and (min-width: $br-768) {
+    padding-left: size(7rem);
+    padding-right: size(7rem);
+  }
+}
+
 .post-preview-vertical__image {
   margin-bottom: size(15rem);
   display: block;

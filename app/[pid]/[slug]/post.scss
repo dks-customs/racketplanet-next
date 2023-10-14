@@ -29,6 +29,12 @@
   }
 }
 
+.post-header__taxonomies .post-sports ~ .post-categories {
+  @media screen and (min-width: $br-768) {
+    margin-left: size(12rem);
+  }
+}
+
 .post-header__title {
   font-family: $ff-display;
   font-size: $fs-h3;
@@ -142,6 +148,6 @@
   margin-bottom: size(40rem);
 
   @media screen and (min-width: $br-768) {
-    margin-bottom: size(50rem);
+    margin-bottom: size(35rem);
   }
 }

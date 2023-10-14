@@ -3,11 +3,11 @@
   display: flex;
   padding-top: size(13rem);
   padding-bottom: size(13rem);
-  border-bottom: size(1rem) solid $c-break-dark;
+  border-bottom: size(1rem) solid rgb(193, 193, 193);
 
   @media screen and (min-width: $br-1280) {
-    padding-bottom: size(7rem);
-    border-bottom: size(1rem) solid $c-break-light;
+    padding-bottom: size(13rem);
+    border-bottom: size(1rem) solid rgb(91, 91, 91);
     align-items: flex-start;
   }
 }
@@ -29,6 +29,7 @@
 .header-top__menu-btn,
 .header-top__search-btn,
 .header-top__links {
+  color: black;
   position: absolute;
 }
 

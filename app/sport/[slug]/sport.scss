@@ -1,0 +1,19 @@
+.sport-subpages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: size(8rem);
+}
+
+.sport-subpages li:not(:last-of-type) {
+  padding-right: size(8rem);
+  border-right: size(0.1rem) solid $c-break-dark;
+  margin-right: size(8rem);
+}
+
+.sport-subpages a {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: $fs-small;
+}

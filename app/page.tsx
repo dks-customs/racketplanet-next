@@ -3,13 +3,16 @@ import pageMetadata from "../util/pageMetadata";
 import LoadMore from "../components/load-more/load-more";
 import getPostsPreviews from "../graphql/getPostsPreviews";
 import PostsList from "../components/posts-list/posts-list";
+import Hero from "../components/post-preview/components/hero/hero";
 
 export default async function Home() {
   const posts = await getPostsPreviews();
 
+  const hero = posts?.items.shift();
+
   return (
     <main className="index layout-container">
-      <h1>Strona główna</h1>
+      {hero && <Hero post={hero.node} />}
       {posts && (
         <>
           <PostsList posts={posts.items.map((item) => item.node)} />

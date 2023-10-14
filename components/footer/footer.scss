@@ -10,7 +10,7 @@
 }
 
 .footer-top {
-  border-top: size(1rem) solid black;
+  border-top: size(1rem) solid $c-break-light;
   border-bottom: size(1rem) solid $c-break-light;
   display: flex;
   flex-direction: column;

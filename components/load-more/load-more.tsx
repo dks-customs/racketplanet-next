@@ -94,9 +94,15 @@ export default function LoadMore({
       {variant === "grid" && <PostsGrid posts={posts} />}
       {variant === "list" && <PostsList posts={posts} />}
       {after && (
-        <Button className="more-posts-btn" variant="primary" onClick={loadMore}>
-          {loading ? <Spinner /> : "Załaduj więcej"}
-        </Button>
+        <div className="more-posts-btn-container">
+          <Button
+            className="more-posts-btn"
+            variant="primary"
+            onClick={loadMore}
+          >
+            {loading ? <Spinner /> : "Załaduj więcej"}
+          </Button>
+        </div>
       )}
     </>
   );
