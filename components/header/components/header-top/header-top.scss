@@ -3,11 +3,11 @@
   display: flex;
   padding-top: size(13rem);
   padding-bottom: size(13rem);
-  border-bottom: size(1rem) solid rgb(193, 193, 193);
+  border-bottom: size(1rem) solid $c-break-dark;
 
   @media screen and (min-width: $br-1280) {
     padding-bottom: size(13rem);
-    border-bottom: size(1rem) solid rgb(91, 91, 91);
+    border-bottom: size(1rem) solid rgb(200, 200, 200);
     align-items: flex-start;
   }
 }
@@ -22,7 +22,7 @@
   height: auto;
 
   @media screen and (min-width: $br-1280) {
-    width: size(90rem);
+    width: size(120rem);
   }
 }
 
