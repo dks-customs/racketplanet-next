@@ -152,3 +152,25 @@ a:active,
     margin-bottom: size(35rem);
   }
 }
+
+.posts-list + .more-posts-btn-container,
+.posts-list-basic + .more-posts-btn-container {
+  display: flex;
+  justify-content: center;
+  max-width: calc(2 / 3 * $wrapper-mw);
+  margin-bottom: size(27rem);
+}
+
+.posts-list-basic + .more-posts-btn-container {
+  margin-top: size(27rem);
+}
+
+.posts-list + .more-posts-btn-container > .more-posts-btn,
+.posts-list-basic + .more-posts-btn-container > .more-posts-btn {
+  margin-left: auto;
+  margin-right: auto;
+  width: size(200rem);
+  height: size(45rem);
+  text-transform: uppercase;
+  font-weight: 300;
+}

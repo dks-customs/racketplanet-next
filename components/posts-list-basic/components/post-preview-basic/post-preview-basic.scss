@@ -1,0 +1,39 @@
+.post-preview-basic {
+  padding-left: size(20rem);
+}
+
+.post-preview-basic__date {
+  font-size: $fs-small;
+  letter-spacing: size(0.2rem);
+  color: rgb(80, 80, 80);
+  margin-bottom: size(8rem);
+  color: gray;
+  font-weight: 300;
+}
+
+.post-preview-basic__taxonomies {
+  display: flex;
+  align-items: center;
+}
+
+.post-preview-basic__taxonomies {
+  font-size: $fs-small;
+  font-family: $ff-body;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: size(5rem);
+}
+
+.post-preview-basic__title a {
+  font-family: $ff-display;
+  font-size: size(25rem);
+  font-weight: 600;
+  color: black;
+  line-height: 1.25;
+  display: block;
+
+  @media screen and (min-width: $br-576) {
+    line-height: 1.3;
+    font-size: $fs-h4;
+  }
+}

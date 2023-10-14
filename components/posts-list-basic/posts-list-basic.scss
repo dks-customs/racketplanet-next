@@ -1,0 +1,22 @@
+.posts-list-basic {
+  max-width: calc(2 / 3 * $wrapper-mw);
+  border-left: size(1rem) solid $c-break-dark;
+
+  @media screen and (min-width: $br-1200) {
+    padding-right: size(30rem);
+  }
+}
+
+.posts-list-basic > li {
+  padding-bottom: size(20rem);
+}
+
+.posts-list-basic > li:not(:last-child) {
+  border-bottom: size(1rem) solid $c-break-light;
+  margin-bottom: size(20rem);
+}
+
+.posts-list-basic + .posts-list-basic {
+  padding-top: size(20rem);
+  border-top: size(1rem) solid $c-break-light;
+}

@@ -4,7 +4,6 @@ import { Button, Fade, Spinner } from "react-bootstrap";
 import { APIPostPreview } from "../../graphql/types/post-preview";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import Link from "next/link";
 import getCategory from "../../graphql/getCategory";
 import getSport from "../../graphql/getSport";
 import getPostsPreviews from "../../graphql/getPostsPreviews";
@@ -12,6 +11,7 @@ import getTag from "../../graphql/getTag";
 import PostsGrid from "../posts-grid/posts-grid";
 import PostsList from "../posts-list/posts-list";
 import getAuthor from "../../graphql/getAuthor";
+import PostsListBasic from "../posts-list-basic/posts-list-basic";
 
 type MorePostsButtonProps = {
   afterCursor: string;
@@ -19,7 +19,7 @@ type MorePostsButtonProps = {
   sportSlug?: string;
   tagSlug?: string;
   authorId?: string;
-  variant?: "list" | "grid";
+  variant?: "list" | "grid" | "basic";
 };
 
 export default function LoadMore({
@@ -93,6 +93,7 @@ export default function LoadMore({
     <>
       {variant === "grid" && <PostsGrid posts={posts} />}
       {variant === "list" && <PostsList posts={posts} />}
+      {variant === "basic" && <PostsListBasic posts={posts} />}
       {after && (
         <div className="more-posts-btn-container">
           <Button

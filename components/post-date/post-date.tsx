@@ -6,14 +6,27 @@ TimeAgo.addDefaultLocale(pl);
 
 type PostDateProps = {
   date: string;
+  classic?: boolean;
 };
 
-export default function PostDate({ date }: PostDateProps) {
-  const timeAgo = new TimeAgo("pl_PL");
+export default function PostDate({ date, classic = false }: PostDateProps) {
+  const jsDate = new Date(date);
 
-  return (
-    <div className="post-date">
-      <time>{timeAgo.format(new Date(date))}</time>
-    </div>
-  );
+  if (classic) {
+    return (
+      <div className="post-date">
+        <time dateTime={jsDate.toDateString()}>
+          {jsDate.getDate()}.{jsDate.getMonth()}.{jsDate.getFullYear()}
+        </time>
+      </div>
+    );
+  } else {
+    const timeAgo = new TimeAgo("pl_PL");
+
+    return (
+      <div className="post-date">
+        <time dateTime={jsDate.toDateString()}>{timeAgo.format(jsDate)}</time>
+      </div>
+    );
+  }
 }

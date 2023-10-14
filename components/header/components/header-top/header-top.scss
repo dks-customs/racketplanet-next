@@ -3,7 +3,7 @@
   display: flex;
   padding-top: size(13rem);
   padding-bottom: size(13rem);
-  border-bottom: size(1rem) solid $c-break-dark;
+  border-bottom: size(1rem) solid black;
 
   @media screen and (min-width: $br-1280) {
     padding-bottom: size(13rem);
