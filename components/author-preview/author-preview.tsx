@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { routes } from "../../constants/constants";
 import "./author-preview.scss";
-import removeAccents from "remove-accents";
 import authorSlug from "../../util/authorSlug";
 
 type AuthorPreviewProps = {
