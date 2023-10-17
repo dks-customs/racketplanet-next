@@ -29,10 +29,15 @@
 
 .places-map-search {
   display: flex;
+  flex-direction: column;
   margin-bottom: size(30rem);
   margin-left: auto;
   margin-right: auto;
-  max-width: size(450rem);
+  max-width: size(475rem);
+
+  @media screen and (min-width: $br-768) {
+    flex-direction: row;
+  }
 }
 
 .places-map-map {
@@ -52,4 +57,58 @@
 .places-map-root {
   border-radius: size(5rem);
   border: 1px solid black;
+}
+
+.place-marker {
+  display: flex;
+  flex-direction: column;
+}
+
+.place-marker h2 {
+  font-weight: 800;
+  font-family: $ff-display;
+  font-size: $fs-p;
+  line-height: 1.2;
+  margin-bottom: size(10rem);
+  text-transform: uppercase;
+}
+
+.places-marker-sports {
+  display: flex;
+  line-height: 1.2;
+  margin-bottom: size(10rem);
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.places-marker-sports a {
+  line-height: 1;
+  color: $c-excerpt-gray;
+  text-transform: uppercase;
+  font-family: $ff-ui;
+  font-size: size(14rem);
+  display: inline-flex;
+}
+
+.place-marker > p {
+  margin-bottom: size(13rem);
+  color: $c-excerpt-gray;
+  font-size: size(14rem);
+  font-family: $ff-ui;
+  line-height: 1.2;
+}
+
+.place-marker > a {
+  font-weight: 500;
+  font-family: $ff-ui;
+  font-size: size(14rem);
+}
+
+.place-marker > a:not(:last-child) {
+  margin-bottom: size(5rem);
+}
+
+.maplibregl-popup-close-button {
+  width: 20px;
+  height: 20px;
 }

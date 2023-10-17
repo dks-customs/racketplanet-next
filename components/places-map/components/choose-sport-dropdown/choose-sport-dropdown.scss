@@ -1,9 +1,10 @@
-.search-place-dropdown {
-  margin-left: size(5rem);
-}
-
 .search-place-dropdown button {
-  width: size(150rem);
+  width: 100%;
+
+  @media screen and (min-width: $br-768) {
+    width: size(150rem);
+    margin-left: size(5rem);
+  }
 }
 
 .search-place-dropdown li {

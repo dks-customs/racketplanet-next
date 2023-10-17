@@ -1,3 +1,61 @@
 .search-place {
   flex-grow: 1;
+  margin-bottom: size(5rem);
+
+  @media screen and (min-width: $br-768) {
+    margin-bottom: 0;
+  }
+}
+
+.search-place .form-control {
+  border: size(1rem) solid $c-break-dark;
+}
+
+.search-place .form-control::placeholder {
+  color: $c-break-dark;
+}
+
+.search-place .dropdown-menu {
+  overflow-x: hidden !important;
+}
+
+.search-place .dropdown-item {
+  padding-top: size(10rem);
+  padding-bottom: size(10rem);
+}
+
+.search-place .dropdown-item:nth-child(2n) {
+  background-color: rgb(245, 245, 245);
+}
+
+.search-place-option {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-place-option__sports {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-place-option__sports span {
+  margin-right: size(3rem);
+  text-transform: uppercase;
+  font-size: size(12rem);
+}
+
+.search-place-option__name {
+  font-weight: 600;
+}
+
+.search-place-option__name,
+.search-place-option__sports {
+  margin-bottom: size(5rem);
+}
+
+.search-place-option__name,
+.search-place-option__sports,
+.search-place-option__address {
+  font-size: size(14rem);
+  font-family: $ff-ui;
 }

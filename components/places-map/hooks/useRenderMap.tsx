@@ -19,7 +19,7 @@ export default function useRenderMap(
         container: mapContainer.current || "",
         style: maptilersdk.MapStyle.STREETS,
         center: [19.1451, 51.9194],
-        zoom: 5.8,
+        zoom: 5,
       });
     }
 
@@ -28,7 +28,7 @@ export default function useRenderMap(
 
       if (!searchedPlaceId) {
         map.current?.setCenter([19.1451, 51.9194]);
-        map.current?.zoomTo(5.8);
+        map.current?.zoomTo(5);
       }
 
       const newMarkers: maptilersdk.Marker[] = [];
@@ -42,23 +42,23 @@ export default function useRenderMap(
             <div class="places-marker-sports">
               ${place.sports.nodes.map(
                 (sport) =>
-                  `<a href="${routes.SPORT}/${sport.slug}">${sport.name}</a>`
+                  `<a href="${routes.SPORT}/${sport.slug}" class="hoverable">${sport.name}</a>`
               )}
             </div>
           `;
 
           const popup = new maptilersdk.Popup().setHTML(`
           <div class="place-marker">
-            <p>${name}</p>
+            <h2>${name}</h2>
             ${sports}
             <p>${address}</p>
             ${description ? `<p>${place.placeAcf.description}</p>` : ""}
             ${
               webpage
-                ? `<a href="${place.placeAcf.webpage}" target="_blank">Strona internetowa&nbsp;&rarr;</a>`
+                ? `<a href="${place.placeAcf.webpage}" target="_blank" class="hoverable">Strona internetowa&nbsp;&rarr;</a>`
                 : ""
             }
-            <a href="http://www.google.com/maps/place/${
+            <a class="hoverable" href="http://www.google.com/maps/place/${
               place.placeAcfOsm.lat
             },${
             place.placeAcfOsm.lng
@@ -67,7 +67,7 @@ export default function useRenderMap(
           `);
 
           const marker = new maptilersdk.Marker({
-            color: searchedPlaceId === place.placeId ? "#007b3e" : "#8B4513",
+            color: searchedPlaceId === place.placeId ? "#007b3e" : "#10628a",
           })
             .setLngLat([lng, lat])
             .setPopup(popup);

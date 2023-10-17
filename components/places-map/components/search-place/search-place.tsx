@@ -88,16 +88,17 @@ export default function SearchPlace({
         <div
           onClick={() => setSearchedPlaceId(option.placeId)}
           key={`search-suggestion-${option.placeId}`}
+          className="search-place-option"
         >
-          <div>
+          <div className="search-place-option__sports">
             {option.sports.map((sport: string) => (
               <span key={`search-suggestion-${option.placeId}-${sport}`}>
                 {sport}
               </span>
             ))}
           </div>
-          <div>{option.name}</div>
-          <div>{option.address}</div>
+          <div className="search-place-option__name">{option.name}</div>
+          <div className="search-place-option__address">{option.address}</div>
         </div>
       )}
     />
