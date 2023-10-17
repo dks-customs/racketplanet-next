@@ -1,9 +1,8 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import { APIPlace } from "../../../../graphql/types/place";
-import "./search-place.scss";
 import { AsyncTypeahead } from "react-bootstrap-typeahead";
-import SearchSVG from "../../../svg/search";
 import removeAccents from "remove-accents";
+import "./search-place.scss";
 
 type PlacesMapSearchInputProps = {
   setSearchedPlaceId: Dispatch<SetStateAction<APIPlace["placeId"]>>;
@@ -75,34 +74,32 @@ export default function SearchPlace({
   };
 
   return (
-    <div>
-      <AsyncTypeahead
-        filterBy={filterSuggestionsBySearchText}
-        id="async-example"
-        isLoading={false}
-        labelKey="name"
-        minLength={3}
-        onSearch={initSuggestions}
-        options={suggestions}
-        placeholder="Wyszukaj po mieście, sporcie lub nazwie"
-        renderMenuItemChildren={(option: Suggestion, props) => (
-          <div
-            onClick={() => setSearchedPlaceId(option.placeId)}
-            key={`search-suggestion-${option.placeId}`}
-          >
-            <div>
-              {option.sports.map((sport: string) => (
-                <span key={`search-suggestion-${option.placeId}-${sport}`}>
-                  {sport}
-                </span>
-              ))}
-            </div>
-            <div>{option.name}</div>
-            <div>{option.address}</div>
+    <AsyncTypeahead
+      filterBy={filterSuggestionsBySearchText}
+      id="async-example"
+      isLoading={false}
+      labelKey="name"
+      minLength={3}
+      onSearch={initSuggestions}
+      options={suggestions}
+      placeholder="Wyszukaj po mieście, sporcie lub nazwie"
+      className="search-place"
+      renderMenuItemChildren={(option: Suggestion, props) => (
+        <div
+          onClick={() => setSearchedPlaceId(option.placeId)}
+          key={`search-suggestion-${option.placeId}`}
+        >
+          <div>
+            {option.sports.map((sport: string) => (
+              <span key={`search-suggestion-${option.placeId}-${sport}`}>
+                {sport}
+              </span>
+            ))}
           </div>
-        )}
-      />
-      <SearchSVG />
-    </div>
+          <div>{option.name}</div>
+          <div>{option.address}</div>
+        </div>
+      )}
+    />
   );
 }

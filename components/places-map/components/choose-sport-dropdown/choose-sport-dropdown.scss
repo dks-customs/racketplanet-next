@@ -1,0 +1,22 @@
+.search-place-dropdown {
+  margin-left: size(5rem);
+}
+
+.search-place-dropdown button {
+  width: size(150rem);
+}
+
+.search-place-dropdown li {
+  padding: size(7rem) size(15rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  display: block;
+  cursor: pointer;
+  font-size: size(10.9rem);
+}
+
+.search-place-dropdown li:active,
+.search-place-dropdown li:hover,
+.search-place-dropdown li:focus {
+  background: none;
+}
