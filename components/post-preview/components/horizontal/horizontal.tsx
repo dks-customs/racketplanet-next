@@ -12,6 +12,7 @@ type PostPreviewHorizontalProps = {
   post: APIPostPreview;
   showSport: boolean;
   showCategory: boolean;
+  small?: boolean;
 };
 
 export default function PostPreviewHorizontal({
@@ -20,6 +21,8 @@ export default function PostPreviewHorizontal({
   showSport = true,
 }: PostPreviewHorizontalProps) {
   const featuredImage = post.featuredImage?.node;
+  const categories = post.categories.nodes;
+  const sports = post.sports.nodes;
 
   return (
     <article className="post-preview-horizontal">
@@ -27,12 +30,11 @@ export default function PostPreviewHorizontal({
         <div className="post-preview-horizontal__text__date">
           <PostDate date={post.date} />
         </div>
-        {(showCategory || showSport) && (
+        {((showCategory && categories.length > 0) ||
+          (showSport && sports.length > 0)) && (
           <div className="post-preview-horizontal__text__taxonomies">
-            {showSport && <PostSports sports={post.sports.nodes} />}
-            {showCategory && (
-              <PostCategories categories={post.categories.nodes} />
-            )}
+            {showSport && <PostSports sports={sports} />}
+            {showCategory && <PostCategories categories={categories} />}
           </div>
         )}
         <h2 className="post-preview-horizontal__text__title">

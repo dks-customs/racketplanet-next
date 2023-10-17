@@ -1,22 +1,37 @@
 .posts-list-basic {
-  max-width: calc(2 / 3 * $wrapper-mw);
-  border-left: size(1rem) solid $c-break-dark;
+  margin-bottom: size(30rem);
+}
 
-  @media screen and (min-width: $br-1200) {
-    padding-right: size(30rem);
+.posts-list-basic > li:hover .post-preview-basic__main__text__title {
+  color: $c-primary;
+}
+
+.posts-list-basic li:not(:last-child) {
+  padding-bottom: size(30rem);
+  border-bottom: size(1rem) solid $c-break-light;
+  margin-bottom: size(27rem);
+
+  @media screen and (min-width: $br-576) {
+    margin-bottom: size(30rem);
+  }
+
+  @media screen and (min-width: $br-768) {
+    padding-bottom: size(40rem);
+    margin-bottom: size(40rem);
   }
 }
 
-.posts-list-basic > li {
-  padding-bottom: size(20rem);
-}
-
-.posts-list-basic > li:not(:last-child) {
-  border-bottom: size(1rem) solid $c-break-light;
-  margin-bottom: size(20rem);
-}
-
 .posts-list-basic + .posts-list-basic {
-  padding-top: size(20rem);
+  padding-top: size(27rem);
   border-top: size(1rem) solid $c-break-light;
+  margin-top: size(30rem);
+
+  @media screen and (min-width: $br-576) {
+    margin-top: size(30rem);
+  }
+
+  @media screen and (min-width: $br-768) {
+    padding-top: size(40rem);
+    margin-top: size(40rem);
+  }
 }

@@ -1,0 +1,48 @@
+.search-form {
+  display: flex;
+  margin-bottom: size(45rem);
+}
+
+.search-form > div {
+  width: 100%;
+}
+
+.search-form input {
+  border-color: $c-break-dark;
+}
+
+.search-form input::placeholder {
+  color: $c-break-dark;
+}
+
+.search-form input,
+.search-form button {
+  height: size(40rem);
+}
+
+.search-form button .spinner-border {
+  height: size(25rem);
+  width: size(25rem);
+  --bs-spinner-border-width: 2.5px;
+}
+
+.search-form button {
+  margin-left: size(5rem);
+  width: 30%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: size(5rem);
+  background-color: $c-secondary;
+
+  @media screen and (min-width: $br-576) {
+    width: 20%;
+  }
+}
+
+.search-form button svg {
+  margin-left: size(10rem);
+  width: size(10rem);
+  height: size(10rem);
+}

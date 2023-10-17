@@ -6,6 +6,7 @@ type PostsListProps = {
   posts: APIPostPreview[];
   showSport?: boolean;
   showCategory?: boolean;
+  detailed?: boolean;
 };
 
 export default function PostsList({

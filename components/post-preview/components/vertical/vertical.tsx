@@ -20,6 +20,8 @@ export default function PostPreviewVertical({
   showSport = true,
 }: PostPreviewVerticalProps) {
   const featuredImage = post.featuredImage?.node;
+  const categories = post.categories.nodes;
+  const sports = post.sports.nodes;
 
   return (
     <article className="post-preview-vertical">
@@ -34,7 +36,8 @@ export default function PostPreviewVertical({
           loading="lazy"
         />
       </Link>
-      {(showCategory || showSport) && (
+      {((showCategory && categories.length > 0) ||
+        (showSport && sports.length > 0)) && (
         <div className="post-preview-vertical__taxonomies">
           {showSport && <PostSports sports={post.sports.nodes} />}
           {showCategory && (

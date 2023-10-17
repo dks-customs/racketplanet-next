@@ -7,7 +7,7 @@
 
   @media screen and (min-width: $br-1280) {
     padding-bottom: size(13rem);
-    border-bottom: size(1rem) solid rgb(200, 200, 200);
+    border-bottom: size(1rem) solid $c-break-light;
     align-items: flex-start;
   }
 }

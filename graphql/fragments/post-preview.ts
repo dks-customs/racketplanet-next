@@ -9,6 +9,11 @@ export const postPreviewFragment = `
 	date
 	excerpt
 	${featuredImageFragment}
+	author {
+    node {
+      name
+		}
+  }
 	categories {
 		nodes {
 			name

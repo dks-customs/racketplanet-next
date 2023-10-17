@@ -21,10 +21,10 @@
 .post-header__taxonomies a {
   font-family: $ff-body;
   font-size: size(14rem);
-  font-weight: 600;
+  font-weight: 400;
 
   @media screen and (min-width: $br-768) {
-    font-weight: 600;
+    font-weight: 400;
     font-size: $fs-p;
   }
 }

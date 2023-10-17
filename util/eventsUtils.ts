@@ -46,9 +46,11 @@ const isFutureEvent = (event: APIEvent) => {
   const begin = new Date(specDateString(event.eventAcf.dateBegin));
   const end =
     event.eventAcf.dateEnd && new Date(specDateString(event.eventAcf.dateEnd));
+
   const dayDate = (date) => {
-    return `${date.getDate()}-${date.getMonth()}-${date.getFullYear}`;
+    return `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
   };
+
   if (end) {
     return end > nowPoland || dayDate(end) === dayDate(nowPoland);
   } else {

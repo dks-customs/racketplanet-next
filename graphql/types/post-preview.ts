@@ -9,6 +9,11 @@ export type APIPostPreview = {
   date: string;
   excerpt?: string;
   featuredImage?: FeaturedImageAPI;
+  author: {
+    node: {
+      name: string;
+    };
+  };
   categories: {
     nodes: {
       name: string;

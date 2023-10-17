@@ -7,6 +7,10 @@
   }
 }
 
+.post-preview-horizontal.small {
+  flex-direction: row;
+}
+
 .post-preview-horizontal__text {
   @media screen and (min-width: $br-576) {
     order: 2;
@@ -40,7 +44,7 @@
   font-size: $fs-small;
   font-family: $ff-body;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: size(10rem);
 
   @media screen and (min-width: $br-768) {
@@ -77,6 +81,9 @@
     line-height: 1.3;
     font-size: size(20rem);
   }
+}
+
+.post-preview-horizontal__text__title small {
 }
 
 .post-preview-horizontal__text__excerpt {

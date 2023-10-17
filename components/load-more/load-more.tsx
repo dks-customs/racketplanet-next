@@ -98,7 +98,7 @@ export default function LoadMore({
         <div className="more-posts-btn-container">
           <Button
             className="more-posts-btn"
-            variant="primary"
+            variant="secondary"
             onClick={loadMore}
           >
             {loading ? <Spinner /> : "Załaduj więcej"}

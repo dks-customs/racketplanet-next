@@ -4,12 +4,13 @@ import { Modal } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { APIPostPreview } from "../../../../graphql/types/post-preview";
 import getPostsPreviews from "../../../../graphql/getPostsPreviews";
-import PostsGrid from "../../../posts-grid/posts-grid";
 import LoadMore from "../../../load-more/load-more";
-import "./search-modal.scss";
 import SearchForm from "./components/search-form";
 import { usePathname } from "next/navigation";
 import SearchSVG from "../../../svg/search";
+import PostsListBasic from "../../../posts-list-basic/posts-list-basic";
+
+import "./search-modal.scss";
 
 export default function SearchModal() {
   const pathname = usePathname();
@@ -47,7 +48,12 @@ export default function SearchModal() {
       <button className="header-top__search-btn hoverable" onClick={handleShow}>
         <SearchSVG />
       </button>
-      <Modal show={show} fullscreen={true} onHide={handleClose}>
+      <Modal
+        show={show}
+        fullscreen={true}
+        onHide={handleClose}
+        className="search-modal"
+      >
         <Modal.Header closeButton />
         <Modal.Body>
           <div className="search-modal-body layout-container">
@@ -58,8 +64,10 @@ export default function SearchModal() {
               </h1>
             )}
             {posts.length === 0 && query && !loading && <div>Brak wyników</div>}
-            {posts.length > 0 && <PostsGrid posts={posts} />}
-            {hasNextPage && <LoadMore afterCursor={endCursor} />}
+            {posts.length > 0 && <PostsListBasic posts={posts} />}
+            {hasNextPage && (
+              <LoadMore afterCursor={endCursor} variant="basic" />
+            )}
           </div>
         </Modal.Body>
       </Modal>

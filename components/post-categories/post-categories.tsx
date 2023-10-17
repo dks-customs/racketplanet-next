@@ -3,6 +3,7 @@ import "./post-categories.scss";
 import { routes } from "../../constants/constants";
 
 type PostCategoriesProps = {
+  links?: boolean;
   categories: {
     slug: string;
     name: string;
@@ -15,7 +16,10 @@ type PostCategoriesProps = {
   }[];
 };
 
-export default function PostCategories({ categories }: PostCategoriesProps) {
+export default function PostCategories({
+  categories,
+  links = true,
+}: PostCategoriesProps) {
   const cats = categories.filter(
     (category) => category.children.nodes.length === 0
   );
@@ -25,9 +29,12 @@ export default function PostCategories({ categories }: PostCategoriesProps) {
       <ul className="post-categories">
         {categories.map((category) => (
           <li key={`post-categories-${category.slug}`}>
-            <Link href={`${routes.CATEGORY}/${category.slug}`}>
-              {category.name}
-            </Link>
+            {links && (
+              <Link href={`${routes.CATEGORY}/${category.slug}`}>
+                {category.name}
+              </Link>
+            )}
+            {!links && <span>{category.name}</span>}
           </li>
         ))}
       </ul>

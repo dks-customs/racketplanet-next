@@ -5,16 +5,20 @@
   padding-bottom: size(30rem);
   border-bottom: size(1rem) solid black;
   margin-bottom: size(30rem);
-  max-width: calc(2 / 3 * $wrapper-mw);
 
   @media screen and (min-width: $br-576) {
     flex-direction: row;
-    margin-bottom: size(15rem);
+    margin-bottom: size(30rem);
     align-items: center;
+    padding-bottom: size(30rem);
   }
+}
+
+.author-container {
+  max-width: calc(2 / 3 * $wrapper-mw);
 
   @media screen and (min-width: $br-1200) {
-    margin-right: size(30rem);
+    padding-right: size(30rem);
   }
 }
 
@@ -24,8 +28,8 @@
   width: size(90rem);
   height: size(90rem);
   border-radius: 50%;
-  border: size(1rem) solid black;
-  margin-bottom: size(25rem);
+  border: size(3rem) solid $c-primary;
+  margin-bottom: size(20rem);
 
   @media screen and (min-width: $br-576) {
     margin-right: size(25rem);
@@ -61,7 +65,7 @@
   text-align: center;
   font-family: $ff-ui;
   line-height: 1.2;
-  color: black;
+  color: $c-excerpt-gray;
   font-weight: 400;
   font-size: size(14rem);
 

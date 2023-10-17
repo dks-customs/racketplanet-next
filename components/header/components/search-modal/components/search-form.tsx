@@ -16,15 +16,15 @@ export default function SearchForm({ setQuery, loading }: SearchFormProps) {
   };
 
   return (
-    <Form onSubmit={onSearch}>
-      <Form.Group className="mb-3" controlId="search-query">
+    <Form onSubmit={onSearch} className="search-form">
+      <Form.Group controlId="search-query">
         <Form.Control
           type="text"
           placeholder="Szukaj w Racket Planet"
           name="search-query"
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="secondary" type="submit">
         {loading ? (
           <Spinner />
         ) : (

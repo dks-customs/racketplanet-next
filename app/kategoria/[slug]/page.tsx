@@ -1,4 +1,3 @@
-import Link from "next/link";
 import getCategories from "../../../graphql/getCategories";
 import { routes } from "../../../constants/constants";
 import "./category.scss";
@@ -27,7 +26,7 @@ export default async function Category({ params }: CategoryProps) {
         </header>
         <PostsList
           posts={category.posts.map((item) => item.node)}
-          showSport={false}
+          showCategory={false}
         />
         {category.hasNextPage && (
           <LoadMore

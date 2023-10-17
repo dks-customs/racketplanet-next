@@ -20,11 +20,14 @@ export default function Hero({
   showSport = true,
 }: HeroProps) {
   const featuredImage = post.featuredImage?.node;
+  const categories = post.categories.nodes;
+  const sports = post.sports.nodes;
 
   return (
     <article className="hero">
       <div className="hero__text">
-        {(showCategory || showSport) && (
+        {((showCategory && categories.length > 0) ||
+          (showSport && sports.length > 0)) && (
           <div className="hero__text__taxonomies">
             {showSport && <PostSports sports={post.sports.nodes} />}
             {showCategory && (

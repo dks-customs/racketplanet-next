@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { APIPostPreview } from "../../graphql/types/post-preview";
 import PostPreviewBasic from "./components/post-preview-basic/post-preview-basic";
 import "./posts-list-basic.scss";
@@ -12,7 +13,12 @@ export default function PostsListBasic({ posts }: PostsListBasic) {
       <ul className="posts-list-basic">
         {posts.map((post) => (
           <li key={`posts-list-basic-${post.id}`}>
-            <PostPreviewBasic post={post} />
+            <Link
+              href={`/${post.databaseId}/${post.slug}`}
+              className="hoverable"
+            >
+              <PostPreviewBasic post={post} />
+            </Link>
           </li>
         ))}
       </ul>

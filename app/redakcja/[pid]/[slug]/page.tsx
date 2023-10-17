@@ -8,6 +8,7 @@ import notFoundMetadata from "../../../../util/notFoundMetadata";
 import NotFound from "../../../not-found";
 import LoadMore from "../../../../components/load-more/load-more";
 import PostsListBasic from "../../../../components/posts-list-basic/posts-list-basic";
+import PostsList from "../../../../components/posts-list/posts-list";
 
 type AuthorProps = {
   params: {
@@ -22,27 +23,29 @@ export default async function Author({ params }: AuthorProps) {
   if (author && authorSlug(author.name) === params.slug) {
     return (
       <main className="author layout-container">
-        <header className="author-header">
-          <img
-            className="author-header__image"
-            src={`${author.avatarUrl}`}
-            width="90"
-            height="90"
-          />
-          <div className="author-header__text">
-            <h1>{author.name}</h1>
-            <p>{author.description}</p>
-          </div>
-        </header>
-        <div>
-          <PostsListBasic posts={author.posts.map((item) => item.node)} />
-          {author.hasNextPage && (
-            <LoadMore
-              afterCursor={author.endCursor}
-              authorId={params.pid}
-              variant="basic"
+        <div className="author-container">
+          <header className="author-header">
+            <img
+              className="author-header__image"
+              src={`${author.avatarUrl}`}
+              width="90"
+              height="90"
             />
-          )}
+            <div className="author-header__text">
+              <h1>{author.name}</h1>
+              <p>{author.description}</p>
+            </div>
+          </header>
+          <div>
+            <PostsListBasic posts={author.posts.map((item) => item.node)} />
+            {author.hasNextPage && (
+              <LoadMore
+                afterCursor={author.endCursor}
+                authorId={params.pid}
+                variant="basic"
+              />
+            )}
+          </div>
         </div>
       </main>
     );

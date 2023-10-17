@@ -1,0 +1,18 @@
+.search-modal .modal-body {
+  padding: 0;
+}
+
+.search-modal-body.layout-container {
+  max-width: size(800rem);
+  margin-top: size(20rem);
+}
+
+.search-modal-body h1 {
+  padding-bottom: size(11rem);
+  border-bottom: size(1rem) solid black;
+  margin-bottom: size(40rem);
+  text-transform: uppercase;
+  font-family: $ff-display;
+  font-size: $fs-h4;
+  font-weight: 800;
+}
