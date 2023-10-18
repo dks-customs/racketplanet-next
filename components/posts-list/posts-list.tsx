@@ -30,6 +30,6 @@ export default function PostsList({
       </ul>
     );
   } else {
-    return null;
+    return <div className="posts-list-no-posts">Brak artykułów</div>;
   }
 }

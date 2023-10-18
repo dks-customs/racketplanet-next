@@ -91,9 +91,11 @@ export default function LoadMore({
 
   return (
     <>
-      {variant === "grid" && <PostsGrid posts={posts} />}
-      {variant === "list" && <PostsList posts={posts} />}
-      {variant === "basic" && <PostsListBasic posts={posts} />}
+      {variant === "grid" && posts.length > 0 && <PostsGrid posts={posts} />}
+      {variant === "list" && posts.length > 0 && <PostsList posts={posts} />}
+      {variant === "basic" && posts.length > 0 && (
+        <PostsListBasic posts={posts} />
+      )}
       {after && (
         <div className="more-posts-btn-container">
           <Button

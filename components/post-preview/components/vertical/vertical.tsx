@@ -7,6 +7,7 @@ import PostCategories from "../../../post-categories/post-categories";
 import prepareExcerpt from "../../../../util/prepareExcerpt";
 import PostExcerpt from "../../../post-excerpt/post-excerpt";
 import PostDate from "../../../post-date/post-date";
+import stripHtmlTags from "../../../../util/stripHtmlTags";
 
 type PostPreviewVerticalProps = {
   post: APIPostPreview;
@@ -47,7 +48,7 @@ export default function PostPreviewVertical({
       )}
       <h2 className="post-preview-vertical__title">
         <Link href={`/${post.databaseId}/${post.slug}`} className="hoverable">
-          {post.title}
+          {stripHtmlTags(post.title, false)}
         </Link>
       </h2>
       {prepareExcerpt(post.excerpt) && (

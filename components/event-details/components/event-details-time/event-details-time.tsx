@@ -13,6 +13,7 @@ export default function EventDetailsTime({
   if (dateBegin) {
     return (
       <p className="event-details-time">
+        Data:&nbsp;
         <time className="event-details-time__begin" dateTime={dateBegin}>
           {eventsUtils.formattedDate(dateBegin, false, true)}
         </time>

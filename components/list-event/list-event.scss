@@ -1,0 +1,40 @@
+.list-event {
+  padding: size(15rem) size(20rem);
+
+  @media screen and (min-width: $br-768) {
+    padding: size(15rem) size(25rem);
+  }
+}
+
+.list-event:not(:last-of-type) {
+  border-bottom: size(1rem) solid $c-break-light;
+}
+
+.list-event.past .list-event-header__main__title {
+  color: $c-excerpt-gray;
+}
+
+.list-event.past:hover .list-event-header__main__title {
+  color: black;
+}
+
+.list-event.past .list-event-date {
+  background-color: $c-break-dark;
+}
+
+.list-event .event-details {
+  margin-top: size(20rem);
+  margin-left: size(60rem);
+  border-top: size(1rem) solid $c-break-light;
+  padding-top: size(13rem);
+  padding-bottom: size(10rem);
+
+  @media screen and (min-width: $br-768) {
+    padding-top: size(25rem);
+    margin-left: size(65rem);
+  }
+}
+
+.list-event .event-details p {
+  font-size: size(14rem);
+}

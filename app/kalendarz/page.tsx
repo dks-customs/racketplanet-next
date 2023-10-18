@@ -11,10 +11,10 @@ export default async function Events() {
   const relations = await getMoreCategoryPosts("relacje");
 
   return (
-    <main className="events layout-container">
+    <main className="events">
       <EventsCalendar allEvents={allEvents} />
       {relations && relations.length > 0 && (
-        <section>
+        <section className="layout-container">
           <div>Relacje z wydarzeń</div>
           <PostsGrid posts={relations} />
         </section>
@@ -25,7 +25,7 @@ export default async function Events() {
 
 export const metadata = pageMetadata({
   url: routes.EVENTS,
-  titleFollowUp: "Wydarzenia",
+  titleFollowUp: "Kalendarz",
   description: "Kalendarz rakietowych imprez sportowych",
   twitterCard: "summary",
   imageUrl: `/images/logo-sygnet.jpg`,

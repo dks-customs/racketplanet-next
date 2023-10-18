@@ -1,0 +1,47 @@
+.list-event-header {
+  display: flex;
+  align-items: center;
+}
+
+.list-event-header__main {
+  display: flex;
+  flex-direction: column;
+  margin-left: size(20rem);
+
+  @media screen and (min-width: $br-768) {
+    margin-left: size(25rem);
+  }
+}
+
+.list-event-header__main__sports .post-sports li span {
+  color: $c-excerpt-gray;
+  text-transform: uppercase;
+  font-size: $fs-small;
+}
+
+.list-event-header__main__sports + .list-event-header__main__title {
+  margin-top: size(5rem);
+}
+
+.list-event-header__main__title {
+  text-align: left;
+  text-transform: uppercase;
+  font-family: $ff-display;
+  font-size: $fs-p;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.list-event-header:hover .list-event-header__main__title {
+  color: $c-primary;
+}
+
+.list-event-header__main__title + .list-event-header__main__city {
+  margin-top: size(7rem);
+}
+
+.list-event-header__main__city {
+  text-align: left;
+  font-size: $fs-small;
+  color: $c-excerpt-gray;
+}

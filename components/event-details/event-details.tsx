@@ -32,8 +32,8 @@ export default function EventDetails({
       <div className="event-details__main">
         <EventDetailsTime dateBegin={dateBegin} dateEnd={dateEnd} />
         <EventDetailsAddress address={address} />
-        <EventDetailsWebsite website={website} />
         <EventDetailsPrice price={price} />
+        <EventDetailsWebsite website={website} />
         <EventDetailsContent content={content} />
       </div>
       <div className="event-details__map">

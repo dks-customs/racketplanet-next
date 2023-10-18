@@ -7,6 +7,7 @@ import PostCategories from "../../../post-categories/post-categories";
 import PostSports from "../../../post-sports/post-sports";
 import FeaturedImage from "../../../featured-image/featured-image";
 import PostDate from "../../../post-date/post-date";
+import stripHtmlTags from "../../../../util/stripHtmlTags";
 
 type HeroProps = {
   post: APIPostPreview;
@@ -37,7 +38,7 @@ export default function Hero({
         )}
         <h2 className="hero__text__title">
           <Link href={`/${post.databaseId}/${post.slug}`} className="hoverable">
-            {post.title}
+            {stripHtmlTags(post.title, false)}
           </Link>
         </h2>
         {prepareExcerpt(post.excerpt) && (

@@ -28,12 +28,13 @@ export default function ListEventDate({ dateBegin }: ListEventDateProps) {
   const month = date.getMonth();
 
   return (
-    <div className="list-event-badge">
-      <div className="list-event-badge__day">
-        {day}&nbsp;{MONTHS[month]}
-      </div>
-      <div className="list-event-badge__weekday">
+    <div className="list-event-date">
+      <div className="list-event-date__weekday">
         {WEEKDAYS[weekday === 0 ? 6 : weekday - 1]}
+      </div>
+      <div className="list-event-date__day">
+        <span className="list-event-date__day__number">{day}</span>
+        <span className="list-event-date__day__month">{MONTHS[month]}</span>
       </div>
     </div>
   );

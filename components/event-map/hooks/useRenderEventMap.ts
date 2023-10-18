@@ -4,7 +4,7 @@ import { MAPTILER_API_KEY } from "../../../constants/constants";
 
 maptilersdk.config.apiKey = MAPTILER_API_KEY;
 
-export default function useEventMap(
+export default function useRenderEventMap(
   lat?: number,
   lng?: number,
   address?: string
@@ -19,15 +19,15 @@ export default function useEventMap(
       map.current = new maptilersdk.Map({
         container: mapContainer.current || "",
         style: maptilersdk.MapStyle.STREETS,
-        center: [lng, lat],
+        center: [lng + 0.01, lat],
         zoom: 12,
       });
 
       const popup = new maptilersdk.Popup({ offset: 40 }).setHTML(
-        `<div><p>${address}</p><a href="http://www.google.com/maps/place/${lat},${lng}" target="_blank">Pokaż w Google&nbsp;&rarr;</a></div>`
+        `<div class="event-map-marker"><p class="event-map-marker__address">${address}</p><a class="event-map-marker__link" href="http://www.google.com/maps/place/${lat},${lng}" target="_blank">Pokaż w Google&nbsp;&rarr;</a></div>`
       );
 
-      const marker = new maptilersdk.Marker({ color: "red" })
+      const marker = new maptilersdk.Marker({ color: "#10628a" })
         .setLngLat([lng, lat])
         .setPopup(popup)
         .addTo(map.current);

@@ -1,10 +1,12 @@
 @import "./vendor/bootstrap.scss";
+@import "./vendor/maptiler.scss";
 
 /*
 // For convenience: scss function size($rem) returns 1/16 of $rem argument (and scales with user browser font size setting).
 */
 
 html {
+  height: 100%;
   min-height: 100%;
 }
 
@@ -165,12 +167,9 @@ a:active,
   margin-top: size(27rem);
 }
 
-.posts-list + .more-posts-btn-container > .more-posts-btn,
-.posts-list-basic + .more-posts-btn-container > .more-posts-btn {
+.more-posts-btn {
   margin-left: auto;
   margin-right: auto;
   width: size(200rem);
   height: size(45rem);
-  text-transform: uppercase;
-  font-weight: 300;
 }

@@ -6,6 +6,7 @@ import "./post-preview-basic.scss";
 import PostExcerpt from "../../../post-excerpt/post-excerpt";
 import prepareExcerpt from "../../../../util/prepareExcerpt";
 import FeaturedImage from "../../../featured-image/featured-image";
+import stripHtmlTags from "../../../../util/stripHtmlTags";
 
 type PostPreviewBasicProps = {
   post: APIPostPreview;
@@ -27,7 +28,7 @@ export default function PostPreviewBasic({ post }: PostPreviewBasicProps) {
             )}
           </div>
           <h2 className="post-preview-basic__main__text__title">
-            {post.title}
+            {stripHtmlTags(post.title, false)}
           </h2>
           {prepareExcerpt(post.excerpt) && (
             <div className="post-preview-basic__main__text__excerpt">

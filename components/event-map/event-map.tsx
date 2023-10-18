@@ -2,7 +2,7 @@
 
 import "@maptiler/sdk/dist/maptiler-sdk.css";
 import "./event-map.scss";
-import useEventMap from "./hooks/useEventMap";
+import useRenderEventMap from "./hooks/useRenderEventMap";
 
 type EventMapProps = {
   address?: string;
@@ -11,7 +11,7 @@ type EventMapProps = {
 };
 
 export default function EventMap({ address, lat, lng }: EventMapProps) {
-  const mapContainer = useEventMap(lat, lng, address);
+  const mapContainer = useRenderEventMap(lat, lng, address);
 
   return (
     <div className="event-map">

@@ -1,9 +1,32 @@
 .event-map {
   width: 100%;
-  height: 100%;
 }
 
 .event-map-container {
+  border: size(1rem) solid $c-break-dark;
+  border-radius: size(5rem);
+  height: size(300rem);
   width: 100%;
-  height: 100%;
+
+  @media screen and (min-width: $br-768) {
+    margin-left: auto;
+    height: size(300rem);
+    width: size(300rem);
+    flex-shrink: 0;
+  }
+}
+
+.event-map-marker {
+  display: flex;
+  flex-direction: column;
+  max-width: size(180rem);
+  padding: 0;
+  font-family: $ff-ui;
+}
+
+.event-map-marker__address {
+  margin-bottom: size(10rem);
+  line-height: 1.2;
+  font-size: $fs-smaller;
+  padding-right: size(10rem);
 }

@@ -33,7 +33,7 @@ export default function HeaderTop({ categories, sports }: HeaderTopProps) {
             <ActiveLink href={routes.RACKET_MAPA}>Racket Mapa</ActiveLink>
           </li>
           <li>
-            <ActiveLink href={routes.EVENTS}>Wydarzenia</ActiveLink>
+            <ActiveLink href={routes.EVENTS}>Kalendarz</ActiveLink>
           </li>
         </ul>
         <ul className="header-top__links__social">

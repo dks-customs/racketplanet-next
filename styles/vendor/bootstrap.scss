@@ -2,3 +2,8 @@ $primary: #007b3e;
 $secondary: #10628a;
 
 @import "~bootstrap/scss/bootstrap";
+
+.btn {
+  text-transform: uppercase;
+  font-weight: 300;
+}

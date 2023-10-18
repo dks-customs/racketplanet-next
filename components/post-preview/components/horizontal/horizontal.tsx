@@ -7,6 +7,7 @@ import prepareExcerpt from "../../../../util/prepareExcerpt";
 import PostExcerpt from "../../../post-excerpt/post-excerpt";
 import FeaturedImage from "../../../featured-image/featured-image";
 import PostDate from "../../../post-date/post-date";
+import stripHtmlTags from "../../../../util/stripHtmlTags";
 
 type PostPreviewHorizontalProps = {
   post: APIPostPreview;
@@ -39,7 +40,7 @@ export default function PostPreviewHorizontal({
         )}
         <h2 className="post-preview-horizontal__text__title">
           <Link href={`/${post.databaseId}/${post.slug}`} className="hoverable">
-            {post.title}
+            {stripHtmlTags(post.title, false)}
           </Link>
         </h2>
         {prepareExcerpt(post.excerpt) && (

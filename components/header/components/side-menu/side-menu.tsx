@@ -52,7 +52,7 @@ export default function SideMenu({ categories, sports }: SideMenuProps) {
               </li>
               <li onClick={handleClose}>
                 <ActiveLinkClient href={routes.EVENTS}>
-                  Wydarzenia
+                  Kalendarz
                 </ActiveLinkClient>
               </li>
               <li onClick={handleClose}>

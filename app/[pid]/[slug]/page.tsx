@@ -16,6 +16,7 @@ import PostsGrid from "../../../components/posts-grid/posts-grid";
 import FeaturedImage from "../../../components/featured-image/featured-image";
 import PostExcerpt from "../../../components/post-excerpt/post-excerpt";
 import prepareExcerpt from "../../../util/prepareExcerpt";
+import stripHtmlTags from "../../../util/stripHtmlTags";
 
 type PostProps = {
   params: {
@@ -38,7 +39,9 @@ export default async function Post({ params }: PostProps) {
               <PostSports sports={post.sports.nodes} />
               <PostCategories categories={post.categories.nodes} />
             </div>
-            <h1 className="post-header__title">{post.title}</h1>
+            <h1 className="post-header__title">
+              {stripHtmlTags(post.title, false)}
+            </h1>
             {prepareExcerpt(post.excerpt) && (
               <div className="post-header__excerpt">
                 <PostExcerpt excerpt={prepareExcerpt(post.excerpt)} />

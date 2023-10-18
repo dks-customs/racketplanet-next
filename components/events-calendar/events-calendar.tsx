@@ -13,45 +13,34 @@ type EventsCalendarProps = {
 };
 
 export default function EventsCalendar({ allEvents }: EventsCalendarProps) {
-  const [events, setEvents] = useState<APIEvent[]>(
-    allEvents.slice(0, POSTS_PER_PAGE)
-  );
-
-  const futureEvents = events.filter(eventsUtils.isFutureEvent);
-  const pastEvents = events.filter(
+  const futureEvents = allEvents.filter(eventsUtils.isFutureEvent);
+  const pastEvents = allEvents.filter(
     (event) => !eventsUtils.isFutureEvent(event)
   );
 
-  const areAllEventsShown = () => {
-    return events.length === allEvents.length;
-  };
-
-  const loadMore = () => {
-    setEvents(
-      events.concat(
-        allEvents.slice(events.length, events.length + POSTS_PER_PAGE)
-      )
-    );
-  };
-
   return (
-    <div className="events-calendar">
-      <h1>Kalendarz wydarzeń</h1>
+    <div className="events-calendar layout-container">
+      <h1 className="events-calendar__title">Kalendarz</h1>
       {futureEvents.length > 0 ? (
-        <EventsList events={futureEvents} />
+        <div className="events-calendar__events">
+          <div className="events-calendar__events__title">
+            Nadchodzące wydarzenia
+          </div>
+          <EventsList events={futureEvents} />
+        </div>
       ) : (
-        <div>Brak nadchodzących wydarzeń</div>
-      )}
-      {pastEvents.length > 0 && (
-        <div>
-          <div>Minione wydarzenia</div>
-          <EventsList events={pastEvents} />
+        <div className="events-calendar__no-events">
+          Brak nadchodzących wydarzeń
         </div>
       )}
-      {!areAllEventsShown() && (
-        <Button onClick={loadMore}>Pokaż więcej wydarzeń</Button>
+      {pastEvents.length > 0 && (
+        <div className="events-calendar__events">
+          <div className="events-calendar__events__title">
+            Minione wydarzenia
+          </div>
+          <EventsList events={pastEvents} past />
+        </div>
       )}
-      {/* RELACJE Z WYDARZEŃ */}
     </div>
   );
 }

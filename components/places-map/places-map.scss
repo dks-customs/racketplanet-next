@@ -82,7 +82,7 @@
 }
 
 .places-marker-sports a {
-  line-height: 1;
+  line-height: 1.1;
   color: $c-excerpt-gray;
   text-transform: uppercase;
   font-family: $ff-ui;
@@ -106,9 +106,4 @@
 
 .place-marker > a:not(:last-child) {
   margin-bottom: size(5rem);
-}
-
-.maplibregl-popup-close-button {
-  width: 20px;
-  height: 20px;
 }

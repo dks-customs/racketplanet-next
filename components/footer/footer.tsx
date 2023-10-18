@@ -79,7 +79,7 @@ export default function Footer({ categories, sports }: FooterProps) {
                   href={`${routes.EVENTS}`}
                   className="hoverable decorate"
                 >
-                  Wydarzenia
+                  Kalendarz
                 </ActiveLink>
               </li>
               <li>

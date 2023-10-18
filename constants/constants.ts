@@ -22,7 +22,7 @@ export const AUTHORS_IDS = [
 export const routes = {
   HOME: "/",
   RACKET_MAPA: "/racket-mapa",
-  EVENTS: "/wydarzenia",
+  EVENTS: "/kalendarz",
   SPORT: "/sport",
   CATEGORY: "/kategoria",
   TAG: "/tag",

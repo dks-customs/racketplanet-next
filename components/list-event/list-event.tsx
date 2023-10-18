@@ -7,13 +7,14 @@ import "./list-event.scss";
 
 type ListEventProps = {
   event: APIEvent;
+  past?: boolean;
 };
 
-export default function ListEvent({ event }: ListEventProps) {
+export default function ListEvent({ event, past }: ListEventProps) {
   const [open, setOpen] = useState(false);
 
   return (
-    <li className="list-event">
+    <li className={`list-event${past ? " past" : ""}`}>
       <article>
         <button
           onClick={() => setOpen(!open)}
@@ -27,7 +28,7 @@ export default function ListEvent({ event }: ListEventProps) {
             city={event.eventAcf.eventCity}
           />
         </button>
-        <Collapse in={open}>
+        <Collapse in={open} mountOnEnter>
           <div id={`collapse-event-${event.eventId}`}>
             <EventDetails
               dateBegin={event.eventAcf.dateBegin}
