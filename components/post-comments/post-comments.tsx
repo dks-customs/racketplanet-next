@@ -46,7 +46,11 @@ export default function PostComments({ id, title }: PostCommentsProps) {
             </>
           )}
           {!show && (
-            <Button onClick={() => setShow(true)} className="post-comments-btn">
+            <Button
+              variant="secondary"
+              onClick={() => setShow(true)}
+              className="post-comments-btn"
+            >
               Pokaż komentarze
               <span className="post-comments-btn__count">
                 {"("}

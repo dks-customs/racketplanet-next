@@ -6,6 +6,8 @@ import NotFound from "../not-found";
 import "./about.scss";
 import getAuthors from "../../graphql/getAuthors";
 import AuthorPreview from "../../components/author-preview/author-preview";
+import stripHtmlTags from "../../util/stripHtmlTags";
+import PostContent from "../../components/post-content/post-content";
 
 export default async function About() {
   const about = await getAbout();
@@ -14,16 +16,13 @@ export default async function About() {
   if (about && authors) {
     return (
       <main className="about layout-container">
-        <h1>{about.title}</h1>
-        <div>
-          <div dangerouslySetInnerHTML={{ __html: about.content }}></div>
-          <div>
-            <LogoSVG />
-          </div>
+        <h1 className="about__title">{stripHtmlTags(about.title, false)}</h1>
+        <div className="about__content">
+          <PostContent content={about.content} />
         </div>
-        <div>
+        <div className="about__authors">
           {(authors.headAuthor || authors.activeAuthors.length > 0) && (
-            <div>
+            <div className="about__authors__active">
               <h3>Redakcja</h3>
               <ul>
                 {authors.headAuthor && (
@@ -48,7 +47,7 @@ export default async function About() {
             </div>
           )}
           {authors.inactiveAuthors.length > 0 && (
-            <div>
+            <div className="about__authors__inactive">
               <h3>Pisali dla nas</h3>
               <ul>
                 {authors.inactiveAuthors.map((user) => (

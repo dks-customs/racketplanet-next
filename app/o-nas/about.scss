@@ -1,0 +1,101 @@
+.about {
+  margin-bottom: size(30rem);
+}
+
+.about__title {
+  text-align: center;
+  margin-top: size(15rem);
+  padding-bottom: size(20rem);
+  border-bottom: size(1rem) solid $c-break-dark;
+  margin-bottom: size(25rem);
+  font-family: $ff-display;
+  font-size: $fs-h2;
+  font-weight: 800;
+
+  @media screen and (min-width: $br-768) {
+    margin-top: size(25rem);
+    padding-bottom: size(28rem);
+    margin-bottom: size(40rem);
+  }
+}
+
+.about__authors {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: size(650rem);
+  width: 100%;
+}
+
+.about__authors__active h3,
+.about__authors__inactive h3 {
+  font-family: $ff-display;
+  font-size: $fs-h4;
+  font-weight: 600;
+  margin-top: size(25rem);
+  padding-bottom: size(10rem);
+  border-bottom: size(1rem) solid $c-break-dark;
+  margin-bottom: size(20rem);
+
+  @media screen and (min-width: $br-768) {
+    margin-top: size(35rem);
+    font-size: $fs-h3;
+  }
+}
+
+.about__authors__active ul,
+.about__authors__inactive ul {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $br-768) {
+    flex-direction: row;
+  }
+}
+
+.about__authors__active ul li,
+.about__authors__inactive ul li {
+  margin-bottom: size(20rem);
+
+  @media screen and (min-width: $br-768) {
+    width: 33.3%;
+  }
+}
+
+.about__authors__active ul li:not(:last-of-type),
+.about__authors__inactive ul li:not(:last-of-type) {
+  padding-right: size(10rem);
+}
+
+.about__authors__active ul li a,
+.about__authors__inactive ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  @media screen and (min-with: $br-768) {
+    justify-content: center;
+  }
+}
+
+.about__authors__active ul li a img,
+.about__authors__inactive ul li a img {
+  width: size(90rem);
+  height: size(90rem);
+  border-radius: 50%;
+  border: size(3rem) solid $c-primary;
+  margin-right: size(10rem);
+}
+
+.about__authors__active ul li a h4,
+.about__authors__inactive ul li a h4 {
+  color: black;
+  font-size: size(18rem);
+  font-family: $ff-display;
+  font-weight: 800;
+  transition: color 0.1s linear;
+}
+
+.about__authors__active ul li a:hover h4,
+.about__authors__inactive ul li a:hover h4 {
+  color: $c-primary;
+}
