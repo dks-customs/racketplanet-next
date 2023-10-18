@@ -13,6 +13,10 @@
   }
 }
 
+.list-event-header__main__sports .post-sports li:not(:last-of-type) {
+  margin-right: size(1rem);
+}
+
 .list-event-header__main__sports .post-sports li span {
   color: $c-excerpt-gray;
   text-transform: uppercase;

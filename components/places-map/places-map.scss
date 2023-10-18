@@ -62,32 +62,33 @@
 .place-marker {
   display: flex;
   flex-direction: column;
-}
-
-.place-marker h2 {
-  font-weight: 800;
-  font-family: $ff-display;
-  font-size: $fs-p;
-  line-height: 1.2;
-  margin-bottom: size(10rem);
-  text-transform: uppercase;
+  padding: size(1rem);
 }
 
 .places-marker-sports {
   display: flex;
   line-height: 1.2;
-  margin-bottom: size(10rem);
+  margin-bottom: size(5rem);
   max-width: 100%;
   flex-wrap: wrap;
 }
 
-.places-marker-sports a {
+.places-marker-sports span {
   line-height: 1.1;
   color: $c-excerpt-gray;
   text-transform: uppercase;
   font-family: $ff-ui;
-  font-size: size(14rem);
+  font-size: size(12rem);
   display: inline-flex;
+}
+
+.place-marker h2 {
+  font-weight: 800;
+  font-family: $ff-ui;
+  font-size: $fs-p;
+  line-height: 1.2;
+  margin-bottom: size(10rem);
+  text-transform: uppercase;
 }
 
 .place-marker > p {

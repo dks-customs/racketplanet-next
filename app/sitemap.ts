@@ -39,16 +39,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: lastMajorSiteUpdate,
   });
 
-  const events = await getEvents();
-  events.forEach((event) => {
-    const modified = new Date(event.modified);
-    items.push({
-      url: `${base}${routes.EVENTS}/${event.eventId}/${event.slug}`,
-      lastModified:
-        modified > lastMajorSiteUpdate ? modified : lastMajorSiteUpdate,
-    });
-  });
-
   //POLITYKA PRYWATNOSCI
   const privacyPolicy = await getPrivacyPolicy();
   if (privacyPolicy) {

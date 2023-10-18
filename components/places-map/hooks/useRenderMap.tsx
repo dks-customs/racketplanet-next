@@ -40,17 +40,14 @@ export default function useRenderMap(
         if (lat && lng && address && name) {
           const sports = `
             <div class="places-marker-sports">
-              ${place.sports.nodes.map(
-                (sport) =>
-                  `<a href="${routes.SPORT}/${sport.slug}" class="hoverable">${sport.name}</a>`
-              )}
+              ${place.sports.nodes.map((sport) => `<span>${sport.name}</span>`)}
             </div>
           `;
 
           const popup = new maptilersdk.Popup().setHTML(`
           <div class="place-marker">
+          ${sports}
             <h2>${name}</h2>
-            ${sports}
             <p>${address}</p>
             ${description ? `<p>${place.placeAcf.description}</p>` : ""}
             ${
