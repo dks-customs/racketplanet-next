@@ -68,6 +68,17 @@
   }
 }
 
+.post-content.small p,
+.post-content.small ul,
+.post-content.small ol,
+.post-content.small blockquote,
+.post-content.small table,
+.post-content.small em {
+  @media screen and (min-width: $br-768) {
+    font-size: size(16rem);
+  }
+}
+
 .post-content ol,
 .post-content ul {
   list-style: inside;

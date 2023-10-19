@@ -4,6 +4,7 @@ import getPrivacyPolicy from "../../graphql/getPrivacyPolicy";
 import pageMetadata from "../../util/pageMetadata";
 import "./privacy-policy.scss";
 import LastModified from "../../components/last-modified/last-modified";
+import PostContent from "../../components/post-content/post-content";
 
 export default async function PrivacyPolicy() {
   const privacyPolicy = await getPrivacyPolicy();
@@ -11,9 +12,11 @@ export default async function PrivacyPolicy() {
   if (privacyPolicy) {
     return (
       <main className="privacy-policy layout-container">
-        <h1>{privacyPolicy.title}</h1>
+        <h1 className="privacy-policy__title page-title">
+          {privacyPolicy.title}
+        </h1>
         <LastModified date={privacyPolicy.modified} />
-        <div dangerouslySetInnerHTML={{ __html: privacyPolicy.content }}></div>
+        <PostContent content={privacyPolicy.content} small />
       </main>
     );
   } else {

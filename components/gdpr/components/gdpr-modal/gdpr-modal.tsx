@@ -28,7 +28,7 @@ export default function GDPRModal({
       show={show}
       backdrop={mode === "consent" || !areCookiesValid() ? "static" : true}
     >
-      <Modal.Header closeButton={areCookiesValid() && mode === "manage"} />
+      {areCookiesValid() && mode === "manage" && <Modal.Header closeButton />}
       <Modal.Body>
         {mode === "consent" && (
           <GDPRModalConsent

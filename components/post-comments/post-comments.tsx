@@ -39,6 +39,7 @@ export default function PostComments({ id, title }: PostCommentsProps) {
               <Button
                 onClick={() => setShow(false)}
                 className="post-comments-btn"
+                variant="secondary"
               >
                 Zwiń komentarze
                 <ChevronUpSVG />

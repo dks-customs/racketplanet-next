@@ -16,7 +16,9 @@ export default async function About() {
   if (about && authors) {
     return (
       <main className="about layout-container">
-        <h1 className="about__title">{stripHtmlTags(about.title, false)}</h1>
+        <h1 className="about__title page-title">
+          {stripHtmlTags(about.title, false)}
+        </h1>
         <div className="about__content">
           <PostContent content={about.content} />
         </div>

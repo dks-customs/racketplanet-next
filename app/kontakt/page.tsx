@@ -15,12 +15,12 @@ export default async function Contact() {
   if (contact) {
     return (
       <main className="contact layout-container">
-        <h1>{contact.title}</h1>
-        <div>
-          <section>
+        <h1 className="contact__title page-title">{contact.title}</h1>
+        <div className="contact__content">
+          <section className="contact__content__form">
             <ContactForm />
           </section>
-          <section>
+          <section className="contact__content__desc">
             <h2>Jeśli bardzo nie lubisz wypełniania formularzy...</h2>
             <p>
               ...możesz skontaktować się z nami pisząc bezpośrednio na nasz

@@ -173,3 +173,20 @@ a:active,
   width: size(200rem);
   height: size(45rem);
 }
+
+.page-title {
+  text-align: center;
+  margin-top: size(15rem);
+  padding-bottom: size(20rem);
+  border-bottom: size(1rem) solid $c-break-dark;
+  margin-bottom: size(25rem);
+  font-family: $ff-display;
+  font-size: $fs-h2;
+  font-weight: 800;
+
+  @media screen and (min-width: $br-768) {
+    margin-top: size(25rem);
+    padding-bottom: size(28rem);
+    margin-bottom: size(40rem);
+  }
+}

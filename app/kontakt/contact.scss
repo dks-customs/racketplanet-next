@@ -1,0 +1,57 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: size(30rem);
+}
+
+.contact__title {
+  font-size: $fs-h2;
+}
+
+.contact__content {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $br-768) {
+    flex-direction: row;
+  }
+}
+
+.contact__content__form,
+.contact__content__desc {
+  @media screen and (min-width: $br-768) {
+    width: 50%;
+  }
+}
+
+.contact__content__form {
+  margin-bottom: size(20rem);
+}
+
+.contact__content__desc {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $br-768) {
+    margin-left: size(30rem);
+  }
+}
+
+.contact-form__title,
+.contact__content__desc > h2 {
+  font-size: $fs-h4;
+  font-weight: 600;
+  font-family: $ff-display;
+  margin-bottom: size(20rem);
+}
+
+.contact__content__desc > p,
+.contact__content__desc > a {
+  display: block;
+  margin-bottom: size(10rem);
+}
+
+.contact__content__desc > a > svg {
+  width: size(30rem);
+  height: size(30rem);
+}

@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import "./contact-form.scss";
 import { Collapse, Alert, Form, Button, Spinner } from "react-bootstrap";
 import { GETFORM_ENDPOINT_URL } from "../../constants/constants";
+import "./contact-form.scss";
 
 export default function ContactForm() {
   const [error, setError] = useState("");

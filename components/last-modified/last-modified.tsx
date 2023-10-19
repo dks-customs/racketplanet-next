@@ -11,7 +11,7 @@ export default function LastModified({ date }: LastModifiedProps) {
   const year = jsDate.getFullYear();
 
   return (
-    <p>
+    <p className="last-modified">
       Ostatnia zmiana:{" "}
       <time dateTime={date}>
         {day}.{month}.{year}
