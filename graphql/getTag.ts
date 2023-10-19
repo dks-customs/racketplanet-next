@@ -2,6 +2,7 @@ import { POSTS_PER_PAGE } from "../constants/constants";
 import { postPreviewFragment } from "./fragments/post-preview";
 import fetchApi from "../util/fetchApi";
 import { APITag } from "./types/tag";
+import filterHiddenPosts from "../util/filterHiddenPosts";
 
 type TagAPIData = {
   tags: {
@@ -37,13 +38,17 @@ export default async function getTag(slug: string, after: string = "") {
   const tag = data?.tags.nodes[0];
 
   if (tag) {
-    return {
-      name: tag.name,
-      hasNextPage: tag.posts.pageInfo.hasNextPage,
-      endCursor: tag.posts.pageInfo.endCursor,
-      posts: tag.posts.edges.slice(0, POSTS_PER_PAGE),
-    };
-  } else {
-    return undefined;
+    const posts = tag.posts.edges.filter(filterHiddenPosts);
+
+    if (posts.length > 0) {
+      return {
+        name: tag.name,
+        hasNextPage: tag.posts.pageInfo.hasNextPage,
+        endCursor: tag.posts.pageInfo.endCursor,
+        posts: posts,
+      };
+    }
   }
+
+  return undefined;
 }

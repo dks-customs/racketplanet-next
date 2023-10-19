@@ -5,7 +5,6 @@ import getSportSubpage from "../../../../graphql/getSportSubpage";
 import NotFound from "../../../not-found";
 import { routes } from "../../../../constants/constants";
 import pageMetadata from "../../../../util/pageMetadata";
-import FeaturedImage from "../../../../components/featured-image/featured-image";
 import PostContent from "../../../../components/post-content/post-content";
 import "./sport-subpage.scss";
 

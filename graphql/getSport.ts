@@ -2,6 +2,7 @@ import { POSTS_PER_PAGE } from "../constants/constants";
 import { postPreviewFragment } from "./fragments/post-preview";
 import fetchApi from "../util/fetchApi";
 import { APISport } from "./types/sport";
+import filterHiddenPosts from "../util/filterHiddenPosts";
 
 type SportAPIData = {
   sports: {
@@ -44,14 +45,18 @@ export default async function getSport(slug: string, after: string = "") {
   const sport = data?.sports.nodes[0];
 
   if (sport) {
-    return {
-      name: sport.name,
-      hasNextPage: sport.posts.pageInfo.hasNextPage,
-      endCursor: sport.posts.pageInfo.endCursor,
-      posts: sport.posts.edges,
-      pages: sport.pages.nodes,
-    };
-  } else {
-    return undefined;
+    const posts = sport.posts.edges.filter(filterHiddenPosts);
+
+    if (posts.length > 0) {
+      return {
+        name: sport.name,
+        hasNextPage: sport.posts.pageInfo.hasNextPage,
+        endCursor: sport.posts.pageInfo.endCursor,
+        posts: posts,
+        pages: sport.pages.nodes,
+      };
+    }
   }
+
+  return undefined;
 }

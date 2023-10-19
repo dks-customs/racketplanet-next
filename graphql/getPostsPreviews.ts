@@ -2,6 +2,7 @@ import { POSTS_PER_PAGE } from "../constants/constants";
 import { postPreviewFragment } from "./fragments/post-preview";
 import fetchApi from "../util/fetchApi";
 import { APIPostPreview } from "./types/post-preview";
+import filterHiddenPosts from "../util/filterHiddenPosts";
 
 type PostsPreviewsAPIData = {
   posts: {
@@ -39,12 +40,16 @@ export default async function getPostsPreviews(
   );
 
   if (data?.posts) {
-    return {
-      hasNextPage: data.posts.pageInfo.hasNextPage,
-      endCursor: data.posts.pageInfo.endCursor,
-      items: data.posts.edges.slice(0, POSTS_PER_PAGE),
-    };
-  } else {
-    return undefined;
+    const posts = data.posts.edges.filter(filterHiddenPosts);
+
+    if (posts.length > 0) {
+      return {
+        hasNextPage: data.posts.pageInfo.hasNextPage,
+        endCursor: data.posts.pageInfo.endCursor,
+        items: posts,
+      };
+    }
   }
+
+  return undefined;
 }

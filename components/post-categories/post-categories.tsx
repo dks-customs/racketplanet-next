@@ -20,9 +20,9 @@ export default function PostCategories({
   categories,
   links = true,
 }: PostCategoriesProps) {
-  const cats = categories.filter(
-    (category) => category.children.nodes.length === 0
-  );
+  const cats = categories
+    .filter((category) => category.children.nodes.length === 0)
+    .filter((category) => category.slug !== "hidden");
 
   if (cats.length > 0) {
     return (

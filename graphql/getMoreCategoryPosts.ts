@@ -1,6 +1,7 @@
 import { postPreviewFragment } from "./fragments/post-preview";
 import fetchApi from "../util/fetchApi";
 import { APIPostPreview } from "./types/post-preview";
+import filterHiddenPosts from "../util/filterHiddenPosts";
 
 type PostsPreviewsAPIData = {
   posts: {
@@ -22,8 +23,14 @@ export default async function getMoreCategoryPosts(categorySlug: string) {
   );
 
   if (data?.posts) {
-    return data.posts.nodes;
-  } else {
-    return undefined;
+    const posts = data.posts.nodes.filter((post) =>
+      filterHiddenPosts({ node: post })
+    );
+
+    if (posts.length > 0) {
+      return posts;
+    }
   }
+
+  return undefined;
 }
