@@ -1,0 +1,36 @@
+.sport-subpage-content {
+  margin-bottom: size(40rem);
+}
+
+.sport-subpage-content__image {
+  width: size(300rem);
+  max-height: size(200rem);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: size(40rem);
+  display: flex;
+  justify-content: center;
+}
+
+.sport-subpage-content__image img {
+  max-height: 200rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
+}
+
+.sport-subpage-content__federation-info {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: size(15rem);
+
+  @media screen and (min-width: $br-768) {
+    margin-bottom: size(25rem);
+  }
+}
+
+.sport-subpage-content__federation-info > p {
+  margin-bottom: size(6.5rem);
+  text-align: center;
+}

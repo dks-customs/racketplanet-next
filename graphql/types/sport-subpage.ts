@@ -18,7 +18,7 @@ export type APISportSubpage = {
               sourceUrl: string;
               height: string;
               width: string;
-            };
+            }[];
           };
         };
       };

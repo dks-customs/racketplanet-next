@@ -5,6 +5,9 @@ import getSportSubpage from "../../../../graphql/getSportSubpage";
 import NotFound from "../../../not-found";
 import { routes } from "../../../../constants/constants";
 import pageMetadata from "../../../../util/pageMetadata";
+import FeaturedImage from "../../../../components/featured-image/featured-image";
+import PostContent from "../../../../components/post-content/post-content";
+import "./sport-subpage.scss";
 
 type SportSubpageProps = {
   params: {
@@ -19,26 +22,46 @@ export default async function SportSubpage({ params }: SportSubpageProps) {
   const subpage = await getSportSubpage(params.slug, params.subpage);
 
   if (subpage) {
+    const { ustawieniaStrony, featuredImage } = subpage;
+    const nazwaFederacji = ustawieniaStrony?.nazwaFederacji;
+    const prezesFederacji = ustawieniaStrony?.prezesFederacji;
+    const stronaFederacji = ustawieniaStrony?.stronaFederacji;
+
     return (
       <main className="sport-subpage layout-container">
         <div className="sport-subpage-content">
-          {/* FEATURED IMAGE */}
-          <h1>{subpage.title}</h1>
-          {subpage.ustawieniaStrony && (
-            <div>
-              <p>{subpage.ustawieniaStrony.nazwaFederacji}</p>
-              <p>{subpage.ustawieniaStrony.prezesFederacji}</p>
-              <p>
-                <a
-                  href={subpage.ustawieniaStrony.stronaFederacji}
-                  target="_blank"
-                >
-                  Strona internetowa&nbsp;&rarr;
-                </a>
-              </p>
+          <h1 className="sport-subpage-content__title page-title">
+            {subpage.title}
+          </h1>
+          {featuredImage && (
+            <div className="sport-subpage-content__image">
+              <img src={featuredImage?.node.sourceUrl}></img>
             </div>
           )}
-          <div dangerouslySetInnerHTML={{ __html: subpage.content }}></div>
+          {subpage.ustawieniaStrony &&
+            (nazwaFederacji || prezesFederacji || stronaFederacji) && (
+              <div className="sport-subpage-content__federation-info">
+                {nazwaFederacji && (
+                  <p>{subpage.ustawieniaStrony.nazwaFederacji}</p>
+                )}
+                {prezesFederacji && (
+                  <p>{subpage.ustawieniaStrony.prezesFederacji}</p>
+                )}
+                {stronaFederacji && (
+                  <p>
+                    <a
+                      href={subpage.ustawieniaStrony.stronaFederacji}
+                      target="_blank"
+                    >
+                      Strona internetowa&nbsp;&rarr;
+                    </a>
+                  </p>
+                )}
+              </div>
+            )}
+          <div className="sport-subpage-content__content">
+            <PostContent content={subpage.content} />
+          </div>
         </div>
       </main>
     );
