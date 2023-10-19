@@ -29,7 +29,6 @@ export default async function getPostsPreviews(
             endCursor
           }
           edges {
-            cursor
             node {
               ${postPreviewFragment}
             }
