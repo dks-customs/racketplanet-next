@@ -13,6 +13,8 @@ type SportSubpageProps = {
   };
 };
 
+export const dynamic = "force-static";
+
 export default async function SportSubpage({ params }: SportSubpageProps) {
   const subpage = await getSportSubpage(params.slug, params.subpage);
 
@@ -38,7 +40,6 @@ export default async function SportSubpage({ params }: SportSubpageProps) {
           )}
           <div dangerouslySetInnerHTML={{ __html: subpage.content }}></div>
         </div>
-        {/* SEE MORE */}
       </main>
     );
   } else {
