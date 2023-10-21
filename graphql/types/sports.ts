@@ -6,6 +6,7 @@ export type APISports = {
     nodes: {
       id: string;
       slug: string;
+      excerpt: string;
       ustawieniaStrony: {
         typStrony: "Historia" | "W Polsce" | "Zasady";
       };

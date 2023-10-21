@@ -6,7 +6,7 @@ import PostPreviewVertical from "./components/vertical/vertical";
 import "./post-preview.scss";
 
 type PostPreviewProps = {
-  variant: "horizontal" | "vertical" | "hero" | "mini";
+  variant: "horizontal" | "vertical" | "hero" | "mini" | "sticky";
   post: APIPostPreview;
   showSport?: boolean;
   showCategory?: boolean;

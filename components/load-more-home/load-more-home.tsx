@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { APIPostPreview } from "../../graphql/types/post-preview";
-import "./load-more-home.scss";
 import PostsList from "../posts-list/posts-list";
 import { Button } from "react-bootstrap";
 import { POSTS_PER_PAGE } from "../../constants/constants";
+import "./load-more-home.scss";
 
 type LoadMoreHomeProps = {
   posts: APIPostPreview[];
@@ -22,7 +22,11 @@ export default function LoadMoreHome({ posts }: LoadMoreHomeProps) {
     <div className="load-more-home">
       {loadedPosts.length > 0 && <PostsList posts={loadedPosts} />}
       {loadedPosts.length !== posts.length && (
-        <Button variant="secondary" onClick={loadMore}>
+        <Button
+          variant="secondary"
+          onClick={loadMore}
+          className="load-more-home__btn"
+        >
           Wczytaj starsze posty
         </Button>
       )}

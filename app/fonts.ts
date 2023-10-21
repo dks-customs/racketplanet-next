@@ -17,7 +17,7 @@ export const displayFont = Playfair_Display({
 // export const displayFont = Barlow_Semi_Condensed({
 //   subsets: ["latin"],
 //   variable: "--font-display",
-//   weight: ["300", "400", "700", "900"],
+//   weight: ["300", "400", "500", "600", "700", "900"],
 // });
 
 export const uiFont = Fira_Sans({

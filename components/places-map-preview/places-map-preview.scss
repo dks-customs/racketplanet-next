@@ -1,0 +1,28 @@
+.places-map-preview {
+  background-color: $c-break-light;
+  padding: size(20rem);
+  margin-bottom: size(30rem);
+  border-radius: size(5rem);
+  max-width: $main-column-mw;
+}
+
+.places-map-preview h2 {
+  font-family: $ff-display;
+  font-size: $fs-h4;
+  font-weight: 800;
+  margin-bottom: size(20rem);
+}
+
+.places-map-preview p {
+  margin-bottom: size(20rem);
+  line-height: 1.3;
+}
+
+.places-map-preview a {
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: black;
+  display: block;
+  text-align: right;
+  font-size: size(14rem);
+}

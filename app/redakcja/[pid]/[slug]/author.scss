@@ -15,7 +15,7 @@
 }
 
 .author-container {
-  max-width: calc(2 / 3 * $wrapper-mw);
+  max-width: $main-column-mw;
 
   @media screen and (min-width: $br-1200) {
     padding-right: size(30rem);

@@ -33,25 +33,25 @@ export default function PostPreviewHorizontal({
         </div>
         {((showCategory && categories.length > 0) ||
           (showSport && sports.length > 0)) && (
-          <div className="post-preview-horizontal__text__taxonomies">
+          <div className="post-preview-horizontal__text__taxonomies post-preview-taxonomies">
             {showSport && <PostSports sports={sports} />}
             {showCategory && <PostCategories categories={categories} />}
           </div>
         )}
-        <h2 className="post-preview-horizontal__text__title">
+        <h2 className="post-preview-horizontal__text__title post-preview-small-screen-title">
           <Link href={`/${post.databaseId}/${post.slug}`} className="hoverable">
             {stripHtmlTags(post.title, false)}
           </Link>
         </h2>
         {prepareExcerpt(post.excerpt) && (
-          <div className="post-preview-horizontal__text__excerpt">
+          <div className="post-preview-horizontal__text__excerpt post-preview-small-screen-excerpt">
             <PostExcerpt excerpt={prepareExcerpt(post.excerpt)} />
           </div>
         )}
       </div>
       <Link
         href={`/${post.databaseId}/${post.slug}`}
-        className="post-preview-horizontal__image"
+        className="post-preview-horizontal__image post-preview-small-screen-image"
       >
         <FeaturedImage
           src={featuredImage?.sourceUrl}

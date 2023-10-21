@@ -2,8 +2,15 @@ $c-primary: #007b3e;
 
 $c-secondary: #10628a;
 $c-break-light: rgb(232, 232, 232);
-$c-break-dark: rgb(186, 186, 186);
+$c-break-dark: #bababa;
 $c-excerpt-gray: rgb(90, 90, 90);
+
+$h-fw: 600;
+$h-lh: 1.3;
+
+$layout-break-padding: size(25rem);
+$list-item-break: size(30rem);
+$list-item-break-big: size(40rem);
 
 //Merriweather
 //Playfair Display
@@ -29,6 +36,8 @@ $wrapper-p: size(20rem);
 $wrapper-p-768: size(20rem);
 $wrapper-p-1024: size(25rem);
 $wrapper-p-1280: size(30rem);
+
+$main-column-mw: calc(0.69 * $wrapper-mw);
 
 $post-content-mw: size(650rem);
 

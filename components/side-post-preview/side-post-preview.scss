@@ -1,0 +1,111 @@
+.side-post-preview-container {
+  @media screen and (min-width: $br-576) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: $br-1200) {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+    padding-right: 0;
+    border-color: $c-break-light;
+    padding-bottom: size(30rem);
+  }
+}
+
+.side-post-preview-container:last-of-type {
+  border-bottom: 0;
+}
+
+.side-post-preview-container + .side-post-preview-container {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.side-post-preview {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $br-576) {
+    flex-direction: row;
+  }
+
+  @media screen and (min-width: $br-1200) {
+    flex-direction: column;
+  }
+}
+
+.side-post-preview__image {
+  position: relative;
+  margin-bottom: size(18rem);
+
+  @media screen and (min-width: $br-1200) {
+    width: 100%;
+  }
+}
+
+.side-post-preview-label {
+  padding: size(11rem) size(15rem);
+  font-size: $fs-smaller;
+  color: $c-excerpt-gray;
+  border: size(1rem) solid $c-excerpt-gray;
+  border-radius: size(20rem);
+  background-color: white;
+  text-transform: uppercase;
+  margin-bottom: size(15rem);
+  text-align: center;
+  margin-right: auto;
+}
+
+.side-post-preview__text__title.post-preview-small-screen-title {
+  @media screen and (min-width: $br-1200) {
+    margin-bottom: size(7rem);
+  }
+}
+
+.side-post-preview__text__title.post-preview-small-screen-title a {
+  @media screen and (min-width: $br-1200) {
+    font-size: size(18rem);
+  }
+}
+
+.side-post-preview__text__title.post-preview-small-screen-title:last-child {
+  margin-bottom: 0;
+}
+
+.side-post-preview__text__excerpt.post-preview-small-screen-excerpt {
+  margin-bottom: 0;
+}
+
+.side-post-preview-break {
+  margin-top: size(15rem);
+  margin-bottom: size(15rem);
+  height: size(1rem);
+  width: size(20rem);
+  background-color: $c-break-light;
+}
+
+.side-post-preview-more-post:not(:last-of-type) {
+  margin-bottom: size(7rem);
+}
+
+.side-post-preview-more-post h3 a {
+  font-family: $ff-display;
+  font-size: size(14rem);
+  font-weight: $h-fw;
+  line-height: $h-lh;
+  display: block;
+  line-height: 1.3;
+  color: black;
+}
+
+.side-post-preview-link {
+  color: black;
+  margin-top: size(30rem);
+  display: block;
+  text-align: left;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-size: $fs-smaller;
+}

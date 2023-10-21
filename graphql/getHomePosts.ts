@@ -1,4 +1,4 @@
-import { POSTS_PER_PAGE } from "../constants/constants";
+import { POSTS_PER_PAGE, POSTS_PER_PAGE_HOME } from "../constants/constants";
 import fetchApi from "../util/fetchApi";
 import filterHiddenPosts from "../util/filterHiddenPosts";
 import { postPreviewFragment } from "./fragments/post-preview";
@@ -65,7 +65,7 @@ export default async function getHomePosts() {
       return true;
     });
 
-    const newest = afterSticky.splice(0, POSTS_PER_PAGE);
+    const newest = afterSticky.splice(0, POSTS_PER_PAGE_HOME);
 
     const afterNewest = afterSticky;
 

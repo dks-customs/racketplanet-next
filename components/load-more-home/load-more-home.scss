@@ -1,0 +1,13 @@
+.load-more-home {
+  display: flex;
+  flex-direction: column;
+}
+
+.load-more-home__btn {
+  margin-left: auto;
+  margin-right: auto;
+  width: size(200rem);
+  height: size(45rem);
+  margin-top: size(27rem);
+  margin-bottom: size(40rem);
+}

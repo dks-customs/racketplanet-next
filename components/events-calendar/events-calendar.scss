@@ -1,5 +1,5 @@
 .events-calendar.layout-container {
-  max-width: calc(2 / 3 * $wrapper-mw);
+  max-width: $main-column-mw;
   padding-left: 0;
   padding-right: 0;
 }
@@ -31,7 +31,7 @@
   margin-bottom: size(30rem);
   padding-bottom: size(15rem);
 
-  @media screen and (min-width: calc(2/3*$wrapper-mw)) {
+  @media screen and (min-width: $main-column-mw) {
     border: size(1rem) solid black;
     border-radius: size(5rem);
   }

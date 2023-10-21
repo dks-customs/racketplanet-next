@@ -1,39 +1,38 @@
 .posts-list {
-  max-width: calc(2 / 3 * $wrapper-mw);
-  margin-bottom: size(30rem);
+  max-width: $main-column-mw;
 
   @media screen and (min-width: $br-1200) {
-    padding-right: size(30rem);
+    padding-right: $layout-break-padding;
   }
 }
 
-.posts-list li:not(:last-child) {
+.posts-list > li:not(:last-child) {
   padding-bottom: size(30rem);
   border-bottom: size(1rem) solid $c-break-light;
   margin-bottom: size(27rem);
 
   @media screen and (min-width: $br-576) {
-    margin-bottom: size(30rem);
+    margin-bottom: $list-item-break;
   }
 
   @media screen and (min-width: $br-768) {
-    padding-bottom: size(40rem);
-    margin-bottom: size(40rem);
+    padding-bottom: $list-item-break-big;
+    margin-bottom: $list-item-break-big;
   }
 }
 
 .posts-list + .posts-list {
-  padding-top: size(27rem);
+  padding-top: $list-item-break;
   border-top: size(1rem) solid $c-break-light;
-  margin-top: size(30rem);
+  margin-top: $list-item-break;
 
   @media screen and (min-width: $br-576) {
-    margin-top: size(30rem);
+    margin-top: $list-item-break;
   }
 
   @media screen and (min-width: $br-768) {
-    padding-top: size(40rem);
-    margin-top: size(40rem);
+    padding-top: $list-item-break-big;
+    margin-top: $list-item-break-big;
   }
 }
 

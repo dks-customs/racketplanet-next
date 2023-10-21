@@ -3,6 +3,7 @@ export const WEBSITE_DESCRIPTION = "Centrum Sportów Rakietowych";
 export const FACEBOOK_URL = "https://www.facebook.com/racketplanetpl";
 export const INSTAGRAM_URL = "https://www.instagram.com/racketplanetpl";
 export const POSTS_PER_PAGE = 14;
+export const POSTS_PER_PAGE_HOME = 18;
 export const MAPTILER_API_KEY = "apksbcaqlt6gXwMNguky";
 export const RACKETPLANET_EMAIL = "kontakt@racketplanet.pl";
 export const GA_COOKIE_NAME = "rp_ga";

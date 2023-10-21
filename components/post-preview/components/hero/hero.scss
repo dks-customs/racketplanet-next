@@ -2,14 +2,11 @@
   display: flex;
   flex-direction: column;
   padding-bottom: size(30rem);
-  border-bottom: size(1rem) solid $c-break-light;
-  margin-bottom: size(27rem);
 
   @media screen and (min-width: $br-768) {
     flex-direction: row;
     margin-top: size(13rem);
     padding-bottom: size(40rem);
-    margin-bottom: size(40rem);
   }
 }
 
@@ -29,7 +26,6 @@
 
 .hero__text__taxonomies {
   display: flex;
-  font-family: $ff-body;
   text-transform: uppercase;
   font-weight: 400;
   justify-content: center;

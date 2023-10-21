@@ -20,6 +20,7 @@ export default async function getSports(): Promise<APISports> {
               nodes {
                 id
                 slug
+                excerpt
                 ustawieniaStrony {
                   typStrony
                 }
