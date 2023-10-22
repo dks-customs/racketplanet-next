@@ -35,8 +35,6 @@ const sliderConfiguration = {
 export default function SportsPreviews({ sports }: SportsPreviewsProps) {
   const [slider] = useState(new Glide(".glide", sliderConfiguration));
 
-  console.log(slider);
-
   useEffect(() => {
     slider.mount();
   }, []);

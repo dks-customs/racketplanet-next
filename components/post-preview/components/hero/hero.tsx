@@ -6,7 +6,6 @@ import "./hero.scss";
 import PostCategories from "../../../post-categories/post-categories";
 import PostSports from "../../../post-sports/post-sports";
 import FeaturedImage from "../../../featured-image/featured-image";
-import PostDate from "../../../post-date/post-date";
 import stripHtmlTags from "../../../../util/stripHtmlTags";
 
 type HeroProps = {
@@ -53,6 +52,7 @@ export default function Hero({
           alt={post.title}
           availableSizes={featuredImage?.mediaDetails.sizes}
           loading="lazy"
+          sizes="(min-width: 768px) 500px, (min-width: 1024px) 600px, 100vw"
         />
       </Link>
     </article>

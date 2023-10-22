@@ -49,6 +49,7 @@ export default function PostPreviewBasic({ post }: PostPreviewBasicProps) {
             alt={post.title}
             availableSizes={featuredImage?.mediaDetails.sizes}
             loading="lazy"
+            sizes="200px"
           />
         </div>
       </div>

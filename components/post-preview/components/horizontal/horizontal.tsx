@@ -58,6 +58,7 @@ export default function PostPreviewHorizontal({
           alt={post.title}
           availableSizes={featuredImage?.mediaDetails.sizes}
           loading="lazy"
+          sizes="(min-width: 576px) 400px, 100vw"
         />
       </Link>
     </article>

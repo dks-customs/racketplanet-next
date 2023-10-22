@@ -35,6 +35,7 @@ export default function PostPreviewVertical({
           alt={post.title}
           availableSizes={featuredImage?.mediaDetails.sizes}
           loading="lazy"
+          sizes="(min-width: 576px) 400px, 100vw"
         />
       </Link>
       {((showCategory && categories.length > 0) ||

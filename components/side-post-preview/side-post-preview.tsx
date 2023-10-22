@@ -36,6 +36,7 @@ export default function SidePostPreview({
             alt={post.title}
             availableSizes={featuredImage?.mediaDetails.sizes}
             loading="lazy"
+            sizes="(min-width: 576px) 400px, 100vw"
           />
         </Link>
         <div className="side-post-preview__text">

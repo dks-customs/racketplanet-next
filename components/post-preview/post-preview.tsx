@@ -1,7 +1,6 @@
 import { APIPostPreview } from "../../graphql/types/post-preview";
 import Hero from "./components/hero/hero";
 import PostPreviewHorizontal from "./components/horizontal/horizontal";
-import PostPreviewMini from "./components/mini/mini";
 import PostPreviewVertical from "./components/vertical/vertical";
 import "./post-preview.scss";
 
@@ -34,14 +33,6 @@ export default function PostPreview({
     case "vertical":
       return (
         <PostPreviewVertical
-          post={post}
-          showCategory={showCategory}
-          showSport={showSport}
-        />
-      );
-    case "mini":
-      return (
-        <PostPreviewMini
           post={post}
           showCategory={showCategory}
           showSport={showSport}

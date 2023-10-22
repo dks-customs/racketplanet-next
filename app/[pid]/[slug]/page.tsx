@@ -55,6 +55,7 @@ export default async function Post({ params }: PostProps) {
                   alt={post.title}
                   caption={featuredImage?.atrybucjaAutora}
                   availableSizes={featuredImage.mediaDetails.sizes}
+                  sizes="(min-width: 1200px) 1000px, 100vw"
                 />
               </div>
             )}
