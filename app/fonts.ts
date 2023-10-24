@@ -13,6 +13,8 @@ import {
   Fira_Sans_Condensed,
   Fira_Sans_Extra_Condensed,
   Oswald,
+  Anton,
+  Lusitana,
 } from "next/font/google";
 
 // export const displayFont = Playfair_Display({
@@ -20,11 +22,10 @@ import {
 //   variable: "--font-display",
 // });
 
-export const displayFont = Cardo({
+export const displayFont = Lusitana({
+  weight: ["400"],
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["400", "700"],
-  // weight: ["300", "400", "500", "600", "700", "900"],
 });
 
 export const uiFont = Lato({
@@ -36,7 +37,7 @@ export const uiFont = Lato({
 export const uiHeadingFont = Oswald({
   subsets: ["latin"],
   variable: "--font-ui-heading",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400"],
 });
 
 export const bodyFont = Noto_Serif({

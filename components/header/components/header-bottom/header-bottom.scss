@@ -21,9 +21,9 @@ $li-margin: size(8.5rem);
 
 .header-bottom__sports-btn svg,
 .header-bottom__categories-btn svg {
-  margin-left: size(2rem);
-  height: size(15rem);
-  width: size(15rem);
+  margin-left: size(3rem);
+  height: size(10rem);
+  width: size(10rem);
 }
 
 .header-bottom__links {
@@ -39,18 +39,19 @@ $li-margin: size(8.5rem);
 .header-bottom__sports-btn,
 .header-bottom__categories-btn,
 .header-bottom__links > li > a {
-  padding-top: size(13rem);
-  padding-bottom: size(13rem);
-  text-transform: uppercase;
-  font-size: size(16rem);
+  padding-top: size(12rem);
+  padding-bottom: size(12rem);
+  font-size: size(15rem);
   font-weight: 400;
+  color: $c-post-meta-gray;
+  text-transform: uppercase;
+  letter-spacing: size(1rem);
 }
 
 .header-bottom__sports-btn,
 .header-bottom__categories-btn,
 .header-bottom__links > li:not(:last-of-type) > a {
-  margin-right: size(18rem);
-  letter-spacing: size(0.2rem);
+  margin-right: size(14rem);
 }
 
 .header-bottom__collapsible {
@@ -80,8 +81,10 @@ $li-margin: size(8.5rem);
 .header-bottom__collapsible__sports > li > a,
 .header-bottom__collapsible__categories > li > a {
   text-transform: uppercase;
-  color: black;
+  color: $c-post-meta-gray;
   font-size: size(14rem);
+  font-weight: 400;
+  letter-spacing: size(0.8rem);
 }
 
 // .header-bottom__sports,

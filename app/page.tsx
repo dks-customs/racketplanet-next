@@ -21,7 +21,7 @@ export default async function Home() {
         {posts.hero && <PostPreview variant="hero" post={posts.hero} />}
         <div className="index-top">
           <div className="index-top__main">
-            <div className="index-top__main__title">Od najnowszego</div>
+            {/* <div className="index-top__main__title">Od najnowszego</div> */}
             {newestFew.length > 0 && (
               <PostsList posts={newestFew.map((item) => item)} />
             )}

@@ -6,9 +6,9 @@
   border-bottom: size(1rem) solid black;
 
   @media screen and (min-width: $br-1280) {
-    padding-bottom: size(13rem);
     border-bottom: 0;
     align-items: flex-start;
+    padding-bottom: size(10rem);
   }
 }
 

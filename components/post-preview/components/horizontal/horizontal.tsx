@@ -28,16 +28,6 @@ export default function PostPreviewHorizontal({
   return (
     <article className="post-preview-horizontal">
       <div className="post-preview-horizontal__text">
-        <div className="post-preview-horizontal__text__date">
-          <PostDate date={post.date} />
-        </div>
-        {((showCategory && categories.length > 0) ||
-          (showSport && sports.length > 0)) && (
-          <div className="post-preview-horizontal__text__taxonomies post-preview-taxonomies">
-            {showSport && <PostSports sports={sports} />}
-            {showCategory && <PostCategories categories={categories} />}
-          </div>
-        )}
         <h2 className="post-preview-horizontal__text__title post-preview-small-screen-title">
           <Link href={`/${post.databaseId}/${post.slug}`} className="hoverable">
             {stripHtmlTags(post.title, false)}
@@ -46,6 +36,13 @@ export default function PostPreviewHorizontal({
         {/* {prepareExcerpt(post.excerpt) && (
           <div className="post-preview-horizontal__text__excerpt post-preview-small-screen-excerpt">
             <PostExcerpt excerpt={prepareExcerpt(post.excerpt)} />
+          </div>
+        )} */}
+        {/* {((showCategory && categories.length > 0) ||
+          (showSport && sports.length > 0)) && (
+          <div className="post-preview-horizontal__text__taxonomies post-preview-taxonomies">
+            {showSport && <PostSports sports={sports} />}
+            {showCategory && <PostCategories categories={categories} />}
           </div>
         )} */}
       </div>

@@ -5,12 +5,13 @@ $main-dividers-color: $c-break-dark;
 
   @media screen and (min-width: $br-768) {
     padding-top: size(40rem);
+    border-top: size(1rem) solid $c-break-dark;
   }
 }
 
 .index-top__main__title {
-  font-size: $fs-h3;
-  font-family: $ff-ui-heading;
+  font-size: $fs-h4;
+  font-family: $ff-ui;
   text-transform: uppercase;
   font-weight: 500;
   margin-bottom: size(40rem);
