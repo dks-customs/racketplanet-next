@@ -4,8 +4,8 @@
   margin-bottom: size(30rem);
 }
 
-.contact__title {
-  font-size: $fs-h2;
+.contact > .archive-header {
+  align-items: flex-start;
 }
 
 .contact__content {
@@ -41,7 +41,7 @@
 .contact__content__desc > h2 {
   font-size: $fs-h4;
   font-weight: 600;
-  font-family: $ff-display;
+  font-family: $ff-ui-heading;
   margin-bottom: size(20rem);
 }
 

@@ -12,7 +12,7 @@ export default async function Home() {
   const posts = await getHomePosts();
 
   if (posts) {
-    const newestThree = posts.newest.slice(0, 3);
+    const newestFew = posts.newest.slice(0, 3);
     const newestRemaining = posts.newest.slice(3, POSTS_PER_PAGE_HOME);
     const categories = Object.values(posts.categories);
 
@@ -21,15 +21,16 @@ export default async function Home() {
         {posts.hero && <PostPreview variant="hero" post={posts.hero} />}
         <div className="index-top">
           <div className="index-top__main">
-            {newestThree.length > 0 && (
-              <PostsList posts={newestThree.map((item) => item)} />
+            <div className="index-top__main__title">Od najnowszego</div>
+            {newestFew.length > 0 && (
+              <PostsList posts={newestFew.map((item) => item)} />
             )}
           </div>
           <div className="index-top__aside">
-            {posts.sticky && (
+            {/* {posts.sticky && (
               <SidePostPreview post={posts.sticky} label="Polecamy" />
-            )}
-            <PlacesMapPreview />
+            )} */}
+            {/* <PlacesMapPreview /> */}
           </div>
         </div>
         <div className="index-bottom">
@@ -38,7 +39,7 @@ export default async function Home() {
               <PostsList posts={newestRemaining.map((item) => item)} />
             )}
           </div>
-          <div className="index-bottom__aside">
+          {/* <div className="index-bottom__aside">
             <div className="index-bottom__aside__title">Jeśli cię ominęło</div>
             {categories.map((posts, index) => (
               <SidePostPreview
@@ -48,7 +49,7 @@ export default async function Home() {
                 morePosts={posts.slice(1)}
               />
             ))}
-          </div>
+          </div> */}
         </div>
         {posts.remaining.length > 0 && (
           <div className="index-remaining">

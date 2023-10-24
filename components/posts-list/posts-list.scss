@@ -23,7 +23,6 @@
 
 .posts-list + .posts-list {
   padding-top: $list-item-break;
-  border-top: size(1rem) solid $c-break-light;
   margin-top: $list-item-break;
 
   @media screen and (min-width: $br-576) {

@@ -20,7 +20,9 @@ export default function EventsCalendar({ allEvents }: EventsCalendarProps) {
 
   return (
     <div className="events-calendar layout-container">
-      <h1 className="events-calendar__title">Kalendarz</h1>
+      <div className="archive-header">
+        <h1 className="archive-title">Kalendarz</h1>
+      </div>
       {futureEvents.length > 0 ? (
         <div className="events-calendar__events">
           <div className="events-calendar__events__title">

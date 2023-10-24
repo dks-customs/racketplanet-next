@@ -40,14 +40,12 @@ export default async function getTag(slug: string, after: string = "") {
   if (tag) {
     const posts = tag.posts.edges.filter(filterHiddenPosts);
 
-    if (posts.length > 0) {
-      return {
-        name: tag.name,
-        hasNextPage: tag.posts.pageInfo.hasNextPage,
-        endCursor: tag.posts.pageInfo.endCursor,
-        posts: posts,
-      };
-    }
+    return {
+      name: tag.name,
+      hasNextPage: tag.posts.pageInfo.hasNextPage,
+      endCursor: tag.posts.pageInfo.endCursor,
+      posts: posts,
+    };
   }
 
   return undefined;

@@ -47,15 +47,13 @@ export default async function getSport(slug: string, after: string = "") {
   if (sport) {
     const posts = sport.posts.edges.filter(filterHiddenPosts);
 
-    if (posts.length > 0) {
-      return {
-        name: sport.name,
-        hasNextPage: sport.posts.pageInfo.hasNextPage,
-        endCursor: sport.posts.pageInfo.endCursor,
-        posts: posts,
-        pages: sport.pages.nodes,
-      };
-    }
+    return {
+      name: sport.name,
+      hasNextPage: sport.posts.pageInfo.hasNextPage,
+      endCursor: sport.posts.pageInfo.endCursor,
+      posts: posts,
+      pages: sport.pages.nodes,
+    };
   }
 
   return undefined;

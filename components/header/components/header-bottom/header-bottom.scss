@@ -3,73 +3,143 @@ $li-margin: size(8.5rem);
 
 .header-bottom {
   display: none;
+  position: relative;
 
   @media screen and (min-width: $br-1280) {
+    display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: size(8.5rem);
-    padding-bottom: size(8.5rem);
-    border-bottom: size(1rem) solid black;
-    display: flex;
+    flex-wrap: wrap;
   }
 }
 
-.header-bottom__sports,
-.header-bottom__categories {
+.header-bottom__sports-btn,
+.header-bottom__categories-btn {
   display: flex;
   align-items: center;
 }
 
-.header-bottom__sports,
-.header-bottom__categories {
-  height: size(20rem);
+.header-bottom__sports-btn svg,
+.header-bottom__categories-btn svg {
+  margin-left: size(2rem);
+  height: size(15rem);
+  width: size(15rem);
 }
 
-.header-bottom__sports {
-  border-right: size(1rem) solid $c-break-light;
-  margin-right: $li-margin;
-  padding-right: $li-margin;
+.header-bottom__links {
+  display: flex;
+  align-items: center;
 }
 
-.header-bottom__categories .dropdown-toggle {
-  background: none !important;
-  border: none;
-  padding: 0;
-  margin: 0;
-  outline: none;
+.header-bottom__links > li > a {
+  display: block;
   color: black;
-  position: relative;
-  top: size(1rem);
 }
 
-.header-bottom__categories .dropdown-toggle:hover,
-.header-bottom__categories .dropdown-toggle:active,
-.header-bottom__categories .dropdown-toggle:focus,
-.header-bottom__categories .dropdown-toggle.show {
-  color: $c-primary !important;
-}
-
-.header-bottom__categories .dropdown-menu {
-  padding-top: size(4rem);
-  padding-bottom: size(4rem);
-}
-
-.header-bottom__categories .dropdown-menu li {
-  padding: size(5rem);
-}
-
-.header-bottom li {
-  margin-left: $li-margin;
-  margin-right: $li-margin;
-}
-
-.header-bottom a,
-.header-bottom .dropdown-toggle {
-  padding: size($li-padding);
-  font-size: size(10.9rem);
+.header-bottom__sports-btn,
+.header-bottom__categories-btn,
+.header-bottom__links > li > a {
+  padding-top: size(13rem);
+  padding-bottom: size(13rem);
   text-transform: uppercase;
-  font-weight: 500;
-  color: black;
-  text-decoration: none;
-  letter-spacing: 0;
+  font-size: size(16rem);
+  font-weight: 400;
 }
+
+.header-bottom__sports-btn,
+.header-bottom__categories-btn,
+.header-bottom__links > li:not(:last-of-type) > a {
+  margin-right: size(18rem);
+  letter-spacing: size(0.2rem);
+}
+
+.header-bottom__collapsible {
+  display: none;
+
+  @media screen and (min-width: $br-1280) {
+    border-top: size(1rem) solid black;
+    width: 100%;
+    display: block;
+  }
+}
+
+.header-bottom__collapsible__sports,
+.header-bottom__collapsible__categories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: size(11rem);
+  padding-bottom: size(11rem);
+}
+
+.header-bottom__collapsible__sports > li:not(:last-of-type),
+.header-bottom__collapsible__categories > li:not(:last-of-type) {
+  margin-right: size(20rem);
+}
+
+.header-bottom__collapsible__sports > li > a,
+.header-bottom__collapsible__categories > li > a {
+  text-transform: uppercase;
+  color: black;
+  font-size: size(14rem);
+}
+
+// .header-bottom__sports,
+// .header-bottom__categories {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .header-bottom__sports,
+// .header-bottom__categories {
+//   height: size(20rem);
+// }
+
+// .header-bottom__sports {
+//   border-right: size(1rem) solid $c-break-light;
+//   margin-right: $li-margin;
+//   padding-right: $li-margin;
+// }
+
+// .header-bottom__categories .dropdown-toggle {
+//   background: none !important;
+//   border: none;
+//   padding: 0;
+//   margin: 0;
+//   outline: none;
+//   color: black;
+//   position: relative;
+//   top: size(1rem);
+// }
+
+// .header-bottom__categories .dropdown-toggle:hover,
+// .header-bottom__categories .dropdown-toggle:active,
+// .header-bottom__categories .dropdown-toggle:focus,
+// .header-bottom__categories .dropdown-toggle.show {
+//   color: $c-primary !important;
+// }
+
+// .header-bottom__categories .dropdown-menu {
+//   padding-top: size(4rem);
+//   padding-bottom: size(4rem);
+// }
+
+// .header-bottom__categories .dropdown-menu li {
+//   padding: size(5rem);
+// }
+
+// .header-bottom li {
+//   margin-left: $li-margin;
+//   margin-right: $li-margin;
+// }
+
+// .header-bottom a,
+// .header-bottom .dropdown-toggle {
+//   padding: size($li-padding);
+//   font-size: size(10.9rem);
+//   text-transform: uppercase;
+//   font-weight: 500;
+//   color: black;
+//   text-decoration: none;
+//   letter-spacing: 0;
+// }

@@ -5,7 +5,7 @@
 
   @media screen and (min-width: $br-768) {
     flex-direction: row;
-    margin-top: size(13rem);
+    margin-top: size(18rem);
     padding-bottom: size(40rem);
   }
 }
@@ -51,7 +51,7 @@
 
 .hero__text__title a {
   font-family: $ff-display;
-  font-weight: 600;
+  font-weight: $fw-display;
   font-size: $fs-h3;
   color: black;
   line-height: 1.2;

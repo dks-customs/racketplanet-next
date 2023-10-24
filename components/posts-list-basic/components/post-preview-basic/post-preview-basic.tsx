@@ -30,11 +30,11 @@ export default function PostPreviewBasic({ post }: PostPreviewBasicProps) {
           <h2 className="post-preview-basic__main__text__title">
             {stripHtmlTags(post.title, false)}
           </h2>
-          {prepareExcerpt(post.excerpt) && (
+          {/* {prepareExcerpt(post.excerpt) && (
             <div className="post-preview-basic__main__text__excerpt">
               <PostExcerpt excerpt={prepareExcerpt(post.excerpt)} />
             </div>
-          )}
+          )} */}
           <div className="post-preview-basic__main__text__meta">
             <PostDate date={post.date} classic />
             ,&nbsp;
@@ -53,11 +53,11 @@ export default function PostPreviewBasic({ post }: PostPreviewBasicProps) {
           />
         </div>
       </div>
-      {prepareExcerpt(post.excerpt) && (
+      {/* {prepareExcerpt(post.excerpt) && (
         <div className="post-preview-basic__excerpt">
           <PostExcerpt excerpt={prepareExcerpt(post.excerpt)} />
         </div>
-      )}
+      )} */}
       <div className="post-preview-basic__meta">
         <div className="post-preview-basic__meta__date">
           <PostDate date={post.date} classic />

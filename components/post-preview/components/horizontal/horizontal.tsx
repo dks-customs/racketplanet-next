@@ -43,11 +43,11 @@ export default function PostPreviewHorizontal({
             {stripHtmlTags(post.title, false)}
           </Link>
         </h2>
-        {prepareExcerpt(post.excerpt) && (
+        {/* {prepareExcerpt(post.excerpt) && (
           <div className="post-preview-horizontal__text__excerpt post-preview-small-screen-excerpt">
             <PostExcerpt excerpt={prepareExcerpt(post.excerpt)} />
           </div>
-        )}
+        )} */}
       </div>
       <Link
         href={`/${post.databaseId}/${post.slug}`}

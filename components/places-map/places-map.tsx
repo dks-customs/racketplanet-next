@@ -32,8 +32,10 @@ export default function PlacesMap({ places, sports }: PlacesMapProps) {
 
   return (
     <div className="places-map">
-      <h1>Racket Mapa</h1>
-      <p>Znajdź miejsce do gry w swoją ulubioną dyscyplinę</p>
+      <div className="archive-header">
+        <h1 className="archive-title">Racket Mapa</h1>
+        <p>Znajdź miejsce do gry w swoją ulubioną dyscyplinę</p>
+      </div>
       <div className="places-map-search">
         <SearchPlace
           setSearchedPlaceId={setSearchedPlaceId}

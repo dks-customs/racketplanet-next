@@ -40,14 +40,12 @@ export default async function getCategory(slug: string, after: string = "") {
   if (category) {
     const posts = category.posts.edges.filter(filterHiddenPosts);
 
-    if (posts.length > 0) {
-      return {
-        name: category.name,
-        hasNextPage: category.posts.pageInfo.hasNextPage,
-        endCursor: category.posts.pageInfo.endCursor,
-        posts: posts,
-      };
-    }
+    return {
+      name: category.name,
+      hasNextPage: category.posts.pageInfo.hasNextPage,
+      endCursor: category.posts.pageInfo.endCursor,
+      posts: posts,
+    };
   }
 
   return undefined;

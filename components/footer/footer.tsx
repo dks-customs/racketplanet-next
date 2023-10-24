@@ -18,7 +18,7 @@ type FooterProps = {
 export default function Footer({ categories, sports }: FooterProps) {
   return (
     <>
-      <SportsPreviews sports={sports} />
+      {/* <SportsPreviews sports={sports} /> */}
       <footer className="footer layout-container">
         <div className="footer-top">
           <div className="footer-top__logo">

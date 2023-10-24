@@ -7,23 +7,36 @@ import {
   Lato,
   Play,
   Barlow_Semi_Condensed,
+  Roboto_Condensed,
+  Poltawski_Nowy,
+  Cardo,
+  Fira_Sans_Condensed,
+  Fira_Sans_Extra_Condensed,
+  Oswald,
 } from "next/font/google";
 
-export const displayFont = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-display",
-});
-
-// export const displayFont = Barlow_Semi_Condensed({
+// export const displayFont = Playfair_Display({
 //   subsets: ["latin"],
 //   variable: "--font-display",
-//   weight: ["300", "400", "500", "600", "700", "900"],
 // });
 
-export const uiFont = Fira_Sans({
-  weight: ["300", "400", "500", "600"],
+export const displayFont = Cardo({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["400", "700"],
+  // weight: ["300", "400", "500", "600", "700", "900"],
+});
+
+export const uiFont = Lato({
+  weight: ["300", "400", "700"],
   subsets: ["latin"],
   variable: "--font-ui",
+});
+
+export const uiHeadingFont = Oswald({
+  subsets: ["latin"],
+  variable: "--font-ui-heading",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const bodyFont = Noto_Serif({

@@ -15,7 +15,9 @@ export default async function Contact() {
   if (contact) {
     return (
       <main className="contact layout-container">
-        <h1 className="contact__title page-title">{contact.title}</h1>
+        <div className="archive-header">
+          <h1 className="archive-title">{contact.title}</h1>
+        </div>
         <div className="contact__content">
           <section className="contact__content__form">
             <ContactForm />

@@ -12,9 +12,9 @@ export default async function PrivacyPolicy() {
   if (privacyPolicy) {
     return (
       <main className="privacy-policy layout-container">
-        <h1 className="privacy-policy__title page-title">
-          {privacyPolicy.title}
-        </h1>
+        <div className="archive-header">
+          <h1 className="archive-title">{privacyPolicy.title}</h1>
+        </div>
         <LastModified date={privacyPolicy.modified} />
         <PostContent content={privacyPolicy.content} small />
       </main>

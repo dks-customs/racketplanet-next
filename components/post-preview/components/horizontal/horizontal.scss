@@ -23,16 +23,14 @@
 .post-preview-horizontal__text__date {
   font-size: $fs-smaller;
   letter-spacing: size(0.2rem);
-  color: rgb(80, 80, 80);
   margin-bottom: size(10rem);
-  color: gray;
   font-weight: 300;
 
   @media screen and (min-width: $br-576) {
     margin-top: size(10rem);
     margin-bottom: 0;
     order: 1;
-    font-size: size(11rem);
+    font-size: size(14rem);
   }
 }
 

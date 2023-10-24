@@ -7,7 +7,7 @@
 
   @media screen and (min-width: $br-1280) {
     padding-bottom: size(13rem);
-    border-bottom: size(1rem) solid $c-break-light;
+    border-bottom: 0;
     align-items: flex-start;
   }
 }
@@ -46,7 +46,7 @@
   }
 
   @media screen and (min-width: $wrapper-mw) {
-    left: size(5rem);
+    left: size(10rem);
     top: size(10rem);
   }
 }
@@ -65,15 +65,15 @@
 
   @media screen and (min-width: $wrapper-mw) {
     right: unset;
-    left: size(30rem);
+    left: size(35rem);
     top: size(10rem);
   }
 }
 
 .header-top__menu-btn svg,
 .header-top__search-btn svg {
-  width: size(17rem);
-  height: size(17rem);
+  width: size(18rem);
+  height: size(18rem);
 }
 
 .header-top__links {
@@ -113,6 +113,6 @@
 }
 
 .header-top__links__social a svg {
-  width: size(13rem);
-  height: size(13rem);
+  width: size(16rem);
+  height: size(16rem);
 }
