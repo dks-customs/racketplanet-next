@@ -86,14 +86,14 @@ a:active,
   @media screen and (min-width: $br-768) {
     margin-top: size(25rem);
     margin-bottom: size(40rem);
-    align-items: center;
+    align-items: flex-start;
   }
 }
 
 .archive-title {
   font-size: $fs-h2;
-  font-family: $ff-ui;
-  font-weight: 500;
+  font-family: $ff-ui-heading;
+  font-weight: 300;
   text-transform: uppercase;
 
   @media screen and (min-width: $br-768) {

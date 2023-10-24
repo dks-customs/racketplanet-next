@@ -23,7 +23,7 @@ import {
 // });
 
 export const displayFont = Lusitana({
-  weight: ["400"],
+  weight: ["400", "700"],
   subsets: ["latin"],
   variable: "--font-display",
 });
@@ -40,8 +40,14 @@ export const uiHeadingFont = Oswald({
   weight: ["400"],
 });
 
-export const bodyFont = Noto_Serif({
-  weight: ["400", "500", "600"],
+// export const bodyFont = Noto_Serif({
+//   weight: ["400", "500", "600"],
+//   subsets: ["latin"],
+//   variable: "--font-body",
+// });
+
+export const bodyFont = Lato({
+  weight: ["300", "400", "700"],
   subsets: ["latin"],
   variable: "--font-body",
 });
