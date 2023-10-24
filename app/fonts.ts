@@ -34,7 +34,7 @@ export const uiFont = Lato({
   variable: "--font-ui",
 });
 
-export const uiHeadingFont = Oswald({
+export const uiHeadingFont = Anton({
   subsets: ["latin"],
   variable: "--font-ui-heading",
   weight: ["400"],
