@@ -7,6 +7,7 @@ import PostCategories from "../../../post-categories/post-categories";
 import PostSports from "../../../post-sports/post-sports";
 import FeaturedImage from "../../../featured-image/featured-image";
 import stripHtmlTags from "../../../../util/stripHtmlTags";
+import PostMeta from "../../../post-meta/post-meta";
 
 type HeroProps = {
   post: APIPostPreview;
@@ -31,6 +32,7 @@ export default function Hero({
             {stripHtmlTags(post.title, false)}
           </Link>
         </h2>
+        <PostMeta categories={categories} sports={sports} date={post.date} />
         {/* {prepareExcerpt(post.excerpt) && (
           <div className="hero__text__excerpt">
             <PostExcerpt excerpt={prepareExcerpt(post.excerpt)} />

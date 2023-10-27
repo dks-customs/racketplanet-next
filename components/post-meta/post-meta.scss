@@ -1,0 +1,19 @@
+.post-meta {
+  display: flex;
+  align-items: center;
+}
+
+.post-meta__item,
+.post-meta__item a,
+.post-meta__item time {
+  font-size: size(13rem);
+  color: $c-meta-lightgray;
+}
+
+.post-meta__item a:hover {
+  color: black;
+}
+
+.post-meta__item:not(:first-child)::before {
+  content: "\00a0\00a0·\00a0\00a0";
+}

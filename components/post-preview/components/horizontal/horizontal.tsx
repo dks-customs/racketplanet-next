@@ -8,6 +8,7 @@ import PostExcerpt from "../../../post-excerpt/post-excerpt";
 import FeaturedImage from "../../../featured-image/featured-image";
 import PostDate from "../../../post-date/post-date";
 import stripHtmlTags from "../../../../util/stripHtmlTags";
+import PostMeta from "../../../post-meta/post-meta";
 
 type PostPreviewHorizontalProps = {
   post: APIPostPreview;
@@ -33,6 +34,7 @@ export default function PostPreviewHorizontal({
             {stripHtmlTags(post.title, false)}
           </Link>
         </h2>
+        <PostMeta categories={categories} sports={sports} date={post.date} />
         {/* {prepareExcerpt(post.excerpt) && (
           <div className="post-preview-horizontal__text__excerpt post-preview-small-screen-excerpt">
             <PostExcerpt excerpt={prepareExcerpt(post.excerpt)} />

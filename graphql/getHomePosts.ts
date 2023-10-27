@@ -1,4 +1,8 @@
-import { POSTS_PER_PAGE, POSTS_PER_PAGE_HOME } from "../constants/constants";
+import {
+  POSTS_PER_PAGE,
+  POSTS_PER_PAGE_HOME,
+  cyclesSlugs,
+} from "../constants/constants";
 import fetchApi from "../util/fetchApi";
 import filterHiddenPosts from "../util/filterHiddenPosts";
 import { postPreviewFragment } from "./fragments/post-preview";
@@ -52,6 +56,8 @@ export default async function getHomePosts() {
   if (posts.length > 0) {
     const hero = posts.shift();
 
+    const heroMore = posts.splice(0, 4);
+
     let sticky: APIPostPreview | undefined;
 
     const afterSticky = posts.filter((post) => {
@@ -65,42 +71,64 @@ export default async function getHomePosts() {
       return true;
     });
 
-    const newest = afterSticky.splice(0, POSTS_PER_PAGE_HOME);
-
-    const afterNewest = afterSticky;
-
     const categories: { [x: string]: APIPostPreview[] } = {};
-    const indexes: number[] = [];
+    const news: APIPostPreview[] = [];
 
-    afterNewest.forEach((post, index) => {
+    afterSticky.forEach((post, index) => {
       post.categories.nodes.every((category) => {
-        const categoryPosts = categories[category.slug];
-
         if (category.slug !== "newsy") {
-          if (categoryPosts && categoryPosts.length < 3) {
-            categoryPosts.push(post);
-            indexes.push(index);
-            return false;
-          } else if (!categoryPosts) {
-            categories[category.slug] = [post];
-            indexes.push(index);
-            return false;
+          if (cyclesSlugs.includes(category.slug)) {
+            if (categories["cykle"]) {
+              categories["cykle"].push(post);
+            } else {
+              categories["cykle"] = [post];
+            }
+          } else {
+            if (categories[category.slug]) {
+              categories[category.slug].push(post);
+            } else {
+              categories[category.slug] = [post];
+            }
           }
+        } else {
+          news.push(post);
         }
       });
     });
 
-    const remaining = afterNewest.filter((post, index) => {
-      if (indexes.includes(index)) return false;
-      else return true;
+    const postsGroups: {
+      news: APIPostPreview[];
+      category: {
+        title: string;
+        posts: APIPostPreview[];
+      };
+    }[] = [];
+
+    Object.values(categories).forEach((categoryPosts) => {
+      let categorySlug = categoryPosts[0].categories.nodes[0].slug;
+      let categoryName = "";
+
+      if (cyclesSlugs.includes(categorySlug)) {
+        categoryName = "Cykle";
+      } else {
+        categoryName = categoryPosts[0].categories.nodes[0].name;
+      }
+
+      postsGroups.push({
+        news: news.splice(0, 6),
+        category: {
+          title: categoryName,
+          posts: categoryPosts,
+        },
+      });
     });
 
     return {
       hero,
+      heroMore,
       sticky,
-      newest,
-      categories,
-      remaining,
+      postsGroups,
+      remainingNews: news,
     };
   }
 

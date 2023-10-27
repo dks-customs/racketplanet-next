@@ -7,6 +7,7 @@ import PostExcerpt from "../../../post-excerpt/post-excerpt";
 import prepareExcerpt from "../../../../util/prepareExcerpt";
 import FeaturedImage from "../../../featured-image/featured-image";
 import stripHtmlTags from "../../../../util/stripHtmlTags";
+import PostMeta from "../../../post-meta/post-meta";
 
 type PostPreviewBasicProps = {
   post: APIPostPreview;
@@ -21,27 +22,21 @@ export default function PostPreviewBasic({ post }: PostPreviewBasicProps) {
     <article className="post-preview-basic">
       <div className="post-preview-basic__main">
         <div className="post-preview-basic__main__text">
-          <div className="post-preview-basic__main__text__taxonomies">
-            {sports.length > 0 && <PostSports sports={sports} links={false} />}
-            {categories.length > 0 && (
-              <PostCategories categories={categories} links={false} />
-            )}
-          </div>
           <h2 className="post-preview-basic__main__text__title">
             {stripHtmlTags(post.title, false)}
           </h2>
+          <div className="post-preview-basic__main__text__meta">
+            <PostMeta
+              categories={categories}
+              sports={sports}
+              date={post.date}
+            />
+          </div>
           {/* {prepareExcerpt(post.excerpt) && (
             <div className="post-preview-basic__main__text__excerpt">
               <PostExcerpt excerpt={prepareExcerpt(post.excerpt)} />
             </div>
           )} */}
-          <div className="post-preview-basic__main__text__meta">
-            <PostDate date={post.date} classic />
-            ,&nbsp;
-            <div className="post-preview-basic__main__text__meta__author">
-              {post.author.node.name}
-            </div>
-          </div>
         </div>
         <div className="post-preview-basic__main__image">
           <FeaturedImage

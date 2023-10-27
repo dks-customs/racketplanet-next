@@ -41,9 +41,9 @@ $li-margin: size(8.5rem);
 .header-bottom__links > li > a {
   padding-top: size(12rem);
   padding-bottom: size(12rem);
-  font-size: size(15rem);
+  font-size: size(14rem);
   font-weight: 400;
-  color: $c-post-meta-gray;
+  color: $c-meta-gray;
   text-transform: uppercase;
   letter-spacing: size(1rem);
 }
@@ -81,7 +81,7 @@ $li-margin: size(8.5rem);
 .header-bottom__collapsible__sports > li > a,
 .header-bottom__collapsible__categories > li > a {
   text-transform: uppercase;
-  color: $c-post-meta-gray;
+  color: $c-meta-gray;
   font-size: size(14rem);
   font-weight: 400;
   letter-spacing: size(0.8rem);

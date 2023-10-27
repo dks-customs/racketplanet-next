@@ -34,6 +34,8 @@ export const routes = {
   SEARCH: "/szukaj",
 };
 
+export const cyclesSlugs = ["world-padel-arena", "racket-lektura"];
+
 export const GOOGLE_ANALYTICS_TRACKING_ID = (() => {
   if (!process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TRACKING_ID) {
     throw new Error(`

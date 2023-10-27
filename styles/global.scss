@@ -210,10 +210,10 @@ a:active,
 
 .post-preview-small-screen-title a {
   font-family: $ff-display;
-  font-size: size(25rem);
   font-weight: $fw-display;
+  line-height: $lh-display;
+  font-size: $fs-h4;
   color: black;
-  line-height: 1.25;
   display: block;
 
   @media screen and (min-width: $br-576) {

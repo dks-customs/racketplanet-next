@@ -10,10 +10,6 @@
   border-bottom: size(1rem) solid $c-break-light;
 }
 
-.list-event.past .list-event-header__main__title {
-  color: $c-excerpt-gray;
-}
-
 .list-event.past:hover .list-event-header__main__title {
   color: black;
 }

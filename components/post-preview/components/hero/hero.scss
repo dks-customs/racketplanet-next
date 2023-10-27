@@ -45,9 +45,9 @@
 .hero__text__title a {
   font-family: $ff-display;
   font-weight: $fw-display;
+  line-height: $lh-display;
   font-size: $fs-h3;
-  color: $c-post-meta-gray;
-  line-height: $lh-h;
+  color: $c-meta-gray;
   display: block;
 
   @media screen and (min-width: $br-1200) {
