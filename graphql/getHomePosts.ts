@@ -58,23 +58,10 @@ export default async function getHomePosts() {
 
     const heroMore = posts.splice(0, 4);
 
-    let sticky: APIPostPreview | undefined;
-
-    const afterSticky = posts.filter((post) => {
-      if (!sticky) {
-        if (post.isSticky) {
-          sticky = post;
-          return false;
-        }
-      }
-
-      return true;
-    });
-
     const categories: { [x: string]: APIPostPreview[] } = {};
     const news: APIPostPreview[] = [];
 
-    afterSticky.forEach((post, index) => {
+    posts.forEach((post, index) => {
       post.categories.nodes.every((category) => {
         if (category.slug !== "newsy") {
           if (cyclesSlugs.includes(category.slug)) {
@@ -126,7 +113,6 @@ export default async function getHomePosts() {
     return {
       hero,
       heroMore,
-      sticky,
       postsGroups,
       remainingNews: news,
     };

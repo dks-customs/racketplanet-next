@@ -31,7 +31,7 @@ export default async function Home() {
               >
                 {group.category.posts.length > 0 && (
                   <section className="index__posts-group__category">
-                    <div className="index__posts-group__category__title layout-container">
+                    <div className="index__posts-group__category__title index__section-title layout-container">
                       {group.category.title}
                     </div>
                     <div className="index__posts-group__category__posts layout-container">
@@ -43,26 +43,16 @@ export default async function Home() {
                   </section>
                 )}
                 {group.news.length > 0 && (
-                  <div className="index__posts-group__chrono">
-                    <section className="index__posts-group__chrono__news">
-                      {index === 0 && (
-                        <div className="index__posts-group__chrono__news__title">
-                          Ostatnie newsy
-                        </div>
-                      )}
-                      <div className="index__posts-group__chrono__news__posts">
-                        <PostsList posts={group.news} />
+                  <section className="index__posts-group__news layout-container">
+                    {index === 0 && (
+                      <div className="index__posts-group__news__title index__section-title">
+                        Ostatnie newsy
                       </div>
-                    </section>
-                    {index === 0 && posts.sticky && (
-                      <section className="index-sticky">
-                        <div className="index-sticky__title">Polecamy</div>
-                        <div className="index-sticky__post">
-                          <SidePostPreview post={posts.sticky} />
-                        </div>
-                      </section>
                     )}
-                  </div>
+                    <div className="index__posts-group__news__posts">
+                      <PostsList posts={group.news} showCategory={false} />
+                    </div>
+                  </section>
                 )}
               </div>
             );

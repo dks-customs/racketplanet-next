@@ -1,163 +1,29 @@
 $main-dividers-color: $c-break-dark;
 
-.index-top {
-  padding-top: size(27rem);
-
-  @media screen and (min-width: $br-768) {
-    padding-top: size(40rem);
-    border-top: size(1rem) solid $c-break-dark;
-  }
+.index__newest {
+  margin-bottom: size(25rem);
 }
 
-.index-top {
-  display: flex;
-  flex-direction: column;
-
-  @media screen and (min-width: $br-1200) {
-    flex-direction: row;
-    max-width: $wrapper-mw;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: $wrapper-p-1024;
-    padding-right: $wrapper-p-1024;
-  }
-
-  @media screen and (min-width: $br-1280) {
-    padding-left: $wrapper-p-1280;
-    padding-right: $wrapper-p-1280;
-  }
+.index__section-title {
+  font-family: $ff-ui-heading;
+  font-size: $fs-h3;
+  text-align: center;
+  margin-bottom: size(30rem);
 }
 
-.index-top__main,
-.index-top__recommended {
-  width: 100%;
-  max-width: $wrapper-mw;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: $wrapper-p;
-  padding-right: $wrapper-p;
-
-  @media screen and (min-width: $br-768) {
-    padding-left: $wrapper-p-768;
-    padding-right: $wrapper-p-768;
-  }
-
-  @media screen and (min-width: $br-1024) {
-    padding-left: $wrapper-p-1024;
-    padding-right: $wrapper-p-1024;
-  }
-
-  @media screen and (min-width: $br-1200) {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-.index-top__main {
-  width: 100%;
-
-  @media screen and (min-width: $br-1200) {
-    max-width: $main-column-mw;
-    flex-shrink: 0;
-  }
-}
-
-.index-top__main__title {
-  font-size: $fs-h4;
-  font-family: $ff-ui;
-  text-transform: uppercase;
-  font-weight: 500;
+.index__posts-group__category {
+  background-color: $c-background-gray;
+  padding-top: size(30rem);
+  padding-bottom: size(30rem);
   margin-bottom: size(40rem);
 }
 
-.index-top__main__posts .posts-list > li:last-of-type {
-  @media screen and (min-width: $br-1200) {
-    padding-bottom: $list-item-break-big;
-    margin-bottom: $list-item-break-big;
-    border-bottom: size(1rem) solid $c-break-light;
-  }
+.index__posts-group__news {
+  margin-bottom: size(40rem);
 }
 
-.index-top__recommended {
-  background-color: $c-background-gray;
-  padding-bottom: size(20rem);
-
-  @media screen and (min-width: $br-1200) {
-    padding-left: size(30rem);
-    margin-left: $layout-break-padding;
-    padding-right: size(30rem);
-    padding-bottom: size(35rem);
-    margin-top: 0;
-    margin-bottom: auto;
-    border-radius: size(5rem);
-  }
+.index__posts-group__news__title {
+  margin-top: size(-10rem);
+  margin-bottom: size(45rem);
+  font-size: $fs-h3;
 }
-
-.index-top__recommended__title,
-.index-top__main__title {
-  margin-top: size(30rem);
-  margin-bottom: size(35rem);
-  font-family: $ff-ui-heading;
-  font-size: $fs-h4;
-  color: $c-meta-gray;
-  text-transform: uppercase;
-}
-
-.index-top__recommended__post {
-  max-width: $main-column-mw;
-}
-
-// .index-bottom__main > .posts-list > li:first-child {
-//   @media screen and (min-width: $br-1200) {
-//   }
-// }
-
-// .index-top__main,
-// .index-bottom__main {
-//   @media screen and (min-width: $br-1200) {
-//     width: 100%;
-//     max-width: $main-column-mw;
-//     flex-shrink: 0;
-//   }
-// }
-
-// .index-top__aside,
-// .index-bottom__aside {
-//   @media screen and (min-width: $br-1200) {
-//     margin-left: $layout-break-padding;
-//   }
-// }
-
-// .index-bottom__aside {
-//   @media screen and (min-width: $br-1200) {
-//     margin-top: size(40rem);
-//     padding-top: size(40rem);
-//   }
-// }
-
-// .index-bottom__aside__title {
-//   margin-bottom: size(30rem);
-//   text-align: left;
-//   font-weight: 800;
-//   font-family: $ff-display;
-//   text-transform: uppercase;
-//   font-size: $fs-p;
-//   letter-spacing: size(0.7rem);
-// }
-
-// .index-remaining {
-//   max-width: $main-column-mw;
-// }
-
-// .index-top__main,
-// .index-bottom__main,
-// .index-remaining .posts-list {
-//   @media screen and (min-width: $br-1200) {
-//   }
-// }
-
-// .index-remaining .posts-list > li:first-of-type {
-//   @media screen and (min-width: $br-1200) {
-//     padding-top: size(40rem);
-//   }
-// }

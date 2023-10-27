@@ -27,26 +27,19 @@ export default function Hero({
   return (
     <article className="hero">
       <div className="hero__text">
+        <div className="hero__text__meta">
+          <PostMeta categories={categories} sports={sports} date={post.date} />
+        </div>
         <h2 className="hero__text__title">
           <Link href={`/${post.databaseId}/${post.slug}`} className="hoverable">
             {stripHtmlTags(post.title, false)}
           </Link>
         </h2>
-        <PostMeta categories={categories} sports={sports} date={post.date} />
-        {/* {prepareExcerpt(post.excerpt) && (
+        {prepareExcerpt(post.excerpt) && (
           <div className="hero__text__excerpt">
             <PostExcerpt excerpt={prepareExcerpt(post.excerpt)} />
           </div>
-        )} */}
-        {/* {((showCategory && categories.length > 0) ||
-          (showSport && sports.length > 0)) && (
-          <div className="hero__text__taxonomies post-preview-taxonomies">
-            {showSport && <PostSports sports={post.sports.nodes} />}
-            {showCategory && (
-              <PostCategories categories={post.categories.nodes} />
-            )}
-          </div>
-        )} */}
+        )}
       </div>
       <Link href={`/${post.databaseId}/${post.slug}`} className="hero__image">
         <FeaturedImage

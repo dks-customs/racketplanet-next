@@ -1,1 +1,64 @@
 @import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+
+.glide__arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: 45%;
+  margin-bottom: auto;
+  width: size(34rem);
+  height: size(34rem);
+  background-color: white;
+  border: size(1rem) solid $c-break-dark;
+  border-radius: size(2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glide__arrow svg {
+  width: size(13rem);
+  height: size(13rem);
+}
+
+.glide__arrow--left {
+  left: size(-17rem);
+}
+
+.glide__arrow--right {
+  right: size(-17rem);
+}
+
+.glide__arrow--disabled {
+  display: none;
+}
+
+.category-slider-post {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-slider-post__title {
+  margin-top: size(25rem);
+  margin-bottom: size(7rem);
+}
+
+.category-slider-post__excerpt {
+  color: $c-meta-mediumgray;
+  font-size: size(14rem);
+  margin-bottom: size(12rem);
+}
+
+.category-slider-post__title a {
+  color: black;
+  display: block;
+  font-family: $ff-display;
+  line-height: $lh-display;
+  font-size: size(22.5rem);
+  font-weight: 400;
+}
+
+.category-slider-post__meta .post-meta__item a,
+.category-slider-post__meta .post-meta__item time {
+  color: $c-meta-gray;
+}

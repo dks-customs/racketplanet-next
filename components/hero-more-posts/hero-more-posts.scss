@@ -1,0 +1,30 @@
+.hero-more-posts {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-more-post {
+  display: flex;
+}
+
+.hero-more-post:not(:last-of-type) {
+  margin-bottom: size(20rem);
+}
+
+.hero-more-post__image {
+  width: 30%;
+  margin-right: size(18rem);
+  flex-shrink: 0;
+}
+
+.hero-more-post__image .featured-image-wrapper {
+  padding-top: 85%;
+}
+
+.hero-more-post__title a {
+  font-family: $ff-display;
+  line-height: $lh-display;
+  font-size: $fs-p;
+  color: black;
+  display: block;
+}

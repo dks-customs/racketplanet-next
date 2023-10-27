@@ -16,7 +16,7 @@ type HeaderProps = {
 export default function Header({ categories, sports, events }: HeaderProps) {
   return (
     <>
-      <header className="header layout-container">
+      <header className="header">
         <EventsWidget events={events} />
         <HeaderTop sports={sports} categories={categories} />
         <HeaderBottom sports={sports} categories={categories} />

@@ -29,12 +29,16 @@ export default function PostPreviewHorizontal({
   return (
     <article className="post-preview-horizontal">
       <div className="post-preview-horizontal__text">
-        <h2 className="post-preview-horizontal__text__title post-preview-small-screen-title">
+        <h2 className="post-preview-horizontal__text__title">
           <Link href={`/${post.databaseId}/${post.slug}`} className="hoverable">
             {stripHtmlTags(post.title, false)}
           </Link>
         </h2>
-        <PostMeta categories={categories} sports={sports} date={post.date} />
+        <PostMeta
+          categories={showCategory ? categories : []}
+          sports={showSport ? sports : []}
+          date={post.date}
+        />
         {/* {prepareExcerpt(post.excerpt) && (
           <div className="post-preview-horizontal__text__excerpt post-preview-small-screen-excerpt">
             <PostExcerpt excerpt={prepareExcerpt(post.excerpt)} />
@@ -50,7 +54,7 @@ export default function PostPreviewHorizontal({
       </div>
       <Link
         href={`/${post.databaseId}/${post.slug}`}
-        className="post-preview-horizontal__image post-preview-small-screen-image"
+        className="post-preview-horizontal__image"
       >
         <FeaturedImage
           src={featuredImage?.sourceUrl}

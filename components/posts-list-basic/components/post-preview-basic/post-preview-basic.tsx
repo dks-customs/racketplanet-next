@@ -54,13 +54,7 @@ export default function PostPreviewBasic({ post }: PostPreviewBasicProps) {
         </div>
       )} */}
       <div className="post-preview-basic__meta">
-        <div className="post-preview-basic__meta__date">
-          <PostDate date={post.date} classic />
-        </div>
-        ,&nbsp;
-        <div className="post-preview-basic__meta__author">
-          {post.author.node.name}
-        </div>
+        <PostMeta categories={categories} sports={sports} date={post.date} />
       </div>
     </article>
   );
