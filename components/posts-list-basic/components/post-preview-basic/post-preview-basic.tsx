@@ -1,13 +1,10 @@
 import { APIPostPreview } from "../../../../graphql/types/post-preview";
-import PostSports from "../../../post-sports/post-sports";
-import PostCategories from "../../../post-categories/post-categories";
-import PostDate from "../../../post-date/post-date";
 import "./post-preview-basic.scss";
-import PostExcerpt from "../../../post-excerpt/post-excerpt";
-import prepareExcerpt from "../../../../util/prepareExcerpt";
 import FeaturedImage from "../../../featured-image/featured-image";
 import stripHtmlTags from "../../../../util/stripHtmlTags";
 import PostMeta from "../../../post-meta/post-meta";
+import Link from "next/link";
+import { routes } from "../../../../constants/constants";
 
 type PostPreviewBasicProps = {
   post: APIPostPreview;
@@ -23,7 +20,12 @@ export default function PostPreviewBasic({ post }: PostPreviewBasicProps) {
       <div className="post-preview-basic__main">
         <div className="post-preview-basic__main__text">
           <h2 className="post-preview-basic__main__text__title">
-            {stripHtmlTags(post.title, false)}
+            <Link
+              href={`/${post.databaseId}/${post.slug}`}
+              className="hoverable"
+            >
+              {stripHtmlTags(post.title, false)}
+            </Link>
           </h2>
           <div className="post-preview-basic__main__text__meta">
             <PostMeta
@@ -32,13 +34,11 @@ export default function PostPreviewBasic({ post }: PostPreviewBasicProps) {
               date={post.date}
             />
           </div>
-          {/* {prepareExcerpt(post.excerpt) && (
-            <div className="post-preview-basic__main__text__excerpt">
-              <PostExcerpt excerpt={prepareExcerpt(post.excerpt)} />
-            </div>
-          )} */}
         </div>
-        <div className="post-preview-basic__main__image">
+        <Link
+          href={`/${post.databaseId}/${post.slug}`}
+          className="post-preview-basic__main__image"
+        >
           <FeaturedImage
             src={featuredImage?.sourceUrl}
             alt={post.title}
@@ -46,13 +46,8 @@ export default function PostPreviewBasic({ post }: PostPreviewBasicProps) {
             loading="lazy"
             sizes="200px"
           />
-        </div>
+        </Link>
       </div>
-      {/* {prepareExcerpt(post.excerpt) && (
-        <div className="post-preview-basic__excerpt">
-          <PostExcerpt excerpt={prepareExcerpt(post.excerpt)} />
-        </div>
-      )} */}
       <div className="post-preview-basic__meta">
         <PostMeta categories={categories} sports={sports} date={post.date} />
       </div>

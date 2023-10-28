@@ -58,7 +58,7 @@ $li-margin: size(8.5rem);
   display: none;
 
   @media screen and (min-width: $br-1280) {
-    border-top: size(1rem) solid black;
+    border-top: size(1rem) solid $c-break-dark;
     width: 100%;
     display: block;
   }

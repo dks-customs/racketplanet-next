@@ -27,12 +27,12 @@ const sliderConfiguration = {
   gap: 30,
   breakpoints: {
     100000: {
-      gap: 30,
-      perView: 4,
+      gap: 25,
+      perView: 3,
     },
     1023: {
-      gap: 13,
-      perView: 3,
+      gap: 20,
+      perView: 2,
     },
     767: {
       gap: 13,
@@ -88,11 +88,6 @@ export default function CategorySlider({ posts, index }: CategorySliderProps) {
                           {stripHtmlTags(post.title, false)}
                         </Link>
                       </h2>
-                      {prepareExcerpt(post.excerpt) && (
-                        <div className="category-slider-post__excerpt">
-                          <PostExcerpt excerpt={prepareExcerpt(post.excerpt)} />
-                        </div>
-                      )}
                       <div className="category-slider-post__meta">
                         <PostMeta date={post.date} sports={post.sports.nodes} />
                       </div>

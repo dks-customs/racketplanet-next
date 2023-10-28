@@ -13,12 +13,7 @@ export default function PostsListBasic({ posts }: PostsListBasic) {
       <ul className="posts-list-basic">
         {posts.map((post) => (
           <li key={`posts-list-basic-${post.id}`}>
-            <Link
-              href={`/${post.databaseId}/${post.slug}`}
-              className="hoverable"
-            >
-              <PostPreviewBasic post={post} />
-            </Link>
+            <PostPreviewBasic post={post} />
           </li>
         ))}
       </ul>

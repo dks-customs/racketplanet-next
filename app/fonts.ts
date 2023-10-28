@@ -15,6 +15,7 @@ import {
   Oswald,
   Anton,
   Lusitana,
+  Fira_Code,
 } from "next/font/google";
 
 // export const displayFont = Playfair_Display({

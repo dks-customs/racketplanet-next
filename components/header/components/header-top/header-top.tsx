@@ -20,7 +20,7 @@ type HeaderTopProps = {
 
 export default function HeaderTop({ categories, sports }: HeaderTopProps) {
   return (
-    <div className="header-top">
+    <div className="header-top layout-container">
       <SideMenu categories={categories} sports={sports} />
       <SearchModal />
       <Link className="header-top__logo" href={routes.HOME}>

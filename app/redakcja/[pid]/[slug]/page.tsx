@@ -8,7 +8,6 @@ import notFoundMetadata from "../../../../util/notFoundMetadata";
 import NotFound from "../../../not-found";
 import LoadMore from "../../../../components/load-more/load-more";
 import PostsListBasic from "../../../../components/posts-list-basic/posts-list-basic";
-import PostsList from "../../../../components/posts-list/posts-list";
 
 type AuthorProps = {
   params: {

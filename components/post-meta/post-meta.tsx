@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { routes } from "../../constants/constants";
 import TimeAgo from "javascript-time-ago";
+import pl from "javascript-time-ago/locale/pl";
+
 import "./post-meta.scss";
+
+TimeAgo.addDefaultLocale(pl);
 
 type PostMetaProps = {
   sports?: {

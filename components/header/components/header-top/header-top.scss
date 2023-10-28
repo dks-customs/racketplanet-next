@@ -46,7 +46,7 @@
   }
 
   @media screen and (min-width: $wrapper-mw) {
-    left: size(10rem);
+    left: size(28rem);
     top: size(10rem);
   }
 }
@@ -65,7 +65,7 @@
 
   @media screen and (min-width: $wrapper-mw) {
     right: unset;
-    left: size(35rem);
+    left: size(53rem);
     top: size(10rem);
   }
 }
@@ -81,7 +81,7 @@
 
   @media screen and (min-width: $wrapper-mw) {
     top: size(10rem);
-    right: size(5rem);
+    right: size(27rem);
     display: flex;
   }
 }

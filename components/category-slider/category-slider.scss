@@ -14,6 +14,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (min-width: $br-576) {
+    margin-top: 20%;
+  }
+
+  @media screen and (min-width: $br-768) {
+    margin-top: 13%;
+  }
+
+  @media screen and (min-width: $br-1024) {
+    margin-top: 10%;
+  }
 }
 
 .glide__arrow svg {
@@ -41,12 +53,16 @@
 .category-slider-post__title {
   margin-top: size(25rem);
   margin-bottom: size(7rem);
+
+  @media screen and (min-width: $br-1200) {
+    margin-top: size(15rem);
+  }
 }
 
 .category-slider-post__excerpt {
   color: $c-meta-mediumgray;
   font-size: size(14rem);
-  margin-bottom: size(12rem);
+  margin-bottom: size(15rem);
 }
 
 .category-slider-post__title a {
@@ -55,10 +71,14 @@
   font-family: $ff-display;
   line-height: $lh-display;
   font-size: size(22.5rem);
-  font-weight: 400;
+  font-weight: $fw-display;
 }
 
 .category-slider-post__meta .post-meta__item a,
 .category-slider-post__meta .post-meta__item time {
   color: $c-meta-gray;
+
+  @media screen and (min-width: $br-768) {
+    color: $c-meta-mediumgray;
+  }
 }
