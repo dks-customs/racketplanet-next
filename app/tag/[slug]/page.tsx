@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { routes } from "../../../constants/constants";
 import LoadMore from "../../../components/load-more/load-more";
 import NotFound from "../../not-found";

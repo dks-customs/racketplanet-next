@@ -1,5 +1,6 @@
 .footer {
   margin-top: auto;
+  border-top: size(1rem) solid $c-break-light;
 }
 
 .footer.layout-container {
@@ -10,8 +11,6 @@
 }
 
 .footer-top {
-  border-top: size(1rem) solid $c-break-light;
-  border-bottom: size(1rem) solid $c-break-light;
   display: flex;
   flex-direction: column;
 }
@@ -160,6 +159,10 @@
 }
 
 .footer-bottom {
+  border-top: size(1rem) solid $c-break-light;
+}
+
+.footer-bottom > .layout-container {
   display: flex;
 }
 

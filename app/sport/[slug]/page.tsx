@@ -25,7 +25,7 @@ export default async function Sport({ params }: SportProps) {
       pageTitle.replace(` – ${sport.name}`, "");
 
     return (
-      <main className="sport layout-container">
+      <main className="sport archive layout-container">
         {sport.pages.length > 0 && (
           <header className="archive-header">
             <h1 className="archive-title">{sport.name}</h1>

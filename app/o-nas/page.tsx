@@ -1,8 +1,6 @@
-import LogoSVG from "../../components/svg/logo";
 import { routes } from "../../constants/constants";
 import getAbout from "../../graphql/getAbout";
 import pageMetadata from "../../util/pageMetadata";
-import NotFound from "../not-found";
 import "./about.scss";
 import getAuthors from "../../graphql/getAuthors";
 import AuthorPreview from "../../components/author-preview/author-preview";

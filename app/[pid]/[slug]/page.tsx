@@ -1,10 +1,8 @@
 import { Metadata } from "next";
 import PostAuthor from "../../../components/post-author/post-author";
-import PostCategories from "../../../components/post-categories/post-categories";
 import PostComments from "../../../components/post-comments/post-comments";
 import PostContent from "../../../components/post-content/post-content";
 import PostDate from "../../../components/post-date/post-date";
-import PostSports from "../../../components/post-sports/post-sports";
 import PostTags from "../../../components/post-tags/post-tags";
 import getAllPostsMeta from "../../../graphql/getAllPostsMeta";
 import getPost from "../../../graphql/getPost";
@@ -17,6 +15,7 @@ import FeaturedImage from "../../../components/featured-image/featured-image";
 import PostExcerpt from "../../../components/post-excerpt/post-excerpt";
 import prepareExcerpt from "../../../util/prepareExcerpt";
 import stripHtmlTags from "../../../util/stripHtmlTags";
+import PostMeta from "../../../components/post-meta/post-meta";
 
 type PostProps = {
   params: {
@@ -35,9 +34,12 @@ export default async function Post({ params }: PostProps) {
       <main className="post layout-container">
         <article>
           <header className="post-header">
-            <div className="post-header__taxonomies">
-              <PostSports sports={post.sports.nodes} />
-              <PostCategories categories={post.categories.nodes} />
+            <div className="post-header__meta">
+              <PostMeta
+                sports={post.sports.nodes}
+                categories={post.categories.nodes}
+                date={post.date}
+              />
             </div>
             <h1 className="post-header__title">
               {stripHtmlTags(post.title, false)}
@@ -59,13 +61,11 @@ export default async function Post({ params }: PostProps) {
                 />
               </div>
             )}
-            <div className="post-header__meta">
+            <div className="post-header__author">
               <PostAuthor
                 name={post.author.node.name}
                 id={post.author.node.databaseId}
               />
-              {","}&nbsp;
-              <PostDate date={post.date} />
             </div>
           </header>
           <PostContent content={post.content} />

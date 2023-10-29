@@ -19,8 +19,8 @@ export default function Footer({ categories, sports }: FooterProps) {
   return (
     <>
       {/* <SportsPreviews sports={sports} /> */}
-      <footer className="footer layout-container">
-        <div className="footer-top">
+      <footer className="footer">
+        <div className="footer-top layout-container">
           <div className="footer-top__logo">
             <ActiveLink href={routes.HOME}>
               <LogoSVG />
@@ -123,13 +123,15 @@ export default function Footer({ categories, sports }: FooterProps) {
           </div>
         </div>
         <div className="footer-bottom">
-          <div className="footer-bottom__privacy-policy">
-            <ActiveLink href={`${routes.PRIVACY_POLICY}`}>
-              Polityka prywatności
-            </ActiveLink>
-          </div>
-          <div className="footer-bottom__gdpr">
-            <GDPR />
+          <div className="layout-container">
+            <div className="footer-bottom__privacy-policy">
+              <ActiveLink href={`${routes.PRIVACY_POLICY}`}>
+                Polityka prywatności
+              </ActiveLink>
+            </div>
+            <div className="footer-bottom__gdpr">
+              <GDPR />
+            </div>
           </div>
         </div>
       </footer>

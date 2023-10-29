@@ -29,9 +29,7 @@ export default async function SportSubpage({ params }: SportSubpageProps) {
     return (
       <main className="sport-subpage layout-container">
         <div className="sport-subpage-content">
-          <h1 className="sport-subpage-content__title page-title">
-            {subpage.title}
-          </h1>
+          <h1 className="sport-subpage-content__title">{subpage.title}</h1>
           {featuredImage && (
             <div className="sport-subpage-content__image">
               <img src={featuredImage?.node.sourceUrl}></img>

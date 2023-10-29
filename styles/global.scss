@@ -95,15 +95,16 @@ a:active,
   font-size: $fs-h3;
   font-family: $ff-ui-heading;
   font-weight: 500;
+  line-height: $lh-display-small;
 
   @media screen and (min-width: $br-768) {
-    font-size: $fs-h1;
+    font-size: $fs-h2;
     text-align: center;
   }
 }
 
 .archive-header .archive-title {
-  text-align: center;
+  text-align: left;
 
   @media screen and (min-width: $br-768) {
     margin-bottom: size(5rem);
@@ -142,9 +143,8 @@ a:active,
 }
 
 .see-more > h5 {
-  font-size: $fs-h3;
-  text-transform: uppercase;
-  padding-bottom: size(20rem);
+  font-size: $fs-h4;
+  padding-bottom: size(10rem);
   margin-bottom: size(20rem);
   border-bottom: size(1rem) solid $c-break-light;
 

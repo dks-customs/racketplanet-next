@@ -8,6 +8,7 @@ import prepareExcerpt from "../../../../util/prepareExcerpt";
 import PostExcerpt from "../../../post-excerpt/post-excerpt";
 import PostDate from "../../../post-date/post-date";
 import stripHtmlTags from "../../../../util/stripHtmlTags";
+import PostMeta from "../../../post-meta/post-meta";
 
 type PostPreviewVerticalProps = {
   post: APIPostPreview;
@@ -38,27 +39,13 @@ export default function PostPreviewVertical({
           sizes="(min-width: 576px) 400px, 100vw"
         />
       </Link>
-      {((showCategory && categories.length > 0) ||
-        (showSport && sports.length > 0)) && (
-        <div className="post-preview-vertical__taxonomies">
-          {showSport && <PostSports sports={post.sports.nodes} />}
-          {showCategory && (
-            <PostCategories categories={post.categories.nodes} />
-          )}
-        </div>
-      )}
       <h2 className="post-preview-vertical__title">
         <Link href={`/${post.databaseId}/${post.slug}`} className="hoverable">
           {stripHtmlTags(post.title, false)}
         </Link>
       </h2>
-      {prepareExcerpt(post.excerpt) && (
-        <div className="post-preview-vertical__excerpt">
-          <PostExcerpt excerpt={prepareExcerpt(post.excerpt)} />
-        </div>
-      )}
-      <div className="post-preview-vertical__date">
-        <PostDate date={post.date} />
+      <div className="post-preview-vertical__meta">
+        <PostMeta categories={categories} sports={sports} date={post.date} />
       </div>
     </article>
   );

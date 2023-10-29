@@ -6,7 +6,7 @@
 .post-tags h5 {
   font-weight: 400;
   letter-spacing: size(0.5rem);
-  font-size: $fs-small;
+  font-size: $fs-p;
   border-bottom: size(1rem) solid $c-break-light;
   padding-bottom: size(5rem);
   margin-bottom: size(8rem);
@@ -28,7 +28,7 @@
 }
 
 .post-tags ul li a {
-  font-family: $ff-display;
+  font-family: $ff-ui;
   font-size: size(14rem);
   text-transform: uppercase;
   font-weight: 700;

@@ -6,9 +6,5 @@ type EventsWidgetProps = {
 };
 
 export default function EventsWidget({ events }: EventsWidgetProps) {
-  if (events.length > 0) {
-    return <div>Events Widget</div>;
-  } else {
-    return null;
-  }
+  return null;
 }

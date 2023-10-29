@@ -25,7 +25,7 @@
 }
 
 .contact__content__form {
-  margin-bottom: size(20rem);
+  margin-bottom: size(40rem);
 }
 
 .contact__content__desc {
@@ -40,8 +40,9 @@
 .contact-form__title,
 .contact__content__desc > h2 {
   font-size: $fs-h4;
-  font-weight: 600;
+  font-weight: 500;
   font-family: $ff-ui-heading;
+  line-height: $lh-display-small;
   margin-bottom: size(20rem);
 }
 
@@ -49,6 +50,7 @@
 .contact__content__desc > a {
   display: block;
   margin-bottom: size(10rem);
+  line-height: $lh-display;
 }
 
 .contact__content__desc > a > svg {

@@ -3,35 +3,28 @@
   flex-direction: column;
 }
 
-.post-header__taxonomies {
+.post-header__meta {
   display: flex;
   margin-top: size(23rem);
   margin-bottom: size(12rem);
-  text-transform: uppercase;
 
   @media screen and (min-width: $br-768) {
     text-align: center;
     display: flex;
     justify-content: center;
-    margin-top: size(40rem);
-    margin-bottom: size(20rem);
+    margin-bottom: size(17rem);
+    margin-top: size(30rem);
   }
 }
 
-.post-header__taxonomies a {
-  font-family: $ff-body;
+.post-header__meta > .post-meta > .post-meta__item,
+.post-header__meta > .post-meta > .post-meta__item > a,
+.post-header__meta > .post-meta > .post-meta__item > time {
+  color: $c-meta-gray;
   font-size: size(14rem);
-  font-weight: 400;
 
   @media screen and (min-width: $br-768) {
-    font-weight: 400;
-    font-size: $fs-p;
-  }
-}
-
-.post-header__taxonomies .post-sports ~ .post-categories {
-  @media screen and (min-width: $br-768) {
-    margin-left: size(12rem);
+    font-size: size(16rem);
   }
 }
 
@@ -39,7 +32,7 @@
   font-family: $ff-display;
   font-size: $fs-h3;
   line-height: 1.2;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: size(15rem);
   max-width: $post-content-mw;
   width: 100%;
@@ -47,9 +40,9 @@
   margin-right: auto;
 
   @media screen and (min-width: $br-768) {
-    font-size: $fs-h1;
+    font-size: $fs-h2;
     text-align: center;
-    line-height: 1.05;
+    line-height: $lh-display-small;
     padding-left: size(34rem);
     padding-right: size(34rem);
     max-width: 100%;
@@ -69,7 +62,7 @@
 
   @media screen and (min-width: $br-768) {
     text-align: center;
-    margin-bottom: size(33rem);
+    margin-bottom: size(40rem);
     font-size: size(18rem);
   }
 }
@@ -79,6 +72,13 @@
 
   @media screen and (min-width: $br-768) {
     margin-bottom: size(50rem);
+  }
+
+  @media screen and (min-width: $br-1024) {
+    max-width: size(900rem);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -104,7 +104,7 @@
   color: rgb(107, 107, 107);
 }
 
-.post-header__meta {
+.post-header__author {
   border-bottom: size(1rem) solid $c-break-light;
   padding-top: size(10rem);
   padding-bottom: size(10rem);
@@ -114,25 +114,24 @@
   font-family: $ff-ui;
 }
 
-.post-header__meta > .post-author a {
+.post-header__author > .post-author a {
   color: black;
-  font-weight: 400;
+  font-weight: 500;
   font-size: $fs-p;
-  text-transform: uppercase;
 }
 
-.post-header__meta > .post-author a:hover {
+.post-header__author > .post-author a:hover {
   color: gray;
 }
 
-.post-header__meta > .post-date {
+.post-header__author > .post-date {
   font-size: $fs-p;
   font-weight: 400;
 }
 
-.post-header__meta,
+.post-header__author,
 .post-header__excerpt,
-.post-header__taxonomies,
+.post-header__meta,
 .post-footer {
   max-width: $post-content-mw;
   margin-left: auto;

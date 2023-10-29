@@ -12,6 +12,20 @@
   justify-content: center;
 }
 
+.sport-subpage-content__title {
+  text-align: left;
+  font-family: $ff-display;
+  margin-top: size(20rem);
+  margin-bottom: size(20rem);
+  font-size: $fs-h4;
+
+  @media screen and (min-width: $br-768) {
+    text-align: center;
+    margin-top: size(30rem);
+    font-size: $fs-h3;
+  }
+}
+
 .sport-subpage-content__image img {
   max-height: 200rem;
   display: block;
