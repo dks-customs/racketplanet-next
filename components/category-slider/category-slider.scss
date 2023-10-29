@@ -52,10 +52,10 @@
 
 .category-slider-post__title {
   margin-top: size(25rem);
-  margin-bottom: size(7rem);
+  margin-bottom: size(10rem);
 
   @media screen and (min-width: $br-1200) {
-    margin-top: size(15rem);
+    margin-top: size(20rem);
   }
 }
 
@@ -70,7 +70,7 @@
   display: block;
   font-family: $ff-display;
   line-height: $lh-display;
-  font-size: size(22.5rem);
+  font-size: $fs-h5;
   font-weight: $fw-display;
 }
 

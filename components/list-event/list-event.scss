@@ -1,13 +1,10 @@
-.list-event {
-  padding: size(15rem) size(20rem);
-
-  @media screen and (min-width: $br-768) {
-    padding: size(20rem) size(25rem);
-  }
+.list-event:not(:first-of-type) {
+  padding-top: size(15rem);
 }
 
 .list-event:not(:last-of-type) {
   border-bottom: size(1rem) solid $c-break-light;
+  padding-bottom: size(15rem);
 }
 
 .list-event.past:hover .list-event-header__main__title {

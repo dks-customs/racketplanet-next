@@ -10,9 +10,13 @@ import ChevronDownSVG from "../../../../../svg/chevron-down";
 
 type CategoryCollapseProps = {
   category: APICategories[0];
+  handleClose: () => void;
 };
 
-export default function CategoryCollapse({ category }: CategoryCollapseProps) {
+export default function CategoryCollapse({
+  category,
+  handleClose,
+}: CategoryCollapseProps) {
   const [show, setShow] = useState<boolean>(false);
   return (
     <>
@@ -29,7 +33,7 @@ export default function CategoryCollapse({ category }: CategoryCollapseProps) {
         <ul id={`category-${category.id}-collapse`}>
           {category.children.nodes.map((child) => {
             return (
-              <li key={`category-child-${child.slug}`}>
+              <li key={`category-child-${child.slug}`} onClick={handleClose}>
                 <ActiveLinkClient
                   href={`${routes.CATEGORY}/${child.slug}`}
                   key={`collapse-item-${child.id}`}

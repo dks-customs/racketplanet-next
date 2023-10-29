@@ -8,7 +8,7 @@
   @media screen and (min-width: $br-1280) {
     border-bottom: 0;
     align-items: flex-start;
-    padding-bottom: size(10rem);
+    padding-bottom: size(12rem);
   }
 }
 
@@ -72,8 +72,8 @@
 
 .header-top__menu-btn svg,
 .header-top__search-btn svg {
-  width: size(18rem);
-  height: size(18rem);
+  width: size(16rem);
+  height: size(16rem);
 }
 
 .header-top__links {
@@ -113,6 +113,6 @@
 }
 
 .header-top__links__social a svg {
-  width: size(16rem);
-  height: size(16rem);
+  width: size(15rem);
+  height: size(15rem);
 }

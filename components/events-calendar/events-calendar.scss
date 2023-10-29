@@ -1,29 +1,25 @@
-.events-calendar.layout-container {
-  max-width: $main-column-mw;
-  padding-left: 0;
-  padding-right: 0;
+.events-calendar .archive-header {
+  align-items: flex-start;
+
+  @media screen and (min-width: $br-1200) {
+    margin-bottom: size(30rem);
+  }
 }
 
 .events-calendar__no-events {
   margin-top: size(30rem);
-  margin-bottom: size(30rem);
-  text-align: center;
+  margin-bottom: size(15rem);
+  text-align: left;
   font-weight: 400;
   color: gray;
   letter-spacing: size(0.2rem);
-  font-family: $ff-display;
+  font-family: $ff-ui;
 }
 
 .events-calendar__events {
   width: 100%;
-  border-top: size(1rem) solid black;
   margin-bottom: size(30rem);
   padding-bottom: size(15rem);
-
-  @media screen and (min-width: $main-column-mw) {
-    border: size(1rem) solid black;
-    border-radius: size(5rem);
-  }
 }
 
 .events-calendar__events + .events-calendar__events {
@@ -31,17 +27,12 @@
 }
 
 .events-calendar__events__title {
-  margin-top: size(30rem);
-  margin-bottom: size(20rem);
-  text-align: center;
+  padding-top: size(10rem);
+  margin-bottom: size(30rem);
+  text-align: left;
   font-weight: 500;
   letter-spacing: size(0.2rem);
   font-family: $ff-ui-heading;
-  font-size: $fs-h5;
-  text-transform: uppercase;
-
-  @media screen and (min-width: $br-768) {
-    margin-top: size(30rem);
-    margin-bottom: size(30rem);
-  }
+  font-size: size(18rem);
+  border-top: size(1rem) solid black;
 }

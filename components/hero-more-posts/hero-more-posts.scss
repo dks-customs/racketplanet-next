@@ -44,7 +44,7 @@
   display: block;
 
   @media screen and (min-width: $br-1200) {
-    font-size: size(18rem);
+    font-size: $fs-p;
   }
 }
 
@@ -58,6 +58,8 @@
   @media screen and (min-width: $br-1200) {
     padding-right: 0;
     margin-bottom: size(20rem);
+    padding-bottom: size(20rem);
+    border-bottom: size(1rem) solid $c-break-light;
   }
 }
 
@@ -78,7 +80,7 @@
   flex-shrink: 0;
 
   @media screen and (min-width: $br-1200) {
-    width: 20%;
+    width: 30%;
     margin-right: size(20rem);
   }
 }
@@ -87,6 +89,6 @@
   padding-top: 85%;
 
   @media screen and (min-width: $br-1200) {
-    padding-top: 100%;
+    padding-top: 62.5%;
   }
 }

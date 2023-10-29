@@ -11,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import getEvents from "../graphql/getEvents";
 import eventsUtils from "../util/eventsUtils";
 import GoogleAnalytics from "../components/google-analytics/google-analytics";
-import { bodyFont, displayFont, uiFont, uiHeadingFont } from "./fonts";
+import { displayFont, uiFont } from "./fonts";
 
 export default async function RootLayout({
   children,
@@ -24,10 +24,7 @@ export default async function RootLayout({
   const widgetEvents = events.filter(eventsUtils.isFutureEvent).slice(0, 3);
 
   return (
-    <html
-      lang="pl"
-      className={`${displayFont.variable} ${uiFont.variable} ${bodyFont.variable} ${uiHeadingFont.variable}`}
-    >
+    <html lang="pl" className={`${displayFont.variable} ${uiFont.variable}`}>
       <body>
         <Header categories={categories} sports={sports} events={widgetEvents} />
         {children}

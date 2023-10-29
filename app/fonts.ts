@@ -16,6 +16,39 @@ import {
   Anton,
   Lusitana,
   Fira_Code,
+  Nanum_Gothic,
+  Inter,
+  Merriweather,
+  Lora,
+  PT_Serif,
+  Source_Serif_4,
+  Frank_Ruhl_Libre,
+  Tinos,
+  Spectral,
+  Alice,
+  Prata,
+  Unna,
+  Old_Standard_TT,
+  Crimson_Pro,
+  Roboto_Serif,
+  Vidaloka,
+  Adamina,
+  Rufina,
+  Petrona,
+  GFS_Didot,
+  Yrsa,
+  Cantata_One,
+  Kaisei_Opti,
+  Rasa,
+  Hahmlet,
+  Cambo,
+  Ledger,
+  Benne,
+  Montaga,
+  Hina_Mincho,
+  Sumana,
+  Bebas_Neue,
+  Kanit,
 } from "next/font/google";
 
 // export const displayFont = Playfair_Display({
@@ -23,8 +56,13 @@ import {
 //   variable: "--font-display",
 // });
 
-export const displayFont = Lusitana({
-  weight: ["400", "700"],
+//Merriweather
+//Noto Serif !
+//EB_Garamond !!
+//Petrona !!!
+//Cantata_One !!!!
+
+export const displayFont = Noto_Serif({
   subsets: ["latin"],
   variable: "--font-display",
 });
@@ -33,22 +71,4 @@ export const uiFont = Lato({
   weight: ["300", "400", "700"],
   subsets: ["latin"],
   variable: "--font-ui",
-});
-
-export const uiHeadingFont = Oswald({
-  subsets: ["latin"],
-  variable: "--font-ui-heading",
-  weight: ["400"],
-});
-
-// export const bodyFont = Noto_Serif({
-//   weight: ["400", "500", "600"],
-//   subsets: ["latin"],
-//   variable: "--font-body",
-// });
-
-export const bodyFont = Lato({
-  weight: ["300", "400", "700"],
-  subsets: ["latin"],
-  variable: "--font-body",
 });

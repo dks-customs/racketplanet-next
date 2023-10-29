@@ -81,7 +81,7 @@ a:active,
 .archive-header {
   display: flex;
   flex-direction: column;
-  margin-top: size(15rem);
+  margin-top: size(20rem);
   margin-bottom: size(25rem);
 
   @media screen and (min-width: $br-768) {
@@ -92,10 +92,9 @@ a:active,
 }
 
 .archive-title {
-  font-size: $fs-h2;
+  font-size: $fs-h3;
   font-family: $ff-ui-heading;
-  font-weight: 300;
-  text-transform: uppercase;
+  font-weight: 500;
 
   @media screen and (min-width: $br-768) {
     font-size: $fs-h1;

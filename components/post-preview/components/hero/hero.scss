@@ -15,7 +15,7 @@
   @media screen and (min-width: $br-1200) {
     flex-direction: column;
     padding-top: 0;
-    width: 50%;
+    width: 53%;
     flex-shrink: 0;
     padding-bottom: 0;
     border-bottom: 0;
@@ -58,6 +58,12 @@
   }
 }
 
+.hero__text__meta > .post-meta > .post-meta__item,
+.hero__text__meta > .post-meta > .post-meta__item > a,
+.hero__text__meta > .post-meta > .post-meta__item > time {
+  color: $c-meta-gray;
+}
+
 .hero__text__title {
   text-align: center;
   margin-bottom: size(14rem);
@@ -68,6 +74,7 @@
   }
 
   @media screen and (min-width: $br-1200) {
+    margin-bottom: size(15rem);
     order: 1;
   }
 }
@@ -81,13 +88,13 @@
   display: block;
 
   @media screen and (min-width: $br-1200) {
-    font-size: $fs-h3;
+    font-size: size(28rem);
   }
 }
 
 .hero__text__excerpt {
   text-align: center;
-  color: $c-meta-lightgray;
+  color: $c-meta-gray;
   font-size: size(14rem);
 
   @media screen and (min-width: $br-768) {
@@ -95,10 +102,14 @@
   }
 
   @media screen and (min-width: $br-1200) {
-    font-size: size(16rem);
+    font-size: size(14rem);
     order: 2;
     margin-bottom: size(15rem);
   }
+}
+
+.hero__text__excerpt .post-excerpt {
+  line-height: $lh-display;
 }
 
 .hero__image {
@@ -113,7 +124,7 @@
   @media screen and (min-width: $br-1200) {
     width: 100%;
     order: 1;
-    margin-bottom: size(15rem);
+    margin-bottom: size(20rem);
   }
 }
 

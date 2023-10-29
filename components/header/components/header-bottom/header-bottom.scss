@@ -69,8 +69,8 @@ $li-margin: size(8.5rem);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: size(11rem);
-  padding-bottom: size(11rem);
+  padding-top: size(7rem);
+  padding-bottom: size(15rem);
 }
 
 .header-bottom__collapsible__sports > li:not(:last-of-type),
@@ -80,7 +80,6 @@ $li-margin: size(8.5rem);
 
 .header-bottom__collapsible__sports > li > a,
 .header-bottom__collapsible__categories > li > a {
-  text-transform: uppercase;
   color: $c-meta-gray;
   font-size: size(14rem);
   font-weight: 400;

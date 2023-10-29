@@ -8,7 +8,7 @@ import {
 } from "../../../../constants/constants";
 import InstagramSVG from "../../../svg/instagram";
 import FacebookSVG from "../../../svg/facebook";
-import { CloseButton, Offcanvas, OffcanvasHeader } from "react-bootstrap";
+import { Offcanvas } from "react-bootstrap";
 import CategoryCollapse from "./components/category-collapse/category-collapse";
 import { APICategories } from "../../../../graphql/types/categories";
 import { APISports } from "../../../../graphql/types/sports";
@@ -77,7 +77,10 @@ export default function SideMenu({ categories, sports }: SideMenuProps) {
                 if (category.children?.nodes?.length > 0) {
                   return (
                     <li key={`header-bottom-${category.id}`}>
-                      <CategoryCollapse category={category} />
+                      <CategoryCollapse
+                        category={category}
+                        handleClose={handleClose}
+                      />
                     </li>
                   );
                 } else {
