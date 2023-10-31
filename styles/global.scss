@@ -93,9 +93,10 @@ a:active,
 
 .archive-title {
   font-size: $fs-h3;
-  font-family: $ff-ui-heading;
-  font-weight: 500;
+  font-family: $ff-display;
+  font-weight: 800;
   line-height: $lh-display-small;
+  text-transform: uppercase;
 
   @media screen and (min-width: $br-768) {
     font-size: $fs-h2;
