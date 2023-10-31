@@ -6,12 +6,17 @@ import "./post-author.scss";
 type PostAuthorProps = {
   name: string;
   id: number;
+  avatarUrl: string;
 };
 
-export default function PostAuthor({ name, id }: PostAuthorProps) {
+export default function PostAuthor({ name, id, avatarUrl }: PostAuthorProps) {
   return (
-    <div className="post-author">
-      <Link href={`${routes.TEAM}/${id}/${authorSlug(name)}`}>{name}</Link>
-    </div>
+    <Link
+      href={`${routes.TEAM}/${id}/${authorSlug(name)}`}
+      className="post-author"
+    >
+      <img src={avatarUrl} />
+      <span>{name}</span>
+    </Link>
   );
 }

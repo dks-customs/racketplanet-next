@@ -30,6 +30,9 @@ export default async function getPost(wpId: string) {
             databaseId
             name
             slug
+            avatar {
+              url
+            }
           }
         }
         categories {

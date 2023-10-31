@@ -44,7 +44,7 @@
   display: block;
 
   @media screen and (min-width: $br-1200) {
-    font-size: $fs-p;
+    font-size: size(18rem);
   }
 }
 

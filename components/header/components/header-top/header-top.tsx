@@ -12,6 +12,8 @@ import SideMenu from "../side-menu/side-menu";
 import { APICategories } from "../../../../graphql/types/categories";
 import { APISports } from "../../../../graphql/types/sports";
 import SearchModal from "../search-modal/search-modal";
+import ActiveLinkClient from "../../../active-link/components/active-link-client";
+import ActiveLink from "../../../active-link/active-link";
 
 type HeaderTopProps = {
   categories: APICategories;
@@ -27,6 +29,18 @@ export default function HeaderTop({ categories, sports }: HeaderTopProps) {
         <LogoSVG />
       </Link>
       <nav className="header-top__links">
+        <ul className="header-top__links__pages">
+          <li>
+            <ActiveLink href={routes.EVENTS} className="hoverable">
+              Kalendarz
+            </ActiveLink>
+          </li>
+          <li>
+            <ActiveLink href={routes.RACKET_MAPA} className="hoverable">
+              Racket Mapa
+            </ActiveLink>
+          </li>
+        </ul>
         <ul className="header-top__links__social">
           <li>
             <a href={FACEBOOK_URL} target="_blank" className="hoverable">

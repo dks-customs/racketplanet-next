@@ -1,1 +1,35 @@
+.post-author {
+  display: flex;
+  align-items: center;
+  font-family: $ff-ui;
+}
 
+.post-author img {
+  border-radius: 50%;
+  border: size(1rem) solid black;
+  width: size(40rem);
+  height: size(40rem);
+  margin-right: size(12rem);
+
+  transition: border-color 0.1s linear;
+}
+
+.post-author span {
+  color: black;
+  transition: color 0.1s linear;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: size(12rem);
+
+  @media screen and (min-width: $br-768) {
+    font-size: size(14rem);
+  }
+}
+
+.post-author:hover span {
+  color: $c-primary;
+}
+
+.post-author:hover img {
+  border-color: $c-primary;
+}

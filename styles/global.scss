@@ -76,6 +76,14 @@ a:active,
 
 .archive .posts-list {
   margin-bottom: size(30rem);
+
+  @media screen and (min-width: $br-768) {
+    margin-bottom: size(40rem);
+  }
+
+  @media screen and (min-width: $br-1200) {
+    margin-bottom: size(50rem);
+  }
 }
 
 .archive-header {
@@ -86,8 +94,9 @@ a:active,
 
   @media screen and (min-width: $br-768) {
     margin-top: size(25rem);
-    margin-bottom: size(40rem);
-    align-items: flex-start;
+    margin-bottom: size(33rem);
+    flex-direction: row;
+    align-items: center;
   }
 }
 
@@ -106,10 +115,6 @@ a:active,
 
 .archive-header .archive-title {
   text-align: left;
-
-  @media screen and (min-width: $br-768) {
-    margin-bottom: size(5rem);
-  }
 }
 
 .layout-container {

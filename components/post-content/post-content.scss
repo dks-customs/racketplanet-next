@@ -7,6 +7,23 @@
   width: 100%;
 }
 
+.post-content h1,
+.post-content h2 {
+  font-size: size(26.88rem);
+}
+
+.post-content h3 {
+  font-size: size(23.61rem);
+}
+
+.post-content h4 {
+  font-size: size(20.74rem);
+}
+
+.post-content h5 {
+  font-size: size(18.22rem);
+}
+
 .post-content h1:not(:first-child),
 .post-content h2:not(:first-child),
 .post-content h3:not(:first-child),
@@ -48,13 +65,9 @@
 .post-content h5 > strong,
 .post-content h6,
 .post-content h6 > strong {
-  font-weight: 400;
+  font-weight: 500;
   font-family: $ff-display;
-  line-height: 1.3;
-
-  @media screen and (min-width: $br-768) {
-    line-height: 1.25;
-  }
+  line-height: $lh-display;
 }
 
 .post-content p,

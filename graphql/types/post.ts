@@ -16,6 +16,9 @@ export type PostAPI = {
       name: string;
       slug: string;
       databaseId: number;
+      avatar: {
+        url: string;
+      };
     };
   };
   categories: {

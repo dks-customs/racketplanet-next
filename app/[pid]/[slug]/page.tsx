@@ -65,6 +65,7 @@ export default async function Post({ params }: PostProps) {
               <PostAuthor
                 name={post.author.node.name}
                 id={post.author.node.databaseId}
+                avatarUrl={post.author.node.avatar.url}
               />
             </div>
           </header>

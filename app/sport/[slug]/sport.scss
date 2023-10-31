@@ -2,6 +2,11 @@
   display: flex;
   align-items: center;
   margin-top: size(8rem);
+
+  @media screen and (min-width: $br-768) {
+    margin-top: 0;
+    margin-left: size(15rem);
+  }
 }
 
 .sport-subpages li:not(:last-of-type) {

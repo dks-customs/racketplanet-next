@@ -7,10 +7,12 @@
 .post-meta__item a,
 .post-meta__item time {
   font-size: size(12rem);
-  color: $c-meta-lightgray;
+  color: $c-meta-mediumgray;
 
   @media screen and (min-width: $br-768) {
     font-size: size(13rem);
+    letter-spacing: size(0.3rem);
+    font-weight: 400;
   }
 }
 

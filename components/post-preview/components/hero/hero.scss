@@ -42,7 +42,7 @@
 }
 
 .hero__text__meta {
-  margin-bottom: size(14rem);
+  margin-bottom: size(10rem);
 
   @media screen and (min-width: $br-1200) {
     order: 3;
@@ -56,12 +56,6 @@
   @media screen and (min-width: $br-768) {
     justify-content: flex-start;
   }
-}
-
-.hero__text__meta > .post-meta > .post-meta__item,
-.hero__text__meta > .post-meta > .post-meta__item > a,
-.hero__text__meta > .post-meta > .post-meta__item > time {
-  color: $c-meta-gray;
 }
 
 .hero__text__title {
@@ -88,7 +82,7 @@
   display: block;
 
   @media screen and (min-width: $br-1200) {
-    font-size: size(28rem);
+    font-size: $fs-h3;
   }
 }
 
@@ -124,7 +118,7 @@
   @media screen and (min-width: $br-1200) {
     width: 100%;
     order: 1;
-    margin-bottom: size(20rem);
+    margin-bottom: size(15rem);
   }
 }
 
