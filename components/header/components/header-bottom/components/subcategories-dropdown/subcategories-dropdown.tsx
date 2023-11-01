@@ -16,7 +16,7 @@ export default function SubcategoriesDropdown({
     <Suspense
       fallback={
         <div className="dropdown">
-          <button className="btn btn-secondary dropdown-toggle">
+          <button className="btn btn-secondary dropdown-toggle hoverable">
             {parentCategory.name}
           </button>
         </div>

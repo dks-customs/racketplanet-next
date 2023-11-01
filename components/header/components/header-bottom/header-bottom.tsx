@@ -146,7 +146,7 @@ export default function HeaderBottom({
         {sports.map((sport) => (
           <li key={`header-bottom-${sport.id}`}>
             <ActiveLink
-              className="hoverable-background"
+              className="hoverable"
               href={`${routes.SPORT}/${sport.slug}`}
             >
               {sport.name}
@@ -165,7 +165,10 @@ export default function HeaderBottom({
           } else {
             return (
               <li key={`header-bottom-${category.id}`}>
-                <ActiveLink href={`${routes.CATEGORY}/${category.slug}`}>
+                <ActiveLink
+                  href={`${routes.CATEGORY}/${category.slug}`}
+                  className="hoverable"
+                >
                   {category.name}
                 </ActiveLink>
               </li>
