@@ -3,9 +3,9 @@ import PostsList from "../components/posts-list/posts-list";
 import getHomePosts from "../graphql/getHomePosts";
 import LoadMoreHome from "../components/load-more-home/load-more-home";
 import PostPreview from "../components/post-preview/post-preview";
-import "./index.scss";
 import CategorySlider from "../components/category-slider/category-slider";
 import HeroMorePosts from "../components/hero-more-posts/hero-more-posts";
+import "./index.scss";
 
 export default async function Home() {
   const posts = await getHomePosts();

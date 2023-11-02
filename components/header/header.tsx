@@ -6,6 +6,7 @@ import HeaderTop from "./components/header-top/header-top";
 
 import "./header.scss";
 import { APIEvent } from "../../graphql/types/event";
+import PopHeader from "./components/pop-header/pop-header";
 
 type HeaderProps = {
   categories: APICategories;
@@ -20,6 +21,7 @@ export default function Header({ categories, sports, events }: HeaderProps) {
         <EventsWidget events={events} />
         <HeaderTop sports={sports} categories={categories} />
         <HeaderBottom sports={sports} categories={categories} />
+        <PopHeader sports={sports} categories={categories} />
       </header>
     </>
   );

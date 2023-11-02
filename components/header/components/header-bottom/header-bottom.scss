@@ -115,13 +115,23 @@ $li-margin: size(8.5rem);
   height: size(20rem);
 }
 
-.header-bottom__sports {
+.header-bottom__sports,
+.pop-header__sports {
   border-right: size(1rem) solid $c-break-light;
+}
+
+.header-bottom__sports {
   margin-right: $li-margin;
   padding-right: $li-margin;
 }
 
-.header-bottom__categories .dropdown-toggle {
+.pop-header__sports {
+  margin-right: size(4rem);
+  padding-right: size(4rem);
+}
+
+.header-bottom__categories .dropdown-toggle,
+.pop-header .dropdown-toggle {
   background: none !important;
   border: none;
   padding: 0;
@@ -135,16 +145,22 @@ $li-margin: size(8.5rem);
 .header-bottom__categories .dropdown-toggle:hover,
 .header-bottom__categories .dropdown-toggle:active,
 .header-bottom__categories .dropdown-toggle:focus,
-.header-bottom__categories .dropdown-toggle.show {
+.header-bottom__categories .dropdown-toggle.show,
+.pop-header .dropdown-toggle:hover,
+.pop-header .dropdown-toggle:active,
+.pop-header .dropdown-toggle:focus,
+.pop-header .dropdown-toggle.show {
   color: $c-primary !important;
 }
 
-.header-bottom__categories .dropdown-menu {
+.header-bottom__categories .dropdown-menu,
+.pop-header .dropdown-menu {
   padding-top: size(4rem);
   padding-bottom: size(4rem);
 }
 
-.header-bottom__categories .dropdown-menu li {
+.header-bottom__categories .dropdown-menu li,
+.pop-header .dropdown-menu li {
   padding: size(5rem);
 }
 
@@ -153,8 +169,15 @@ $li-margin: size(8.5rem);
   margin-right: $li-margin;
 }
 
+.pop-header li {
+  margin-left: size(4rem);
+  margin-right: size(4rem);
+}
+
 .header-bottom a,
-.header-bottom .dropdown-toggle {
+.header-bottom .dropdown-toggle,
+.pop-header a,
+.pop-header .dropdown-toggle {
   padding: size($li-padding);
   font-size: size(10.9rem);
   text-transform: uppercase;
@@ -164,6 +187,137 @@ $li-margin: size(8.5rem);
   letter-spacing: 0;
 }
 
-.header-bottom .dropdown-toggle {
+.header-bottom .dropdown-toggle,
+.pop-header .dropdown-toggle {
   min-height: 0;
+}
+
+//////////////
+//POP HEADER//
+//////////////
+
+.pop-header {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: size(40rem);
+  border-bottom: size(1rem) solid black;
+  margin-top: size(-40rem);
+  transition: margin-top 0.3s linear;
+  z-index: 1000;
+
+  @media screen and (min-width: $br-1200) {
+    height: size(35rem);
+    margin-top: size(-35rem);
+  }
+}
+
+.pop-header.show {
+  margin-top: 0rem;
+}
+
+.pop-header.show.admin-bar {
+  @media screen and (min-width: size(601rem)) {
+    margin-top: size(46rem);
+  }
+
+  @media screen and (min-width: size(783rem)) {
+    margin-top: size(32rem);
+  }
+}
+
+.pop-header > .layout-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  @media screen and (min-width: $wrapper-mw) {
+    justify-content: flex-start;
+  }
+}
+
+.pop-header__logo {
+  @media screen and (min-width: $wrapper-mw) {
+    margin-right: size(10rem);
+  }
+}
+
+.pop-header__logo svg {
+  height: size(27rem);
+  width: auto;
+
+  @media screen and (min-width: $wrapper-mw) {
+    height: size(24rem);
+  }
+}
+
+.pop-header .header-menu-btn,
+.pop-header .header-search-btn {
+  color: black;
+  position: absolute;
+}
+
+.pop-header .header-menu-btn {
+  left: $wrapper-p;
+  top: size(11rem);
+
+  @media screen and (min-width: $br-768) {
+    left: $wrapper-p-768;
+  }
+
+  @media screen and (min-width: $br-1024) {
+    left: $wrapper-p-1024;
+  }
+
+  @media screen and (min-width: $wrapper-mw) {
+    right: 0;
+    left: unset;
+    top: size(8rem);
+  }
+}
+
+.pop-header .header-search-btn {
+  top: size(11rem);
+  right: $wrapper-p;
+
+  @media screen and (min-width: $br-768) {
+    right: $wrapper-p-768;
+  }
+
+  @media screen and (min-width: $br-1024) {
+    right: $wrapper-p-1024;
+  }
+
+  @media screen and (min-width: $wrapper-mw) {
+    right: size(25rem);
+    top: size(8rem);
+    border-left: size(1rem) solid $c-break-light;
+    padding-left: size(10rem);
+  }
+}
+
+.pop-header .header-menu-btn svg,
+.pop-header .header-search-btn svg {
+  width: size(16rem);
+  height: size(16rem);
+
+  @media screen and (min-width: $wrapper-mw) {
+    width: size(14rem);
+    height: size(14rem);
+  }
+}
+
+.pop-header__categories,
+.pop-header__sports {
+  display: none;
+
+  @media screen and (min-width: $wrapper-mw) {
+    display: flex;
+    align-items: center;
+  }
 }

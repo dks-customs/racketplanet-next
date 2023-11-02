@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { CANONICAL_BASE } from "../constants/constants";
 import Header from "../components/header/header";
 import getCategories from "../graphql/getCategories";
@@ -44,5 +44,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  themeColor: "#fff",
 };
+
+export const viewport: Viewport = {
+  themeColor: "#fff"
+}

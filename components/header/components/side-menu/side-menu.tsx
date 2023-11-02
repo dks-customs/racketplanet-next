@@ -30,7 +30,7 @@ export default function SideMenu({ categories, sports }: SideMenuProps) {
 
   return (
     <>
-      <button className="header-top__menu-btn hoverable" onClick={handleShow}>
+      <button className="header-menu-btn hoverable" onClick={handleShow}>
         <ListSVG />
       </button>
       <Offcanvas

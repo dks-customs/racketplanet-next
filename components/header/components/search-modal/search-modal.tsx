@@ -45,7 +45,7 @@ export default function SearchModal() {
 
   return (
     <>
-      <button className="header-top__search-btn hoverable" onClick={handleShow}>
+      <button className="header-search-btn hoverable" onClick={handleShow}>
         <SearchSVG />
       </button>
       <Modal

@@ -26,14 +26,14 @@
   }
 }
 
-.header-top__menu-btn,
-.header-top__search-btn,
+.header-top .header-menu-btn,
+.header-top .header-search-btn,
 .header-top__links {
   color: black;
   position: absolute;
 }
 
-.header-top__menu-btn {
+.header-top .header-menu-btn {
   left: $wrapper-p;
   top: size(33rem);
 
@@ -51,7 +51,7 @@
   }
 }
 
-.header-top__search-btn {
+.header-top .header-search-btn {
   top: size(33rem);
   right: $wrapper-p;
 
@@ -70,8 +70,8 @@
   }
 }
 
-.header-top__menu-btn svg,
-.header-top__search-btn svg {
+.header-top .header-menu-btn svg,
+.header-top .header-search-btn svg {
   width: size(16rem);
   height: size(16rem);
 }
